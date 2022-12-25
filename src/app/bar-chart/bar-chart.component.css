@@ -4,12 +4,34 @@
 }
 
 button {
-    width: 8%;
-    height: 100%;
+    
 }
 
 canvas {
-    width: 30%;
-    height: auto;
-    margin: 0 auto;
+    
+}
+
+@media screen and (max-width: 768px) {
+    button {
+        width: 30%;
+        height: 100%;
+    }
+    canvas {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;    
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    button {
+        width: 20%;
+        height: 100%;
+    }
+    canvas {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;    
+    }
 }
