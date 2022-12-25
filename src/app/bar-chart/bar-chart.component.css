@@ -1,0 +1,15 @@
+.button_wrapper {
+    text-align: center;
+    height: 30px;
+}
+
+button {
+    width: 8%;
+    height: 100%;
+}
+
+canvas {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+}
