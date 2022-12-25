@@ -17,7 +17,7 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 //    '' で [/] のルートパスを指定できる
 //    '**' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
-  { path: 'top', component: TopComponent },
+  { path: 'index', component: TopComponent },
   { path: 'about', component: AboutComponent },
   { path: 'fee', component: FeeComponent },
   { path: 'contact', component: ContactComponent },
