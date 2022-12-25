@@ -2,3 +2,10 @@
     font-size: 1.2em;
     margin: 0 0 1em 0;
 }
+
+.theme {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 2em;
+    background-color: antiquewhite;
+}

@@ -23,7 +23,7 @@ export class BarChartComponent {
     },
     plugins: {
       legend: {
-        display: true,
+        display: false,
       },
       // datalabels: {
       //   anchor: 'end',
@@ -39,14 +39,13 @@ export class BarChartComponent {
   public barChartData: ChartData<'bar'> = {
     labels: [ '', '', '', '', '', '', '' ],
     datasets: [
-      { data: [ 1, 2, 3, 4 ,5 ,6 ,7 ], label: '' }
+      { data: [ 1, 2, 3, 4 ,5 ,6 ,7 ]}
     ]
   };
 
   public randomize(): void {
     this.barChartData.datasets[0].data = [
       2, 2, 3, 4, 5, 6, 7 ];
-
     this.chart?.update();
   }
 }
