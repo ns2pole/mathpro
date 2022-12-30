@@ -12,10 +12,19 @@ export class FieldComponent {
   ngOnInit() {
     const a: number = 1;
     const b: number = 2;
-    function foo(): void {
-      console.log('hello');
+    // function foo(): void {
+    //   console.log('hello');
+    // }
+
+    function drawRect(s:any): () => void {
+      return () => {
+        s.background(255);
+        s.rect(100, 100, 100, 100);
+        s.rect(200, 200, 100, 100);
+      }
     }
-    foo()
+
+    // foo()
     let sketch = (s:any) => {
       s.preload = () => {
         // preload code
@@ -25,10 +34,7 @@ export class FieldComponent {
         let ele = document.getElementsByTagName('app-field')[0];
         canvas.parent(ele);
       };
-      s.draw = () => {
-        s.background(255);
-        s.rect(100, 100, 100, 100);
-      };
+      s.draw = drawRect(s);
     }
     new p5(sketch);
   }
