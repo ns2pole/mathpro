@@ -10,7 +10,6 @@ import { ContactComponent } from './contact/contact.component';
 import { FeeComponent } from './fee/fee.component';
 import { AboutComponent } from './about/about.component';
 import { BarChartComponent } from './top/bar-chart/bar-chart.component';
-import { FieldComponent } from './top/field/field.component';
 import { BreadthFirstSearchComponent } from './top/breadth-first-search/breadth-first-search.component';
 
 // Routing を行う対象のコンポーネントを管理する
@@ -33,7 +32,6 @@ const ROUTE_TABLE: Routes = [
     FeeComponent,
     ContactComponent,
     BarChartComponent,
-    FieldComponent,
     BreadthFirstSearchComponent,
   ],
   imports: [
