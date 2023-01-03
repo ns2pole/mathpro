@@ -1,0 +1,50 @@
+@startuml{test.png}
+title bread-first-search
+
+    class Start {
+    }
+    class Goal {
+    }
+
+    class Vacant {
+    }
+
+    abstract class NotObstacle {
+    }
+
+    class Obstacle {
+    }
+
+    class Vertex {
+    }
+
+    class Edge {
+    }
+
+    interface Square {
+    }
+
+    enum Color {
+    }
+
+    enum Space {
+    }
+
+    enum IsAdjacent {
+    }
+
+    class Canvas {
+    }
+
+    class Plane {
+    }
+
+    Start <|..NotObstacle
+    Goal <|..NotObstacle
+    Vacant <|..NotObstacle
+    NotObstacle <|.. Square
+    Obstacle <|.. Square
+    NotObstacle <|.. Vertex
+
+
+@enduml
