@@ -1,9 +1,8 @@
-import * as p5 from 'p5';
 import { Square } from './Square';
 import { Color } from './Color';
 export abstract class Obstacle implements Square{
   static color : Color | undefined;
-  size : Number | undefined;
+  
   public paint(): void {
     // console.log("paint");
   }

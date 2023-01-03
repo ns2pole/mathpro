@@ -1,5 +1,5 @@
 export interface Square {
-  size : Number | undefined;
+  // size : Number | undefined;
   paint(): void
   draw() : void
   getCenter() : [Number, Number]

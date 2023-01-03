@@ -5,16 +5,18 @@ import { Start } from './Start';
 import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
 import { Space } from './Space';
+import { Vertex } from './Vertex';
+import { Canvas } from './Canvas';
 
 export class Plane {
-  rowSize : Number | undefined;
-  columnSize : Number | undefined;
-  obstacleNum : Number | undefined;
-  map : Array<Array<Space>> | undefined; 
-  adjacentMatrix : Array<Array<IsAdjacent>> | undefined;
-  constructor(rowSize : Number, columnSize : Number, obstacleNum : Number) {
-    this.rowSize = rowSize;
-    this.columnSize = columnSize;
+  rowNum : number;
+  columnNum : number;
+  obstacleNum : number;
+  map : Array<Array<Space>>;
+  adjacentMatrix : Array<Array<IsAdjacent>>;
+  constructor(rowNum : number, columnNum : number, obstacleNum : number) {
+    this.rowNum = rowNum;
+    this.columnNum = columnNum;
     this.obstacleNum = obstacleNum;
     this.map = this.generateMap(); 
     this.adjacentMatrix = this.getAdjacentMatrix();
@@ -64,5 +66,25 @@ export class Plane {
   }
   getGoal() : Goal {
     return new Goal(0);
+  }
+
+  getSquareStartPosition() : [Number, Number] {
+    return [0, 0];
+  }
+  draw(s:any): () => void {
+    return () => {
+      s.background(155);
+      s.rectMode(s.CORNER);
+      for (let i = 0; i < this.rowNum; i++) {
+        for (let j = 0; j < this.columnNum; j++) {
+          s.rect(
+            Canvas.xOriginForDrawing(s) + i * Vertex.getSize(s),
+            Canvas.yOriginForDrawing(s) + j * Vertex.getSize(s),
+            Vertex.getSize(s),
+            Vertex.getSize(s)
+          );
+        }
+      }
+    }
   }
 }

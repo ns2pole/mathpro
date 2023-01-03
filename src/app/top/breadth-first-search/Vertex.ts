@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import * as p5 from 'p5';
-import { Plane } from './Plane';
 import { Edge } from './Edge';
 import { IsAdjacent } from './IsAdjacent';
 export class Vertex {
   id: number | undefined;  
+  static SIZE : number = 1 / 30;
+  static getSize(s:any) : number { 
+    return s.windowWidth * Vertex.SIZE;
+  };
   constructor(id : number) {
     this.id = id;
   }
