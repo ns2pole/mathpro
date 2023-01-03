@@ -20,11 +20,6 @@ export class Vertex {
     return [];
   }
 
-  public static test12(): Number {
-    const f: Plane = new Plane();
-    return f.test1();
-  }
-
   public static test13(): Number {
     return 500;
   }

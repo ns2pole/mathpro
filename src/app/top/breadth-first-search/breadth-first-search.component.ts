@@ -21,8 +21,6 @@ export class BreadthFirstSearchComponent {
     return () => {
       s.background(155);
       s.rectMode(s.CORNER);
-      s.rect(Plane.test2(), 100, 100, 100);
-      s.rect(Plane.test3(), Vertex.test12(), 100, 100);
       s.rect(Road.test4(), Road.test4(), 100, 100);
       s.rect(100, 100, 100, 100);
       s.rect(100, 100, 100, 100);
