@@ -73,26 +73,26 @@ export class Plane {
     }
     for( let i :number = 0; i < map.length; i++) {
       for( let j :number = 0; j < map[i].length; j++) {
-          if(map[i][j] != Space.isObstacle && map[i][j + 1] != Space.isObstacle) {
-          let vertexId1 = Plane.getVertexIdsFor(map, i, j);
-          let vertexId2 = Plane.getVertexIdsFor(map, i, j + 1);
-            adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
-          }
-          if(map[i][j] != Space.isObstacle && map[i + 1][j] != Space.isObstacle) {
-            let vertexId1 = Plane.getVertexIdsFor(map, i, j);
-            let vertexId2 = Plane.getVertexIdsFor(map, i + 1, j);
-            adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
-          }
-          if(map[i][j] != Space.isObstacle && map[i][j - 1] != Space.isObstacle) {
-            let vertexId1 = Plane.getVertexIdsFor(map, i, j);
-            let vertexId2 = Plane.getVertexIdsFor(map, i, j - 1);
-            adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
-          }
-          if(map[i][j] != Space.isObstacle && map[i - 1][j] != Space.isObstacle) {
-            let vertexId1 = Plane.getVertexIdsFor(map, i, j);
-            let vertexId2 = Plane.getVertexIdsFor(map, i - 1, j);
-            adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
-          }
+          // if(map[i][j] != Space.isObstacle && map[i][j + 1] != Space.isObstacle) {
+          // let vertexId1 = Plane.getVertexIdsFor(map, i, j);
+          // let vertexId2 = Plane.getVertexIdsFor(map, i, j + 1);
+          //   adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
+          // }
+          // if(map[i][j] != Space.isObstacle && map[i + 1][j] != Space.isObstacle) {
+          //   let vertexId1 = Plane.getVertexIdsFor(map, i, j);
+          //   let vertexId2 = Plane.getVertexIdsFor(map, i + 1, j);
+          //   adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
+          // }
+          // if(map[i][j] != Space.isObstacle && map[i][j - 1] != Space.isObstacle) {
+            // let vertexId1 = Plane.getVertexIdsFor(map, i, j);
+            // let vertexId2 = Plane.getVertexIdsFor(map, i, j - 1);
+            adjacentMatrix[2][2] = IsAdjacent.Yes;
+          // }
+          // if(map[i][j] != Space.isObstacle && map[i - 1][j] != Space.isObstacle) {
+          //   let vertexId1 = Plane.getVertexIdsFor(map, i, j);
+          //   let vertexId2 = Plane.getVertexIdsFor(map, i - 1, j);
+          //   adjacentMatrix[vertexId1][vertexId2] = IsAdjacent.Yes;
+          // }
         }
       }
     return adjacentMatrix;
