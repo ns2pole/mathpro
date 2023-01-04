@@ -5,19 +5,12 @@ import { Start } from './Start';
 import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
 import { Space } from './Space';
-import { Vertex } from './Vertex';
-import { Canvas } from './Canvas';
+import { Const } from './Const';
 
 export class Plane {
-  rowNum : number;
-  columnNum : number;
-  obstacleNum : number;
   map : Array<Array<Space>>;
   adjacentMatrix : Array<Array<IsAdjacent>>;
-  constructor(rowNum : number, columnNum : number, obstacleNum : number) {
-    this.rowNum = rowNum;
-    this.columnNum = columnNum;
-    this.obstacleNum = obstacleNum;
+  constructor() {
     this.map = this.generateMap(); 
     this.adjacentMatrix = this.getAdjacentMatrix();
   }
@@ -73,15 +66,15 @@ export class Plane {
   }
   draw(s:any): () => void {
     return () => {
-      s.background(155);
+      s.background(Const.CANVAS_BACKGROUND_COLOR);
       s.rectMode(s.CORNER);
-      for (let i = 0; i < this.rowNum; i++) {
-        for (let j = 0; j < this.columnNum; j++) {
+      for (let i = 0; i < Const.SQUARE_ROW_NUM; i++) {
+        for (let j = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
           s.rect(
-            Canvas.xOriginForDrawing(s) + i * Vertex.getSize(s),
-            Canvas.yOriginForDrawing(s) + j * Vertex.getSize(s),
-            Vertex.getSize(s),
-            Vertex.getSize(s)
+            Const.getXOriginForDrawing(s) + i * Const.getSquareSize(s),
+            Const.getYOriginForDrawing(s) + j * Const.getSquareSize(s),
+            Const.getSquareSize(s),
+            Const.getSquareSize(s)
           );
         }
       }
