@@ -15,12 +15,16 @@ export class Plane {
     this.adjacentMatrix = this.getAdjacentMatrix();
   }
   generateMap() : Array<Array<Space>>{
-  // [this.map](http://this.map)[i][j] = Space.isRoad
-  // for( i < obstacleNum)
-  // [this.map](http://this.map)[getRandomRow()][getRandomColumn()] = Space.isObstacle
-  // this.map[getRandomRow()][getRandomColumn()] = Space.isStart
-  // this.map[getRandomRow()][getRandomColumn()] = Space.isGoal
-    return [];
+    let map : Array<Array<Space>> = new Array(Const.SQUARE_ROW_NUM);
+    for( let i :number = 0; i < Const.SQUARE_ROW_NUM; i++) {
+      map[i] = new Array(Const.SQUARE_COLUMN_NUM);
+      for( let j :number = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
+        map[i][j] = Space.isVacant;
+      }
+    }
+    map[Plane.getRandomRow()][Plane.getRandomColumn()] = Space.isStart
+    map[Plane.getRandomRow()][Plane.getRandomColumn()] = Space.isGoal
+    return map;
   }
   
   //隣接行列
@@ -39,12 +43,15 @@ export class Plane {
   static toNumberFor(row : Number, column : Number) : Number {
     return 0;
   }
-  getRandomRow() : Number {
-    return 0;
+
+  static getRandomRow() : number {
+    return Math.floor(Math.random() * Const.SQUARE_ROW_NUM);
   }
-  getRandomColumn() : Number {
-    return 0;
+  
+  static getRandomColumn() : number {
+    return Math.floor(Math.random() * Const.SQUARE_COLUMN_NUM);
   }
+
   getAllObstacles() : Array<Obstacle> {
     return [];
   }
@@ -76,6 +83,28 @@ export class Plane {
             Const.getSquareSize(s),
             Const.getSquareSize(s)
           );
+        }
+      }
+      // this.paint(s)
+    }
+  }
+
+  paint(s:any): void {
+    for (let i = 0; i < Const.SQUARE_ROW_NUM; i++) {
+      for (let j = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
+        switch (this.map[i][j]) {
+          case Space.isObstacle:
+            s.fill('black');
+            break;
+          case Space.isStart:
+            s.fill('green');
+            break;
+          case Space.isGoal:
+            s.fill('red');
+            break;
+          case Space.isVacant:
+            s.fill('white');
+            break;
         }
       }
     }

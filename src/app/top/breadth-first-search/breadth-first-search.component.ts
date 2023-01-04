@@ -12,17 +12,16 @@ export class BreadthFirstSearchComponent {
   ngOnInit() {
     const plane : Plane = new Plane();
     let sketch = (s:any) => {
-      s.preload = () => {
-      }
       s.setup = () => {
         let canvas = s.createCanvas(Const.getCanvasWidth(s), Const.getCanvasHeight(s));
         let ele = document.getElementById('canvas');
         canvas.parent(ele);
+        s.draw = plane.draw(s);
+
       };
       s.windowResized = () => {
         s.resizeCanvas(Const.getCanvasWidth(s), Const.getCanvasHeight(s));
       };
-      s.draw = plane.draw(s);
     }
     new p5(sketch);
   }

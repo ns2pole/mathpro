@@ -9,8 +9,8 @@ export abstract class NotObstacle extends Vertex implements Square{
   public paint(): void {
     // console.log("paint");
   }
-  public draw() : void {
-    // console.log("draw");
+  public draw(s:any) : void {
+    s.fill(NotObstacle.color);
   }
   public getCenter() : [Number, Number] {
     return [0, 0];

@@ -1,5 +1,9 @@
 import { NotObstacle } from './NotObstacle';
 import { Color } from './Color';
 export class Goal extends NotObstacle {
-    color : Color = Color.Red;
+    static override color : Color = Color.Red;
+    isSearched : boolean = false;
+    override draw(s:any) : void {
+        s.fill(Goal.color);
+    }
 }
