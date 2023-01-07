@@ -6,14 +6,14 @@ export class Labyrinth2D extends Array<Array<Space>> {
         super();
     }
 
-    getVertexIdOf(x : number, y : number) : number {
+    getVertexIdOf(row : number, column : number) : number {
         //rowごとに要素の数がバラバラでも動くようにしている。
         //ex. mapが0行目は3要素、1行目は4要素でかつrow=2ならば、numOfelementUntilrow=7となる。
         let numOfelementUntilrow : number = 0;
-        for( let i :number = 0; i < y; i++) {
+        for( let i :number = 0; i < row; i++) {
             numOfelementUntilrow += this[i].length;
         }
-        return numOfelementUntilrow + x - this.getCountOfObstaclesUntil(y, x);
+        return numOfelementUntilrow + column - this.getCountOfObstaclesUntil(row, column);
     }
 
     //Obstacle以外の場所のV、row,columnに対応するVertexのidを取得する
