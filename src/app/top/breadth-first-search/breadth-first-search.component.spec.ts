@@ -1,5 +1,5 @@
 import { Plane } from './Plane';
-import { Space, IsAdjacent } from './Type';
+import { Space, IsAdjacent } from './Union';
 import { isInside } from './FunctionModule';
 
 describe('BreadthFirstSearchComponent', () => {

@@ -1,4 +1,4 @@
-import { Color } from './Type';
+import { Color } from './Union';
 export class Const {
   static CANVAS_WIDTH : number = 1 / 2;
   static CANVAS_HEIGHT : number = 1 / 2;

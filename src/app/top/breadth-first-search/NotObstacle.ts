@@ -1,4 +1,4 @@
-import { Color } from './Type';
+import { Color } from './Union';
 import { Vertex } from './Vertex';
 import { Square } from './Square';
 export abstract class NotObstacle extends Vertex implements Square{

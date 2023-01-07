@@ -1,4 +1,4 @@
-import { IsAdjacent } from './Type';
+import { IsAdjacent } from './Union';
 import { Edge } from './Edge';
 export class Vertex {
   id: number | undefined;  

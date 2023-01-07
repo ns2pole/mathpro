@@ -1,5 +1,5 @@
 import { NotObstacle } from './NotObstacle';
-import { Color } from './Type';
+import { Color } from './Union';
 export class Goal extends NotObstacle {
     static override color : Color = "Red";
     isSearched : boolean = false;

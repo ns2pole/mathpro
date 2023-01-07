@@ -3,7 +3,7 @@ import { Vacant } from './Vacant';
 import { Start } from './Start';
 import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
-import { Space, IsAdjacent } from './Type';
+import { Space, IsAdjacent } from './Union';
 import { Const } from './Const';
 import { isInside } from './FunctionModule';
 

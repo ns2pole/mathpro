@@ -1,5 +1,5 @@
 import { NotObstacle } from './NotObstacle';
-import { Color } from './Type';
+import { Color } from './Union';
 export class Start extends NotObstacle {
     color : Color = "Green";
 }
