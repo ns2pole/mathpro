@@ -3,8 +3,8 @@ export const CANVAS_WIDTH : number = 1 / 2;
 export const CANVAS_HEIGHT : number = 1 / 2;
 export const CANVAS_BACKGROUND_COLOR : Color = 'Red';
 export const SQUARE_SIZE : number = 1 / 30;
-export const SQUARE_ROW_NUM : number = 12;
-export const SQUARE_COLUMN_NUM : number = 12;
+export const LABYRINTH_ROW_NUM : number = 12;
+export const LABYRINTH_COLUMN_NUM : number = 12;
 export const OBSTACLE_NUM : number = 30;
 
 export const getSquareSize: (arg: any) => number = (s: any) => { 
@@ -20,8 +20,8 @@ export const getCanvasHeight: (arg: any) => number = (s: any) => {
 };
 
 export const getXOriginForDrawing: (arg: any) => number = (s: any) => { 
-  return s.windowWidth * (CANVAS_WIDTH - (SQUARE_ROW_NUM * SQUARE_SIZE)) / 2;
+  return s.windowWidth * (CANVAS_WIDTH - (LABYRINTH_ROW_NUM * SQUARE_SIZE)) / 2;
 }
 export const getYOriginForDrawing: (arg: any) => number = (s: any) => { 
-  return s.windowWidth * (CANVAS_WIDTH - (SQUARE_ROW_NUM * SQUARE_SIZE)) / 2;
+  return s.windowWidth * (CANVAS_WIDTH - (LABYRINTH_ROW_NUM * SQUARE_SIZE)) / 2;
 }
