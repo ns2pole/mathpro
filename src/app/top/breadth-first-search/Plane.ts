@@ -4,26 +4,27 @@ import { Start } from './Start';
 import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
 import { Space, IsAdjacent } from './Union';
-import { Const } from './Const';
+import { SQUARE_ROW_NUM, SQUARE_COLUMN_NUM, OBSTACLE_NUM, CANVAS_BACKGROUND_COLOR, getSquareSize, getXOriginForDrawing, getYOriginForDrawing} from './Const';
 import { isInside } from './FunctionModule';
+import { Labyrinth2D } from './Labyrinth2D';
 
 export class Plane {
-  map : Array<Array<Space>>;
+  map : Labyrinth2D;
   adjacentMatrix : Array<Array<IsAdjacent>>;
   constructor() {
     this.map = Plane.generateMap(); 
     this.adjacentMatrix = Plane.getAdjacentMatrix(this.map);
   }
 
-  static generateMap() : Array<Array<Space>>{
-    let map : Array<Array<Space>> = new Array(Const.SQUARE_ROW_NUM);
-    for( let i :number = 0; i < Const.SQUARE_ROW_NUM; i++) {
-      map[i] = new Array(Const.SQUARE_COLUMN_NUM);
-      for( let j :number = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
+  static generateMap() : Labyrinth2D {
+    let map : Labyrinth2D = new Labyrinth2D();
+    for( let i :number = 0; i < SQUARE_ROW_NUM; i++) {
+      map[i] = new Array(SQUARE_COLUMN_NUM);
+      for( let j :number = 0; j < SQUARE_COLUMN_NUM; j++) {
         map[i][j] = "isVacant";
       }
     }
-    for( let i :number = 0; i < Const.OBSTACLE_NUM; i++) {
+    for( let i :number = 0; i < OBSTACLE_NUM; i++) {
         map[Plane.getRandomRow()][Plane.getRandomColumn()] = "isObstacle";
     }
     map[Plane.getRandomRow()][Plane.getRandomColumn()] =  "isStart"
@@ -31,32 +32,8 @@ export class Plane {
     return map;
   }
   
-  //Obstacle以外の場所のV、row,columnに対応するVertexのidを取得する
-  static getCountOfObstaclesUntil(map : Array<Array<Space>>, row : number, column :number) : number {
-    let obstaclesNum : number = 0;
-    for( let i :number = 0; i < Const.SQUARE_ROW_NUM; i++) {
-      for( let j :number = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
-        if(map[i][j] == "isObstacle") {
-          obstaclesNum++;
-        }
-        if(i == row && j == column) {
-          return obstaclesNum;
-        }
-      }
-    }
-    //TODO:error処理
-    return 0;
-  }
+  
 
-  static getVertexIdsFor(map : Array<Array<Space>>, row : number, column :number) : number {
-    //rowごとに要素の数がバラバラでも動くようにしている。
-    //ex. mapが0行目は3要素、1行目は4要素でかつrow=2ならば、numOfelementUntilrow=7となる。
-    let numOfelementUntilrow : number = 0;
-    for( let i :number = 0; i < row; i++) {
-      numOfelementUntilrow += map[i].length;
-    }
-    return numOfelementUntilrow + column - Plane.getCountOfObstaclesUntil(map, row, column);
-  }
 
   //Vertexのidから、Mapのrowとcolumnを取得する
   static toRowColumnFor(map : Array<Array<Space>>, id : number) : [Number, Number] {
@@ -81,7 +58,7 @@ export class Plane {
 
   // static setIsAdjacent(map,[a, b], [c, d], yesOrNo) 
 
-  static getAdjacentMatrix(map : Array<Array<Space>>) : Array<Array<IsAdjacent>> {
+  static getAdjacentMatrix(map : Labyrinth2D) : Array<Array<IsAdjacent>> {
     let adjacentMatrix : Array<Array<IsAdjacent>> = new Array(Plane.getIdCount(map));
     
     for( let i :number = 0; i < Plane.getIdCount(map); i++) {
@@ -91,20 +68,20 @@ export class Plane {
       for( let j :number = 0; j < map[i].length; j++) {
         if(isInside(map, i, j)) {
           if(map[i][j] != "isObstacle" && map[i][j + 1] != "isObstacle") {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j + 1)] = "Adjacent";
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j + 1)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i, j + 1)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i, j + 1)][map.getVertexIdFor(i, j)] = "Adjacent";
           }
           if(map[i][j] != "isObstacle" && map[i][j - 1] != "isObstacle") {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j - 1)] = "Adjacent";
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j - 1)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i, j - 1)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i, j - 1)][map.getVertexIdFor(i, j)] = "Adjacent";
           }
           if(map[i][j] != "isObstacle" && map[i + 1][j] != "isObstacle") {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i + 1, j)] = "Adjacent";
-            adjacentMatrix[Plane.getVertexIdsFor(map, i + 1, j)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i + 1, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i + 1, j)][map.getVertexIdFor(i, j)] = "Adjacent";
           }
           if(map[i][j] != "isObstacle" && map[i - 1][j] != "isObstacle") {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i - 1, j)] = "Adjacent";
-            adjacentMatrix[Plane.getVertexIdsFor(map, i - 1, j)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i - 1, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdFor(i - 1, j)][map.getVertexIdFor(i, j)] = "Adjacent";
           }
         }
       }
@@ -120,11 +97,11 @@ export class Plane {
   }
 
   static getRandomRow() : number {
-    return Math.floor(Math.random() * Const.SQUARE_ROW_NUM);
+    return Math.floor(Math.random() * SQUARE_ROW_NUM);
   }
   
   static getRandomColumn() : number {
-    return Math.floor(Math.random() * Const.SQUARE_COLUMN_NUM);
+    return Math.floor(Math.random() * SQUARE_COLUMN_NUM);
   }
 
   getAllObstacles() : Array<Obstacle> {
@@ -146,18 +123,18 @@ export class Plane {
   getSquareStartPosition() : [Number, Number] {
     return [0, 0];
   }
-  
+
   draw(s:any): () => void {
     return () => {
-      s.background(Const.CANVAS_BACKGROUND_COLOR);
+      s.background(CANVAS_BACKGROUND_COLOR);
       s.rectMode(s.CORNER);
-      for (let i = 0; i < Const.SQUARE_ROW_NUM; i++) {
-        for (let j = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
+      for (let i = 0; i < SQUARE_ROW_NUM; i++) {
+        for (let j = 0; j < SQUARE_COLUMN_NUM; j++) {
           s.rect(
-            Const.getXOriginForDrawing(s) + i * Const.getSquareSize(s),
-            Const.getYOriginForDrawing(s) + j * Const.getSquareSize(s),
-            Const.getSquareSize(s),
-            Const.getSquareSize(s)
+            getXOriginForDrawing(s) + i * getSquareSize(s),
+            getYOriginForDrawing(s) + j * getSquareSize(s),
+            getSquareSize(s),
+            getSquareSize(s)
           );
         }
       }
@@ -166,8 +143,8 @@ export class Plane {
   }
 
   paint(s:any): void {
-    for (let i = 0; i < Const.SQUARE_ROW_NUM; i++) {
-      for (let j = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
+    for (let i = 0; i < SQUARE_ROW_NUM; i++) {
+      for (let j = 0; j < SQUARE_COLUMN_NUM; j++) {
         switch (this.map[i][j]) {
           case "isObstacle":
             s.fill('black');

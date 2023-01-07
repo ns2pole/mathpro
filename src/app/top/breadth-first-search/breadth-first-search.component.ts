@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as p5 from 'p5';
-import { Const } from './Const';
+import { getCanvasWidth, getCanvasHeight } from './Const';
 import { Plane } from './Plane';
 
 @Component({
@@ -13,14 +13,14 @@ export class BreadthFirstSearchComponent {
     const plane : Plane = new Plane();
     let sketch = (s:any) => {
       s.setup = () => {
-        let canvas = s.createCanvas(Const.getCanvasWidth(s), Const.getCanvasHeight(s));
+        let canvas = s.createCanvas(getCanvasWidth(s), getCanvasHeight(s));
         let ele = document.getElementById('canvas');
         canvas.parent(ele);
         s.draw = plane.draw(s);
 
       };
       s.windowResized = () => {
-        s.resizeCanvas(Const.getCanvasWidth(s), Const.getCanvasHeight(s));
+        s.resizeCanvas(getCanvasWidth(s), getCanvasHeight(s));
       };
     }
     new p5(sketch);

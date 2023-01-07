@@ -1,16 +1,16 @@
 import { Plane } from './Plane';
-import { Space, IsAdjacent } from './Union';
+import { IsAdjacent } from './Union';
 import { isInside } from './FunctionModule';
+import { Labyrinth2D } from './Labyrinth2D';
 
 describe('BreadthFirstSearchComponent', () => {
 
   describe('PlaneClassのテスト', () => {
-    let map : Array<Array<Space>> = [
-      ["isObstacle", "isStart", "isVacant", "isVacant"],
-      ["isObstacle", "isVacant", "isVacant", "isVacant"],
-      ["isObstacle", "isObstacle", "isVacant", "isGoal"],
-      ["isObstacle", "isObstacle", "isVacant", "isVacant"]
-    ];
+    let map : Labyrinth2D = new Labyrinth2D();
+    map[0] = ["isObstacle", "isStart", "isVacant", "isVacant"],
+    map[1] = ["isObstacle", "isVacant", "isVacant", "isVacant"],
+    map[2] = ["isObstacle", "isObstacle", "isVacant", "isGoal"],
+    map[3] = ["isObstacle", "isObstacle", "isVacant", "isVacant"]
 
     test('Plane.getIdCount', () => {
       let count : number = Plane.getIdCount(map);
@@ -18,16 +18,16 @@ describe('BreadthFirstSearchComponent', () => {
     });
 
     test('Plane.getCountOfObstaclesUntil', () => {
-      let count1 : number = Plane.getCountOfObstaclesUntil(map, 2, 2);
+      let count1 : number = map.getCountOfObstaclesUntil(2, 2);
       expect(count1).toBe(4);
-      let count2 : number = Plane.getCountOfObstaclesUntil(map, 3, 3);
+      let count2 : number = map.getCountOfObstaclesUntil(3, 3);
       expect(count2).toBe(6);
     });
 
-    test('Plane.getVertexIdsFor', () => {
-      let id1 : number = Plane.getVertexIdsFor(map, 0, 1);
+    test('Labirinth2D.getVertexIdsFor', () => {
+      let id1 : number = map.getVertexIdFor(0, 1);
       expect(id1).toBe(0);
-      let id2 : number = Plane.getVertexIdsFor(map, 2, 2);
+      let id2 : number = map.getVertexIdFor(2, 2);
       expect(id2).toBe(6);
     });
 

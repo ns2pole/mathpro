@@ -1,29 +1,27 @@
 import { Color } from './Union';
-export class Const {
-  static CANVAS_WIDTH : number = 1 / 2;
-  static CANVAS_HEIGHT : number = 1 / 2;
-  static CANVAS_BACKGROUND_COLOR : Color = 'Red';
-  static SQUARE_SIZE : number = 1 / 30;
-  static SQUARE_ROW_NUM : number = 12;
-  static SQUARE_COLUMN_NUM : number = 12;
-  static OBSTACLE_NUM : number = 30;
+export const CANVAS_WIDTH : number = 1 / 2;
+export const CANVAS_HEIGHT : number = 1 / 2;
+export const CANVAS_BACKGROUND_COLOR : Color = 'Red';
+export const SQUARE_SIZE : number = 1 / 30;
+export const SQUARE_ROW_NUM : number = 12;
+export const SQUARE_COLUMN_NUM : number = 12;
+export const OBSTACLE_NUM : number = 30;
 
-  static getSquareSize(s:any) : number { 
-    return s.windowWidth * Const.SQUARE_SIZE;
-  };
+export const getSquareSize: (arg: any) => number = (s: any) => { 
+  return s.windowWidth * SQUARE_SIZE;
+};
 
-  static getCanvasWidth(s:any) : number { 
-    return s.windowWidth * Const.CANVAS_WIDTH;
-  };
-  
-  static getCanvasHeight(s:any) : number { 
-    return s.windowWidth * Const.CANVAS_HEIGHT;
-  };
+export const getCanvasWidth: (arg: any) => number = (s: any) => {
+  return s.windowWidth * CANVAS_WIDTH;
+};
 
-  static getXOriginForDrawing(s:any) : number {
-    return s.windowWidth * (Const.CANVAS_WIDTH - (Const.SQUARE_ROW_NUM * Const.SQUARE_SIZE)) / 2;
-  }
-  static getYOriginForDrawing(s:any) : number {
-    return s.windowWidth * (Const.CANVAS_WIDTH - (Const.SQUARE_ROW_NUM * Const.SQUARE_SIZE)) / 2;
-  }
+export const getCanvasHeight: (arg: any) => number = (s: any) => { 
+  return s.windowWidth * CANVAS_HEIGHT;
+};
+
+export const getXOriginForDrawing: (arg: any) => number = (s: any) => { 
+  return s.windowWidth * (CANVAS_WIDTH - (SQUARE_ROW_NUM * SQUARE_SIZE)) / 2;
+}
+export const getYOriginForDrawing: (arg: any) => number = (s: any) => { 
+  return s.windowWidth * (CANVAS_WIDTH - (SQUARE_ROW_NUM * SQUARE_SIZE)) / 2;
 }
