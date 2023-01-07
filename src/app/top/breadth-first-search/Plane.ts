@@ -5,6 +5,7 @@ import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
 import { Space, IsAdjacent } from './Type';
 import { Const } from './Const';
+import { isInside } from './FunctionModule';
 
 export class Plane {
   map : Array<Array<Space>>;
@@ -73,26 +74,6 @@ export class Plane {
     return [0, 0];
   }
 
-  static isRightSide(map : Array<Array<any>>, row : number, column :number) : boolean {
-    return column == map[row].length - 1;
-  }
-
-  static isLeftSide(map : Array<Array<any>>, row : number, column :number) : boolean {
-    return column == 0;
-  }
-
-  static isTopSide(map : Array<Array<any>>, row : number, column :number) : boolean {
-    return row == 0;
-  }
-
-  static isBottomSide(map : Array<Array<any>>, row : number, column :number) : boolean {
-    return row == map.length - 1;
-  }
-
-  static isInside(map : Array<Array<any>>, row : number, column :number) : boolean {
-    return !Plane.isRightSide(map, row, column) && !Plane.isLeftSide(map, row, column) && !Plane.isTopSide(map, row, column) && !Plane.isBottomSide(map, row, column);
-  }
-
   static getIdCount(map :Array<Array<Space>>) : number {
     return map.flat().filter((space) => space != "isObstacle").length;
   }
@@ -101,12 +82,14 @@ export class Plane {
 
   static getAdjacentMatrix(map : Array<Array<Space>>) : Array<Array<IsAdjacent>> {
     let adjacentMatrix : Array<Array<IsAdjacent>> = new Array(Plane.getIdCount(map));
+    
     for( let i :number = 0; i < Plane.getIdCount(map); i++) {
       adjacentMatrix[i] = new Array(Plane.getIdCount(map));
     }
     for( let i :number = 0; i < map.length; i++) {
       for( let j :number = 0; j < map[i].length; j++) {
-        if(Plane.isInside(map, i, j)) {
+        if(isInside(map, i, j)) {
+          console.log("1111")
           if(map[i][j] != "isObstacle" && map[i][j + 1] != "isObstacle") {
             adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j + 1)] = "Adjacent";
             adjacentMatrix[Plane.getVertexIdsFor(map, i, j + 1)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";

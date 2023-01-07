@@ -1,5 +1,6 @@
 import { Plane } from './Plane';
 import { Space, IsAdjacent } from './Type';
+import { isInside } from './FunctionModule';
 
 describe('BreadthFirstSearchComponent', () => {
 
@@ -37,6 +38,11 @@ describe('BreadthFirstSearchComponent', () => {
       // expect(rowCloumn1).toEqual([1, 2]);
       let rowCloumn3 : [Number, Number] = Plane.toRowColumnFor(map, 9);
       expect(rowCloumn3).toEqual([3, 3]);
+    });
+
+    test('isInside', () => {
+      expect(isInside(map, 0, 0)).toEqual(false);
+      expect(isInside(map, 1, 1)).toEqual(true);
     });
 
     test('Plane.getAdjacentMatrix', () => {
