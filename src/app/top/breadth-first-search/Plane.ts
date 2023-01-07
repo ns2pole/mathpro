@@ -89,7 +89,6 @@ export class Plane {
     for( let i :number = 0; i < map.length; i++) {
       for( let j :number = 0; j < map[i].length; j++) {
         if(isInside(map, i, j)) {
-          console.log("1111")
           if(map[i][j] != "isObstacle" && map[i][j + 1] != "isObstacle") {
             adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j + 1)] = "Adjacent";
             adjacentMatrix[Plane.getVertexIdsFor(map, i, j + 1)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
