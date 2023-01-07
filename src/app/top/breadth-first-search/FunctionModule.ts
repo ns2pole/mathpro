@@ -9,5 +9,5 @@ export const isBottomSide : (map : Array<Array<any>>, row : number, column :numb
 export const isInside : (map : Array<Array<any>>, row : number, column :number) => boolean 
   = (map, row, column) => !isRightSide(map, row, column) && !isLeftSide(map, row, column) && !isTopSide(map, row, column) && !isBottomSide(map, row, column);
 
-export const getRandomInt : (from : number, to :number) => number 
-  = (from, to) => Math.floor(Math.random() * (to - from + 1)) + from;
+export const getRandomInt : (from : number, lessThan :number) => number 
+  = (from, to) => Math.floor(Math.random() * (to - from)) + from;
