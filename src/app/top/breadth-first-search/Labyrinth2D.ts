@@ -6,7 +6,7 @@ export class Labyrinth2D extends Array<Array<Space>> {
         super();
     }
 
-    getVertexIdFor(x : number, y : number) : number {
+    getVertexIdOf(x : number, y : number) : number {
         //rowごとに要素の数がバラバラでも動くようにしている。
         //ex. mapが0行目は3要素、1行目は4要素でかつrow=2ならば、numOfelementUntilrow=7となる。
         let numOfelementUntilrow : number = 0;

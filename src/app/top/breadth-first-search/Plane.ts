@@ -68,20 +68,20 @@ export class Plane {
       for( let j :number = 0; j < map[i].length; j++) {
         if(isInside(map, i, j)) {
           if(map[i][j] != "isObstacle" && map[i][j + 1] != "isObstacle") {
-            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i, j + 1)] = "Adjacent";
-            adjacentMatrix[map.getVertexIdFor(i, j + 1)][map.getVertexIdFor(i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i, j + 1)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i, j + 1)][map.getVertexIdOf(i, j)] = "Adjacent";
           }
           if(map[i][j] != "isObstacle" && map[i][j - 1] != "isObstacle") {
-            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i, j - 1)] = "Adjacent";
-            adjacentMatrix[map.getVertexIdFor(i, j - 1)][map.getVertexIdFor(i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i, j - 1)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i, j - 1)][map.getVertexIdOf(i, j)] = "Adjacent";
           }
           if(map[i][j] != "isObstacle" && map[i + 1][j] != "isObstacle") {
-            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i + 1, j)] = "Adjacent";
-            adjacentMatrix[map.getVertexIdFor(i + 1, j)][map.getVertexIdFor(i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i + 1, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i + 1, j)][map.getVertexIdOf(i, j)] = "Adjacent";
           }
           if(map[i][j] != "isObstacle" && map[i - 1][j] != "isObstacle") {
-            adjacentMatrix[map.getVertexIdFor(i, j)][map.getVertexIdFor(i - 1, j)] = "Adjacent";
-            adjacentMatrix[map.getVertexIdFor(i - 1, j)][map.getVertexIdFor(i, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i - 1, j)] = "Adjacent";
+            adjacentMatrix[map.getVertexIdOf(i - 1, j)][map.getVertexIdOf(i, j)] = "Adjacent";
           }
         }
       }
