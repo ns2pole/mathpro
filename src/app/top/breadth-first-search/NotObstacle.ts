@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import * as p5 from 'p5';
+import { Color } from './Type';
 import { Vertex } from './Vertex';
-import { Color } from './Color';
 import { Square } from './Square';
 export abstract class NotObstacle extends Vertex implements Square{
   static color : Color | undefined;

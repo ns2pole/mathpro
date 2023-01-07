@@ -1,5 +1,5 @@
 import { NotObstacle } from './NotObstacle';
-import { Color } from './Color';
+import { Color } from './Type';
 export class Start extends NotObstacle {
-    color : Color = Color.Green;
+    color : Color = "Green";
 }

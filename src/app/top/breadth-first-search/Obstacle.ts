@@ -1,5 +1,6 @@
 import { Square } from './Square';
-import { Color } from './Color';
+import { Color } from './Type';
+
 export abstract class Obstacle implements Square{
   static color : Color | undefined;
   

@@ -1,7 +1,8 @@
+import { Color } from './Type';
 export class Const {
   static CANVAS_WIDTH : number = 1 / 2;
   static CANVAS_HEIGHT : number = 1 / 2;
-  static CANVAS_BACKGROUND_COLOR : string = 'red';
+  static CANVAS_BACKGROUND_COLOR : Color = 'Red';
   static SQUARE_SIZE : number = 1 / 30;
   static SQUARE_ROW_NUM : number = 12;
   static SQUARE_COLUMN_NUM : number = 12;
