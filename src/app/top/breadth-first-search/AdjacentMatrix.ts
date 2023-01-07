@@ -1,9 +1,9 @@
 import { Labyrinth2D } from './Labyrinth2D';
-import { Color, IsAdjacent, Space } from './Union';
+import { IsAdjacent} from './Union';
 import { isInside } from './FunctionModule';
 export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 	constructor() {
-			super();
+		super();
 	}
 	static getAdjacentMatrixFor(lab : Labyrinth2D) : AdjacentMatrix {
 		let adjacentMatrix : AdjacentMatrix = new AdjacentMatrix();
@@ -46,7 +46,8 @@ export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 			this[map.getVertexIdOf(row + 1, column)][map.getVertexIdOf(row, column)] = "NotAdjacent";
 			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row - 1, column)] = "NotAdjacent";
 			this[map.getVertexIdOf(row - 1, column)][map.getVertexIdOf(row, column)] = "NotAdjacent";
-		} else {
+		} 
+		if(isInside(map, row, column) && map[row][column] != "isObstacle") {
 			if(map[row][column + 1] != "isObstacle") {
 				this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column + 1)] = "Adjacent";
 				this[map.getVertexIdOf(row, column + 1)][map.getVertexIdOf(row, column)] = "Adjacent";

@@ -17,5 +17,4 @@ export class Vertex {
     return [];
   }
 
-
 }
