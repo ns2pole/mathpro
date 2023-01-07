@@ -5,6 +5,7 @@ export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 	constructor() {
 		super();
 	}
+	
 	static getAdjacentMatrixFor(lab : Labyrinth2D) : AdjacentMatrix {
 		let adjacentMatrix : AdjacentMatrix = new AdjacentMatrix();
 		for( let i :number = 0; i < lab.getIdCount(); i++) {
@@ -13,24 +14,6 @@ export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 		for( let i :number = 0; i < lab.length; i++) {
 			for( let j :number = 0; j < lab[i].length; j++) {
 				adjacentMatrix.setAdjacentInfoFor(lab, i, j);
-				// if(isInside(map, i, j)) {
-				//   if(map[i][j] != "isObstacle" && map[i][j + 1] != "isObstacle") {
-				//     adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i, j + 1)] = "Adjacent";
-				//     adjacentMatrix[map.getVertexIdOf(i, j + 1)][map.getVertexIdOf(i, j)] = "Adjacent";
-				//   }
-				//   if(map[i][j] != "isObstacle" && map[i][j - 1] != "isObstacle") {
-				//     adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i, j - 1)] = "Adjacent";
-				//     adjacentMatrix[map.getVertexIdOf(i, j - 1)][map.getVertexIdOf(i, j)] = "Adjacent";
-				//   }
-				//   if(map[i][j] != "isObstacle" && map[i + 1][j] != "isObstacle") {
-				//     adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i + 1, j)] = "Adjacent";
-				//     adjacentMatrix[map.getVertexIdOf(i + 1, j)][map.getVertexIdOf(i, j)] = "Adjacent";
-				//   }
-				//   if(map[i][j] != "isObstacle" && map[i - 1][j] != "isObstacle") {
-				//     adjacentMatrix[map.getVertexIdOf(i, j)][map.getVertexIdOf(i - 1, j)] = "Adjacent";
-				//     adjacentMatrix[map.getVertexIdOf(i - 1, j)][map.getVertexIdOf(i, j)] = "Adjacent";
-				//   }
-				// }
 			}
 		}
 		return adjacentMatrix;
