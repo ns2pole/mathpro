@@ -1,15 +1,14 @@
-import { IsAdjacent } from './IsAdjacent';
 import { Plane } from './Plane';
-import { Space } from './Space';
+import { Space, IsAdjacent } from './Type';
 
 describe('BreadthFirstSearchComponent', () => {
 
   describe('PlaneClassのテスト', () => {
     let map : Array<Array<Space>> = [
-      [Space.isObstacle, Space.isStart, Space.isVacant, Space.isVacant],
-      [Space.isObstacle, Space.isVacant, Space.isVacant, Space.isVacant],
-      [Space.isObstacle, Space.isObstacle, Space.isVacant, Space.isGoal],
-      [Space.isObstacle, Space.isObstacle, Space.isVacant, Space.isVacant]
+      ["isObstacle", "isStart", "isVacant", "isVacant"],
+      ["isObstacle", "isVacant", "isVacant", "isVacant"],
+      ["isObstacle", "isObstacle", "isVacant", "isGoal"],
+      ["isObstacle", "isObstacle", "isVacant", "isVacant"]
     ];
 
     test('Plane.getIdCount', () => {

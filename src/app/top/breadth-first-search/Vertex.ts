@@ -1,5 +1,5 @@
+import { IsAdjacent } from './Type';
 import { Edge } from './Edge';
-import { IsAdjacent } from './IsAdjacent';
 export class Vertex {
   id: number | undefined;  
   constructor(id : number) {

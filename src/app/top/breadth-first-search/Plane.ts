@@ -1,12 +1,10 @@
-import { IsAdjacent } from './IsAdjacent';
 import { Edge } from './Edge';
 import { Vacant } from './Vacant';
 import { Start } from './Start';
 import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
-import { Space } from './Space';
+import { Space, IsAdjacent } from './Type';
 import { Const } from './Const';
-import { staticBlock } from '@babel/types';
 
 export class Plane {
   map : Array<Array<Space>>;
@@ -20,14 +18,14 @@ export class Plane {
     for( let i :number = 0; i < Const.SQUARE_ROW_NUM; i++) {
       map[i] = new Array(Const.SQUARE_COLUMN_NUM);
       for( let j :number = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
-        map[i][j] = Space.isVacant;
+        map[i][j] = "isVacant";
       }
     }
     for( let i :number = 0; i < Const.OBSTACLE_NUM; i++) {
-        map[Plane.getRandomRow()][Plane.getRandomColumn()] = Space.isObstacle;
+        map[Plane.getRandomRow()][Plane.getRandomColumn()] = "isObstacle";
     }
-    map[Plane.getRandomRow()][Plane.getRandomColumn()] = Space.isStart
-    map[Plane.getRandomRow()][Plane.getRandomColumn()] = Space.isGoal
+    map[Plane.getRandomRow()][Plane.getRandomColumn()] =  "isStart"
+    map[Plane.getRandomRow()][Plane.getRandomColumn()] = "isGoal"
     return map;
   }
   
@@ -36,7 +34,7 @@ export class Plane {
     let obstaclesNum : number = 0;
     for( let i :number = 0; i < Const.SQUARE_ROW_NUM; i++) {
       for( let j :number = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
-        if(map[i][j] == Space.isObstacle) {
+        if(map[i][j] == "isObstacle") {
           obstaclesNum++;
         }
         if(i == row && j == column) {
@@ -63,7 +61,7 @@ export class Plane {
     let count : number = 0;
     for( let i :number = 0; i < map.length; i++) {
       for( let j :number = 0; j < map[i].length; j++) {
-        if(map[i][j] != Space.isObstacle) {
+        if(map[i][j] != "isObstacle") {
           if(count == id) {
             return [i, j];
           }
@@ -96,7 +94,7 @@ export class Plane {
   }
 
   static getIdCount(map :Array<Array<Space>>) : number {
-    return map.flat().filter((space) => space != Space.isObstacle).length;
+    return map.flat().filter((space) => space != "isObstacle").length;
   }
 
   // static setIsAdjacent(map,[a, b], [c, d], yesOrNo) 
@@ -109,21 +107,21 @@ export class Plane {
     for( let i :number = 0; i < map.length; i++) {
       for( let j :number = 0; j < map[i].length; j++) {
         if(Plane.isInside(map, i, j)) {
-          if(map[i][j] != Space.isObstacle && map[i][j + 1] != Space.isObstacle) {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j + 1)] = IsAdjacent.Yes;
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j + 1)][Plane.getVertexIdsFor(map, i, j)] = IsAdjacent.Yes;
+          if(map[i][j] != "isObstacle" && map[i][j + 1] != "isObstacle") {
+            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j + 1)] = "Adjacent";
+            adjacentMatrix[Plane.getVertexIdsFor(map, i, j + 1)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
           }
-          if(map[i][j] != Space.isObstacle && map[i][j - 1] != Space.isObstacle) {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j - 1)] = IsAdjacent.Yes;
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j - 1)][Plane.getVertexIdsFor(map, i, j)] = IsAdjacent.Yes;
+          if(map[i][j] != "isObstacle" && map[i][j - 1] != "isObstacle") {
+            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i, j - 1)] = "Adjacent";
+            adjacentMatrix[Plane.getVertexIdsFor(map, i, j - 1)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
           }
-          if(map[i][j] != Space.isObstacle && map[i + 1][j] != Space.isObstacle) {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i + 1, j)] = IsAdjacent.Yes;
-            adjacentMatrix[Plane.getVertexIdsFor(map, i + 1, j)][Plane.getVertexIdsFor(map, i, j)] = IsAdjacent.Yes;
+          if(map[i][j] != "isObstacle" && map[i + 1][j] != "isObstacle") {
+            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i + 1, j)] = "Adjacent";
+            adjacentMatrix[Plane.getVertexIdsFor(map, i + 1, j)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
           }
-          if(map[i][j] != Space.isObstacle && map[i - 1][j] != Space.isObstacle) {
-            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i - 1, j)] = IsAdjacent.Yes;
-            adjacentMatrix[Plane.getVertexIdsFor(map, i - 1, j)][Plane.getVertexIdsFor(map, i, j)] = IsAdjacent.Yes;
+          if(map[i][j] != "isObstacle" && map[i - 1][j] != "isObstacle") {
+            adjacentMatrix[Plane.getVertexIdsFor(map, i, j)][Plane.getVertexIdsFor(map, i - 1, j)] = "Adjacent";
+            adjacentMatrix[Plane.getVertexIdsFor(map, i - 1, j)][Plane.getVertexIdsFor(map, i, j)] = "Adjacent";
           }
         }
       }
@@ -187,16 +185,16 @@ export class Plane {
     for (let i = 0; i < Const.SQUARE_ROW_NUM; i++) {
       for (let j = 0; j < Const.SQUARE_COLUMN_NUM; j++) {
         switch (this.map[i][j]) {
-          case Space.isObstacle:
+          case "isObstacle":
             s.fill('black');
             break;
-          case Space.isStart:
+          case "isStart":
             s.fill('green');
             break;
-          case Space.isGoal:
+          case "isGoal":
             s.fill('red');
             break;
-          case Space.isVacant:
+          case "isVacant":
             s.fill('white');
             break;
         }
