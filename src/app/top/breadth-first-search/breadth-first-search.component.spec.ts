@@ -25,9 +25,9 @@ describe('BreadthFirstSearchComponent', () => {
     });
 
     test('Labirinth2D.getVertexIdsFor', () => {
-      let id1 : number = map.getVertexIdFor(0, 1);
+      let id1 : number = map.getVertexIdOf(0, 1);
       expect(id1).toBe(0);
-      let id2 : number = map.getVertexIdFor(2, 2);
+      let id2 : number = map.getVertexIdOf(2, 2);
       expect(id2).toBe(6);
     });
 
