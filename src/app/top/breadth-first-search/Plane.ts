@@ -14,6 +14,7 @@ export class Plane {
     this.map = Plane.generateMap(); 
     this.adjacentMatrix = Plane.getAdjacentMatrix(this.map);
   }
+
   static generateMap() : Array<Array<Space>>{
     let map : Array<Array<Space>> = new Array(Const.SQUARE_ROW_NUM);
     for( let i :number = 0; i < Const.SQUARE_ROW_NUM; i++) {
@@ -145,6 +146,7 @@ export class Plane {
   getSquareStartPosition() : [Number, Number] {
     return [0, 0];
   }
+  
   draw(s:any): () => void {
     return () => {
       s.background(Const.CANVAS_BACKGROUND_COLOR);

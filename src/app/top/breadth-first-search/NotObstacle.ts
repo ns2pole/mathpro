@@ -16,10 +16,4 @@ export abstract class NotObstacle extends Vertex implements Square{
   constructor(id : number) {
     super(id);
   }
-  public test111(): Number {
-    return 400;
-  }
-  public test333(): Number {
-    return 500;
-  }
 }

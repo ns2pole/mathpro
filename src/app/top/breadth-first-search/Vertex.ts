@@ -17,8 +17,5 @@ export class Vertex {
     return [];
   }
 
-  public static test13(): Number {
-    return 500;
-  }
 
 }

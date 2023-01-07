@@ -13,10 +13,4 @@ export abstract class Obstacle implements Square{
   public getCenter() : [Number, Number] {
     return [0, 0];
   }
-  public test111(): Number {
-    return 400;
-  }
-  public test333(): Number {
-    return 500;
-  }
 }
