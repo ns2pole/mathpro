@@ -3,4 +3,8 @@ export enum Space {
     isStart,
     isObstacle,
     isVacant,
+
+    // public isObstacle() {
+
+    // }
 }

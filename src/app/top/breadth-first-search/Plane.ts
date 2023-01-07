@@ -99,6 +99,7 @@ export class Plane {
     return map.flat().filter((space) => space != Space.isObstacle).length;
   }
 
+  // static setIsAdjacent(map,[a, b], [c, d], yesOrNo) 
 
   static getAdjacentMatrix(map : Array<Array<Space>>) : Array<Array<IsAdjacent>> {
     let adjacentMatrix : Array<Array<IsAdjacent>> = new Array(Plane.getIdCount(map));
