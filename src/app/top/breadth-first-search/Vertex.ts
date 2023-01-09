@@ -1,15 +1,16 @@
-import { IsAdjacent } from './Union';
+import { AdjacentMatrix } from './AdjacentMatrix';
 import { Edge } from './Edge';
 export class Vertex {
-  id: number | undefined;  
+  id: number;
   constructor(id : number) {
     this.id = id;
   }
-  getEdges(adjacentMatrix : Array<Array<IsAdjacent>>) : Array<Edge> {
+  
+  getEdges(ad : AdjacentMatrix) : Array<Edge> {
     return [];
   }
   
-  getAdjacentBy(adjacentMatrix : Array<Array<IsAdjacent>>) : Array<Vertex> {
+  getAdjacentBy(ad : AdjacentMatrix) : Array<Vertex> {
     return [];
   }
     
