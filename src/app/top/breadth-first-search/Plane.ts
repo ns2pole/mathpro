@@ -3,9 +3,7 @@ import { Vacant } from './Vacant';
 import { Start } from './Start';
 import { Goal } from './Goal';
 import { Obstacle } from './Obstacle';
-import { Space, IsAdjacent } from './Union';
 import { LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM, CANVAS_BACKGROUND_COLOR, getSquareSize, getXOriginForDrawing, getYOriginForDrawing} from './Const';
-import { isInside } from './FunctionModule';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 
