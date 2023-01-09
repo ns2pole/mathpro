@@ -43,67 +43,49 @@ export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 					adjacentMatrix.setAdjacentInfoForBottomRightCorner(lab, i, j);
 				}
 			}
-			for( let i :number = 0; i < adjacentMatrix.length; i++) {
-				adjacentMatrix[i][i] = "NotAdjacent";
-				;
-			}
 		}
-		for( let i :number = 0; i < adjacentMatrix.length; i++) {
-			for( let j :number = 0; j < adjacentMatrix[i].length; j++) {
-				if(adjacentMatrix[i][j] == undefined) {
-					adjacentMatrix[i][j] = "NotAdjacent";
-				}
-			}
-		}
+		adjacentMatrix.setAdjacentInfoOtherwise();
 		return adjacentMatrix;
 	}
 
+	//
+	setAdjacentInfoOtherwise(): void {
+		for( let i :number = 0; i < this.length; i++) {
+			for( let j :number = 0; j < this[i].length; j++) {
+				if(this[i][j] == undefined) {
+					this[i][j] = "NotAdjacent";
+				}
+			}
+		}
+	}
+
+
 	// setAdjacentInfoForEveryDirection(map : Labyrinth2D, row: number, column: number): void {
 	setAdjacentInfoForAbove(map : Labyrinth2D, row: number, column: number): void {
-		if(map[row][column] == "isObstacle") {
-			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row - 1, column)] = "NotAdjacent";
-			this[map.getVertexIdOf(row - 1, column)][map.getVertexIdOf(row, column)] = "NotAdjacent";
-		} else {
-			if(map[row - 1][column] != "isObstacle") {
-				this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row - 1, column)] = "Adjacent";
-				this[map.getVertexIdOf(row - 1, column)][map.getVertexIdOf(row, column)] = "Adjacent";
-			}
+		if(map[row][column] != "isObstacle" && map[row - 1][column] != "isObstacle") {
+			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row - 1, column)] = "Adjacent";
+			this[map.getVertexIdOf(row - 1, column)][map.getVertexIdOf(row, column)] = "Adjacent";
 		}
 	}
 
 	setAdjacentInfoForBelow(map : Labyrinth2D, row: number, column: number): void {
-		if(map[row][column] == "isObstacle") {
-			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row + 1, column)] = "NotAdjacent";
-			this[map.getVertexIdOf(row + 1, column)][map.getVertexIdOf(row, column)] = "NotAdjacent";
-		} else {
-			if(map[row + 1][column] != "isObstacle") {
-				this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row + 1, column)] = "Adjacent";
-				this[map.getVertexIdOf(row + 1, column)][map.getVertexIdOf(row, column)] = "Adjacent";
-			}
+		if(map[row][column] != "isObstacle" && map[row + 1][column] != "isObstacle") {
+			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row + 1, column)] = "Adjacent";
+			this[map.getVertexIdOf(row + 1, column)][map.getVertexIdOf(row, column)] = "Adjacent";
 		}
 	}
 
 	setAdjacentInfoForLeft(map : Labyrinth2D, row: number, column: number): void {
-		if(map[row][column] == "isObstacle") {
-			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column - 1)] = "NotAdjacent";
-			this[map.getVertexIdOf(row, column - 1)][map.getVertexIdOf(row, column)] = "NotAdjacent";
-		} else {
-			if(map[row][column - 1] != "isObstacle") {
-				this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column - 1)] = "Adjacent";
-				this[map.getVertexIdOf(row, column - 1)][map.getVertexIdOf(row, column)] = "Adjacent";
-			}	
+		if(map[row][column] != "isObstacle" && map[row][column - 1] != "isObstacle") {
+			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column - 1)] = "Adjacent";
+			this[map.getVertexIdOf(row, column - 1)][map.getVertexIdOf(row, column)] = "Adjacent";
 		}
 	}
 
 	setAdjacentInfoForRight(map : Labyrinth2D, row: number, column: number): void {
-		if(map[row][column] == "isObstacle") {
-			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column + 1)] = "NotAdjacent";
-			this[map.getVertexIdOf(row, column + 1)][map.getVertexIdOf(row, column)] = "NotAdjacent";
-		} else {
-			if(map[row][column + 1] != "isObstacle") {
-				this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column + 1)] = "Adjacent";
-				this[map.getVertexIdOf(row, column + 1)][map.getVertexIdOf(row, column)] = "Adjacent";
-			}
+		if(map[row][column] != "isObstacle" && map[row][column + 1] != "isObstacle") {
+			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row, column + 1)] = "Adjacent";
+			this[map.getVertexIdOf(row, column + 1)][map.getVertexIdOf(row, column)] = "Adjacent";
 		}
 	}
 
