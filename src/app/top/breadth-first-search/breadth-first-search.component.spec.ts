@@ -109,10 +109,22 @@ describe('BreadthFirstSearchComponent', () => {
 
 
     test('vertex.evolute', () => {
-      const pair : Array<[number, Array<number>]> = [[1, [1]]]
-      const actual : Array<[number, Array<number>]> = Vertex.evolute(pair, ad1);
-      expect(actual).toEqual([[1, [2, 5]]]);
+      const sequence1 : Array<[number, Array<number>]> = [[1, [1]]]
+      const actual1 : Array<[number, Array<number>]> = Vertex.evolute(sequence1, ad1);
+      expect(actual1).toEqual([[1, [2, 5]]]);
+      // const sequence2 : Array<[number, Array<number>]> = [[1, [2, 5]]]
+      // const actual2 : Array<[number, Array<number>]> = Vertex.evolute(sequence2, ad1);
+      // expect(actual2).toEqual([[2, [3, 6]], [5, [6]]]);
     });
-
+    test('vertex.getIdsSequenceOfBreadFirstlyPathTo', () => {
+      const v1 : Vertex = new Vertex(1);
+      const idsSequence1 : Array<Array<[number, Array<number>]>> = v1.getIdsSequenceOfBreadFirstlyPathTo(11, ad1);
+      expect(idsSequence1).toEqual([]);
+    })
+    test('vertex.getIdsIncludedIn', () => {
+      const arr : Array<Array<[number, Array<number>]>> = [ [ [1, [1]] ], [ [2, [3, 6]], [5, [6] ] ] ];
+      const actual : Array<number> = Vertex.getIdsIncludedIn(arr);
+      expect(actual).toEqual([1, 3, 6]);
+    })
   });
 });
