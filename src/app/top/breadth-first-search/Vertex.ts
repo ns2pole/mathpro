@@ -45,7 +45,7 @@ export class Vertex {
     if(id == this.id) {
       return []
     } else {
-      let initPair : [number, Array<number>] = this.getIdAndAdjacentVertexIds(ad)
+      let initPair : [number, Array<number>] = [this.id, this.getAdjacentVertexIdsBy(ad)]
       sequenceOfIdsOnPath.push([initPair])
       let ids : number[] = initPair[1]
       while(ids.includes(id)) {
@@ -69,7 +69,7 @@ export class Vertex {
     return evolutedSequence;
   }
 
-  getIdsOfBreadFirstlyPathTo(id : number, ad : AdjacentMatrix) : Array<number> {
+    getIdsOfBreadFirstlyPathTo(id : number, ad : AdjacentMatrix) : Array<number> {
     let sequenceOfIdsOnPath : Array<Array<number>> = []
     for(let i : number = 0; i < ad.length; i++) {
       sequenceOfIdsOnPath.push(this.getAdjacentVertexIdsBy(ad))
