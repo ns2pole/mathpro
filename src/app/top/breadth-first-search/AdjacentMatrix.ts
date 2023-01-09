@@ -2,7 +2,7 @@ import { Labyrinth2D } from './Labyrinth2D';
 import { IsAdjacent} from './Union';
 import { isInside, isTopInSide, isBottomInSide, isLeftInSide, isRightInSide, isTopLeftCorner, isTopRightCorner, isBottomLeftCorner, isBottomRightCorner } from './FunctionModule';
 
-
+//行番号列番号はvertexのidに対応する
 export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 	constructor() {
 		super();

@@ -2,6 +2,7 @@ import { IsAdjacent } from './Union';
 import { isInside } from './FunctionModule';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
+import { Vertex } from './Vertex';
 
 describe('BreadthFirstSearchComponent', () => {
 
@@ -71,7 +72,22 @@ describe('BreadthFirstSearchComponent', () => {
           ["NotAdjacent", "NotAdjacent", "NotAdjacent", "NotAdjacent", "NotAdjacent", "NotAdjacent", "NotAdjacent", "NotAdjacent", "NotAdjacent"],
         ]
       );
-
     });
+
+    test('vertex.getAdjacentVertexIdsBy(ad)', () => {
+      const ad1 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab1);
+      const v1 : Vertex = new Vertex(5);
+      const ids1 : Array<number> = v1.getAdjacentVertexIdsBy(ad1);
+      expect(ids1).toEqual([1, 6]);
+      const ad2 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab2);
+      const v2 : Vertex = new Vertex(0);
+      const ids2 : Array<number> = v2.getAdjacentVertexIdsBy(ad2);
+      expect(ids2).toEqual([1]);
+      const ad3 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab3);
+      const v3 : Vertex = new Vertex(3);
+      const ids3 : Array<number> = v3.getAdjacentVertexIdsBy(ad3);
+      expect(ids3).toEqual([]);
+    });
+
   });
 });
