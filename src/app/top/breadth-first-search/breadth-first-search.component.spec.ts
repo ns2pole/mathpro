@@ -15,30 +15,23 @@ describe('BreadthFirstSearchComponent', () => {
 
     test('labirinth2D.getIdCount', () => {
       let count : number = lab.getIdCount();
-      expect(count).toBe(10);
-    });
-
-    test('labirinth2D.getCountOfObstaclesUntil', () => {
-      let count1 : number = lab.getCountOfObstaclesUntil(2, 2);
-      expect(count1).toBe(4);
-      let count2 : number = lab.getCountOfObstaclesUntil(3, 3);
-      expect(count2).toBe(6);
+      expect(count).toBe(16);
     });
 
     test('labirinth2D.getVertexIdsFor', () => {
       let id1 : number = lab.getVertexIdOf(0, 1);
-      expect(id1).toBe(0);
+      expect(id1).toBe(1);
       let id2 : number = lab.getVertexIdOf(2, 2);
-      expect(id2).toBe(6);
+      expect(id2).toBe(10);
     });
 
     test('labirinth2D.getRowColumnOf', () => {
-      let rowCloumn2 : [Number, Number] = lab.getRowColumnOf(0);
-      expect(rowCloumn2).toEqual([0, 1]);
-      // let rowCloumn1 : [Number, Number] = Plane.toRowColumnFor(lab, 4);
-      // expect(rowCloumn1).toEqual([1, 2]);
+      let rowCloumn1 : [Number, Number] = lab.getRowColumnOf(0);
+      expect(rowCloumn1).toEqual([0, 0]);
+      let rowCloumn2 : [Number, Number] = lab.getRowColumnOf(5);
+      expect(rowCloumn2).toEqual([1, 1]);
       let rowCloumn3 : [Number, Number] = lab.getRowColumnOf(9);
-      expect(rowCloumn3).toEqual([3, 3]);
+      expect(rowCloumn3).toEqual([2, 1]);
     });
 
     test('isInside', () => {

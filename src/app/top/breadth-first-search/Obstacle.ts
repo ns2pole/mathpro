@@ -1,7 +1,8 @@
 import { Square } from './Square';
 import { Color } from './Union';
+import { Vertex } from './Vertex';
 
-export abstract class Obstacle implements Square{
+export abstract class Obstacle extends Vertex implements Square{
   static color : Color | undefined;
   
   public paint(): void {

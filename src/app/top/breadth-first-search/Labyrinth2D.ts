@@ -5,7 +5,6 @@ export class Labyrinth2D extends Array<Array<Space>> {
     super();
   }
 
-
 	static generateLabyrinth(labRowNum : number, labColumnNum : number, obstaclesNum : number) : Labyrinth2D {
 		let map : Labyrinth2D = new Labyrinth2D();
 		for( let i :number = 0; i < labRowNum; i++) {
@@ -29,7 +28,7 @@ export class Labyrinth2D extends Array<Array<Space>> {
 		for( let i :number = 0; i < row; i++) {
 			numOfelementUntilrow += this[i].length;
 		}
-		return numOfelementUntilrow + column - this.getCountOfObstaclesUntil(row, column);
+		return numOfelementUntilrow + column;
 	}
 
 	//Vertexのidから、Mapのrowとcolumnを取得する
@@ -37,12 +36,10 @@ export class Labyrinth2D extends Array<Array<Space>> {
 		let count : number = 0;
 		for( let i :number = 0; i < this.length; i++) {
 			for( let j :number = 0; j < this[i].length; j++) {
-				if(this[i][j] != "isObstacle") {
 				if(count == vertexId) {
 						return [i, j];
 				}
 				count++;
-				}
 			}
 		}
 		//TODO:error処理
@@ -50,23 +47,6 @@ export class Labyrinth2D extends Array<Array<Space>> {
 	}
 
 	getIdCount() : number {
-		return this.flat().filter((space) => space !== "isObstacle").length;
-	}
-
-	//Obstacle以外の場所のV、row,columnに対応するVertexのidを取得する
-	getCountOfObstaclesUntil(row : number, column :number) : number {
-		let obstaclesNum : number = 0;
-		for( let i :number = 0; i < this.length; i++) {
-			for( let j :number = 0; j < this[i].length; j++) {
-				if(this[i][j] == "isObstacle") {
-				obstaclesNum++;
-				}
-				if(i == row && j == column) {
-				return obstaclesNum;
-				}
-			}
-		}
-		//TODO:error処理
-		return 0;
+		return this.flat().length;
 	}
 }
