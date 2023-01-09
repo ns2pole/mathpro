@@ -3,6 +3,8 @@ import { AdjacentMatrix } from './AdjacentMatrix';
 import { Labyrinth2D } from './Labyrinth2D';
 export class Vertex {
   id: number;
+  //使いづらい。
+  isSearched : boolean = false;
   constructor(id : number) {
     this.id = id;
   }
@@ -16,12 +18,17 @@ export class Vertex {
     return allvertexes
   }
 
-  getAdjacentVertexIdsBy(ad : AdjacentMatrix) : Array<number> {
+  getAdjacentVertexIdsBy(ad : AdjacentMatrix, excludeFlg : boolean = false) : Array<number> {
     let vertexIds = []
     for(let i : number = 0; i < ad[this.id].length; i++) {
       if(ad[this.id][i] == "Adjacent") {
         vertexIds.push(i)
       }
+    }
+    if(excludeFlg) {
+      vertexIds = vertexIds.filter((id) => {
+        return id != this.id
+      })
     }
     return vertexIds;
   }
@@ -36,14 +43,21 @@ export class Vertex {
     return edges;
   }
 
-  static getIdsIncludedIn(arr : Array<Array<[number, Array<number>]>>) : Array<number> {
-    let tmp : Array<Array<number>> = []
+  static getNumsIncludedIn(arr : Array<Array<[number, Array<number>]>>) : Array<number> {
+    let tmp1 : Array<Array<number>> = []
     for(let i : number = 0; i < arr.length; i++) {
       for(let j : number = 0; j < arr[i].length; j++) {
-        tmp.push(arr[i][j][1])
+        tmp1.push(arr[i][j][1])
       }
     }
-    return tmp.flat().filter((x, i) => tmp.flat().indexOf(x) === i)
+    let tmp2 : Array<number> = []
+    for(let i : number = 0; i < arr.length; i++) {
+      for(let j : number = 0; j < arr[i].length; j++) {
+        tmp2.push(arr[i][j][0])
+      }
+    }
+    let tmp : Array<number> = tmp2.concat(tmp1.flat())
+    return tmp.flat().filter((x, i) => tmp.flat().indexOf(x) === i).sort()
   }
 
   getIdsSequenceOfBreadFirstlyPathTo(id : number, ad : AdjacentMatrix) : Array<Array<[number, Array<number>]>> {
@@ -59,7 +73,8 @@ export class Vertex {
         for(let i : number = 0; i < range; i++) {
           sequenceOfIdsOnPath.push(Vertex.evolute(sequenceOfIdsOnPath[i], ad)) 
         }
-        ids = Vertex.getIdsIncludedIn(sequenceOfIdsOnPath)
+        ids = Vertex.getNumsIncludedIn(sequenceOfIdsOnPath)
+        //labについて全てのvertex_idについてsearchTableの導入？
         console.log(ids)
       }
       return sequenceOfIdsOnPath;
@@ -67,6 +82,7 @@ export class Vertex {
   }
 
   //TODO:探索済を除外する
+  //ex. [[1, [2, 3]], [2, [4]]] => [[2, [7, 8]], [3, [11, 13]], [4, [9, 10]]]
   static evolute(searchSequence : Array<[number, Array<number>]>, ad : AdjacentMatrix) : Array<[number, Array<number>]> {
     let evolutedSequence : Array<[number, Array<number>]> = []
     let ids = []
@@ -76,7 +92,7 @@ export class Vertex {
     ids = ids.flat()
     for(let i : number = 0; i < ids.length; i++) {
       let vertex : Vertex = new Vertex(ids[i])
-      evolutedSequence.push([ids[i], vertex.getAdjacentVertexIdsBy(ad)])
+      evolutedSequence.push([ids[i], vertex.getAdjacentVertexIdsBy(ad, true)])
     }
     return evolutedSequence;
   }

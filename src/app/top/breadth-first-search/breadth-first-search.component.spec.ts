@@ -103,10 +103,7 @@ describe('BreadthFirstSearchComponent', () => {
       const v1_2 : Vertex = new Vertex(1);
       const ids1_2 : Array<number> = v1_2.getAdjacentVertexIdsBy(ad1);
       expect(ids1_2).toEqual([2, 5]);
-      
     });
-
-
 
     test('vertex.evolute', () => {
       const sequence1 : Array<[number, Array<number>]> = [[1, [1]]]
@@ -123,8 +120,8 @@ describe('BreadthFirstSearchComponent', () => {
     })
     test('vertex.getIdsIncludedIn', () => {
       const arr : Array<Array<[number, Array<number>]>> = [ [ [1, [1]] ], [ [2, [3, 6]], [5, [6] ] ] ];
-      const actual : Array<number> = Vertex.getIdsIncludedIn(arr);
-      expect(actual).toEqual([1, 3, 6]);
+      const actual : Array<number> = Vertex.getNumsIncludedIn(arr);
+      expect(actual).toEqual([1, 2, 3, 5, 6]);
     })
   });
 });
