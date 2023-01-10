@@ -10,7 +10,7 @@ export class Labyrinth2D extends Array<Array<Square>> {
 		for( let i :number = 0; i < labRowNum; i++) {
 			map[i] = new Array(labColumnNum);
 			for( let j :number = 0; j < labColumnNum; j++) {
-				map[i][j] = new Square("isVacant");
+				map[i][j] = new Square(i * labRowNum + labColumnNum, "isVacant");
 			}
 		}
 		for( let i :number = 0; i < obstaclesNum; i++) {

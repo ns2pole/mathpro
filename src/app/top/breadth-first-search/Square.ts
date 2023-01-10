@@ -7,8 +7,8 @@ export class Square extends Vertex{
   // paint(): void
   // draw(s:any) : void
   // getCenter() : [Number, Number]
-  constructor(kind : Space) {
-    super();
+  constructor(id : number, kind : Space) {
+    super(id);
     this.kind = kind;
     this.isSearched = false;
   }

@@ -3,24 +3,25 @@ import { isInside } from './FunctionModule';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Vertex } from './Vertex';
+import { Square } from './Square';
 
 describe('BreadthFirstSearchComponent', () => {
 
   describe('UnitTest', () => {
     const lab1 : Labyrinth2D = new Labyrinth2D();
-    lab1[0] = ["isObstacle", "isStart", "isVacant", "isVacant"],
-    lab1[1] = ["isObstacle", "isVacant", "isVacant", "isVacant"],
-    lab1[2] = ["isObstacle", "isObstacle", "isVacant", "isGoal"],
-    lab1[3] = ["isObstacle", "isObstacle", "isVacant", "isVacant"]
+    lab1[0] = [new Square(1, "isObstacle"), new Square(1, "isStart"), new Square(1, "isVacant"), new Square(1, "isVacant")],
+    lab1[1] = [new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isVacant"), new Square(1, "isVacant")],
+    lab1[2] = [new Square(1, "isObstacle"), new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isGoal")],
+    lab1[3] = [new Square(1, "isObstacle"), new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isVacant")]
 
     const lab2 : Labyrinth2D = new Labyrinth2D();
-    lab2[0] = ["isStart", "isVacant"],
-    lab2[1] = ["isObstacle", "isGoal"]
+    lab2[0] = [new Square(1, "isStart"), new Square(1, "isVacant")],
+    lab2[1] = [new Square(1, "isObstacle"), new Square(1, "isGoal")]
 
     const lab3 : Labyrinth2D = new Labyrinth2D();
-    lab3[0] = ["isStart", "isVacant", "isVacant"],
-    lab3[1] = ["isObstacle", "isVacant", "isVacant"]
-    lab3[2] = ["isObstacle", "isGoal", "isObstacle"]
+    lab3[0] = [new Square(1, "isStart"), new Square(1, "isVacant"), new Square(1, "isVacant")],
+    lab3[1] = [new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isVacant")]
+    lab3[2] = [new Square(1, "isObstacle"), new Square(1, "isGoal"), new Square(1, "isObstacle")]
 
     const ad1 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab1);
     const ad2 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab2);
@@ -109,9 +110,9 @@ describe('BreadthFirstSearchComponent', () => {
       const sequence1 : Array<[number, Array<number>]> = [[1, [1]]]
       const actual1 : Array<[number, Array<number>]> = Vertex.evolute(sequence1, ad1);
       expect(actual1).toEqual([[1, [2, 5]]]);
-      // const sequence2 : Array<[number, Array<number>]> = [[1, [2, 5]]]
-      // const actual2 : Array<[number, Array<number>]> = Vertex.evolute(sequence2, ad1);
-      // expect(actual2).toEqual([[2, [3, 6]], [5, [6]]]);
+      const sequence2 : Array<[number, Array<number>]> = [[1, [2, 5]]]
+      const actual2 : Array<[number, Array<number>]> = Vertex.evolute(sequence2, ad1);
+      expect(actual2).toEqual([[2, [3, 6]], [5, [6]]]);
     });
     test('vertex.getIdsSequenceOfBreadFirstlyPathTo', () => {
       const v1 : Vertex = new Vertex(1);
