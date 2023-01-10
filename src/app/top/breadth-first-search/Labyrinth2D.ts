@@ -51,7 +51,7 @@ export class Labyrinth2D extends Array<Array<Square>> {
 		return this.flat().length;
 	}
 
-	getBreadthFirstSearchPath() : Array<number> {
+	solveByBreadthFirstSearch() : Array<number> {
 		let start : number = this.flat().findIndex((square) => square.kind == "isStart");
 		let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
 		let path : Array<number> = Vertex.breadthFirstSearch(start, goal, this);

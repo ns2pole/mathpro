@@ -148,8 +148,13 @@ describe('BreadthFirstSearchComponent', () => {
     test('Vertex.breadthFirstSearch', () => {
       const actual1 : Array<number> = Vertex.breadthFirstSearch(0, 3, lab2);
       expect(actual1).toEqual([0, 1, 3]);
-      const actual2 : Array<number> = Vertex.breadthFirstSearch(0, 7, lab2);
+      const actual2 : Array<number> = Vertex.breadthFirstSearch(0, 7, lab3);
       expect(actual2).toEqual([0, 1, 4, 7]);
     });
-    })
+    test('labirinth2D.solveBreadFirstSearch', () => {
+      const actual2 : Array<number> = lab2.solveByBreadthFirstSearch();
+      expect(actual2).toEqual([0, 1, 3]);
+      const actual3 : Array<number> = lab3.solveByBreadthFirstSearch();
+      expect(actual3).toEqual([0, 1, 4, 7]);
+    });})
 });
