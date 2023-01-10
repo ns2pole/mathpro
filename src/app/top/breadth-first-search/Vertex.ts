@@ -3,21 +3,18 @@ import { AdjacentMatrix } from './AdjacentMatrix';
 import { Labyrinth2D } from './Labyrinth2D';
 export class Vertex {
   id: number;
+  static searchedIds : Array<number> = []
   static num : number = 0;
-  constructor() {
-    this.id = Vertex.num;
-    Vertex.num++;
+
+  constructor(id : number) {
+    this.id = id;
   }
 
-  static getBy(id : number) : Vertex {
-
-    return new Vertex();
-  }
   static getAllVertexesFor(lab : Labyrinth2D) : Array<Vertex> {
     AdjacentMatrix.getAdjacentMatrixFor(lab)
     let allvertexes : Array<Vertex> = []
     for(let id = 0; id < lab.getIdCount(); id++) {
-      allvertexes.push(new Vertex())
+      allvertexes.push(new Vertex(id))
     }
     return allvertexes
   }
@@ -31,7 +28,7 @@ export class Vertex {
     }
     if(excludeFlg) {
       vertexIds = vertexIds.filter((id) => {
-        Vertex.getBy(id)  != this.id
+        return !Vertex.searchedIds.includes(id)
       })
     }
     return vertexIds;
@@ -78,8 +75,6 @@ export class Vertex {
           sequenceOfIdsOnPath.push(Vertex.evolute(sequenceOfIdsOnPath[i], ad)) 
         }
         ids = Vertex.getNumsIncludedIn(sequenceOfIdsOnPath)
-        //labについて全てのvertex_idについてsearchTableの導入？
-        console.log(ids)
       }
       return sequenceOfIdsOnPath;
     }
@@ -99,7 +94,7 @@ export class Vertex {
     }
     ids = ids.flat()
     for(let i : number = 0; i < ids.length; i++) {
-      let vertex : Vertex = Vertex.getBy(ids[i])
+      let vertex : Vertex = new Vertex(ids[i])
       evolutedSequence.push([ids[i], vertex.getAdjacentVertexIdsBy(ad, true)])
     }
     return evolutedSequence;
