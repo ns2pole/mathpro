@@ -44,7 +44,7 @@ export class Vertex {
     return edges;
   }
 
-  static getNumsIncludedIn(set : Set<Array<number>>) : Array<number> {
+  static getNumsIncludedIn(set : Set<Array<number>>) : Set<number> {
     const arr : Array<Array<number>> = Array.from(set)
     let result : Array<number> = []
     for(let i : number = 0; i < arr.length; i++) {
@@ -52,7 +52,7 @@ export class Vertex {
         result.push(arr[i][j])
       }
     }
-    return result.filter((x, i) => result.indexOf(x) === i).sort()
+    return new Set(result.filter((x, i) => result.indexOf(x) === i).sort())
   }
 
   getIdsSequenceOfBreadFirstlyPathTo(destinationId : number, ad : AdjacentMatrix) : Set<Array<number>> {
@@ -75,13 +75,27 @@ export class Vertex {
   }
 
   //TODO:探索済を除外する
-  //ex. [[1, [2, 3]], [2, [4]]] => [[2, [7, 8]], [3, [11, 13]], [4, [9, 10]]]
-  //[[1 -> 2], [1 -> 3]] からの [[1 -> 2 -> 7], [1 -> 2 -> 8], [1 -> 3 -> 11], [1 -> 3 -> 13]] を作る方がいい気がする
+  //[[1 -> 2], [1 -> 5]] からの [[1 -> 2 -> 3], [1 -> 2 -> 6], [1 -> 5 -> 6], [1 -> 5 -> 9]] を作る方がいい気がする
   //getAdjacentUnsearchedVertexIdsを作る
   //で再帰で回す
   //こういう扱いやすいデータ構造を考えるのがむずい
   static evolute(sequence : Set<Array<number>>, ad : AdjacentMatrix) : Set<Array<number>> {
-    sequence
+    const arr : Array<Array<number>> = Array.from(sequence);
+    let searchedIds : Set<number> = Vertex.getNumsIncludedIn(sequence)
+    let result : Set<Array<number>> = new Set()
+    //1つのpathを見るためにiを使う。
+    for(let i : number = 0; i < arr.length; i++) {
+      let lastId : number = arr[i][arr[i].length - 1]
+      let adjacentIds : Array<number> = new Vertex(lastId).getAdjacentVertexIdsBy(ad, true)
+      //1つのpathから複数のpathが生まれる。そのpathを回すためにjを使う。
+      for(let j : number = 0; j < adjacentIds.length; j++) {
+        if(!searchedIds.has(adjacentIds[j])) {
+          result.add(arr[i].concat([adjacentIds[j]]))
+        }
+      }
+    }
+    return result
+
     return new Set([[]])
   }
 

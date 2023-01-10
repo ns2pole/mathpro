@@ -112,7 +112,10 @@ describe('BreadthFirstSearchComponent', () => {
       expect(actual1).toEqual(new Set([[1, 2], [1, 5]]));
       const sequence2 : Set<Array<number>> = new Set([[1, 2], [1, 5]])
       const actual2 : Set<Array<number>> = Vertex.evolute(sequence2, ad1);
-      expect(actual2).toEqual(new Set([[1, 2, 6], [1, 5, 6], [1, 2, 6]]));
+      expect(actual2).toEqual(new Set([[1, 2, 3], [1, 5, 6], [1, 2, 6]]));
+      const sequence3 : Set<Array<number>> = new Set([[1, 2, 3], [1, 5, 6], [1, 2, 6]])
+      const actual3 : Set<Array<number>> = Vertex.evolute(sequence3, ad1);
+      expect(actual3).toEqual(new Set([[1, 2, 3, 7], [1, 2, 6, 7], [1, 2, 6, 10], [1, 5, 6, 7], [1, 5, 6, 10]]));
     });
     test('vertex.getIdsSequenceOfBreadFirstlyPathTo', () => {
       // const v1 : Vertex = new Vertex(1);
@@ -121,8 +124,8 @@ describe('BreadthFirstSearchComponent', () => {
     })
     test('vertex.getIdsIncludedIn', () => {
       const set : Set<Array<number>> = new Set([[1, 2], [1, 5]]);
-      const actual : Array<number> = Vertex.getNumsIncludedIn(set);
-      expect(actual).toEqual([1, 2, 5]);
+      const actual : Set<number> = Vertex.getNumsIncludedIn(set);
+      expect(actual).toEqual(new Set([1, 2, 5]));
     })
   });
 });
