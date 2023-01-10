@@ -1,5 +1,6 @@
 import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
+import { Vertex } from './Vertex';
 export class Labyrinth2D extends Array<Array<Square>> {
   constructor() {
     super();
@@ -48,5 +49,12 @@ export class Labyrinth2D extends Array<Array<Square>> {
 
 	getIdCount() : number {
 		return this.flat().length;
+	}
+
+	getBreadthFirstSearchPath() : Array<number> {
+		let start : number = this.flat().findIndex((square) => square.kind == "isStart");
+		let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
+		let path : Array<number> = Vertex.breadthFirstSearch(start, goal, this);
+		return path;
 	}
 }

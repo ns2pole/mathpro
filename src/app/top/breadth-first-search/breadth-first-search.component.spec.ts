@@ -117,7 +117,7 @@ describe('BreadthFirstSearchComponent', () => {
       const actual3 : Set<Array<number>> = Vertex.evolute(sequence3, ad1);
       expect(actual3).toEqual(new Set([[1, 2, 3, 7], [1, 2, 6, 7], [1, 2, 6, 10], [1, 5, 6, 7], [1, 5, 6, 10]]));
     });
-    
+
     test('vertex.getAllFastestPathsByBreadFirstlyPathTo', () => {
       const v1 : Vertex = new Vertex(1);
       const idSequences1 : Set<Array<number>> = v1.getAllFastestPathsByBreadFirstlyPathTo(11, lab1);
@@ -143,6 +143,12 @@ describe('BreadthFirstSearchComponent', () => {
       
       const vertex2 : Vertex = new Vertex(0);
       const actual2 : Array<number> = vertex2.getFastestPathTo(7, lab3);
+      expect(actual2).toEqual([0, 1, 4, 7]);
+    });
+    test('Vertex.breadthFirstSearch', () => {
+      const actual1 : Array<number> = Vertex.breadthFirstSearch(0, 3, lab2);
+      expect(actual1).toEqual([0, 1, 3]);
+      const actual2 : Array<number> = Vertex.breadthFirstSearch(0, 7, lab2);
       expect(actual2).toEqual([0, 1, 4, 7]);
     });
     })

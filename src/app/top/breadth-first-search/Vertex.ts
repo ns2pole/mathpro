@@ -55,19 +55,6 @@ export class Vertex {
     return new Set(result.filter((x, i) => result.indexOf(x) === i))
   }
 
-  //return all fastest courses to destination
-  //TODO:startからgoalへの経路が存在しない時の処理
-  getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {
-    let ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab)
-    let idSequences : Set<Array<number>> = new Set([[this.id]])
-    while(!Vertex.getNumsIncludedIn(idSequences).has(destinationId)) {
-      idSequences = Vertex.evolute(idSequences, ad)
-    }
-    let arr : Array<Array<number>> = Array.from(idSequences)
-    arr = arr.filter((path) => path.includes(destinationId) )
-    return new Set(arr)
-  }
-
   //TODO:探索済を除外する
   //[[1 -> 2], [1 -> 5]] からの [[1 -> 2 -> 3], [1 -> 2 -> 6], [1 -> 5 -> 6], [1 -> 5 -> 9]] を作る方がいい気がする
   //getAdjacentUnsearchedVertexIdsを作る
@@ -91,9 +78,27 @@ export class Vertex {
     return result
   }
 
+
+  //return all fastest courses to destination
+  //TODO:startからgoalへの経路が存在しない時の処理
+  getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {
+    let ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab)
+    let idSequences : Set<Array<number>> = new Set([[this.id]])
+    while(!Vertex.getNumsIncludedIn(idSequences).has(destinationId)) {
+      idSequences = Vertex.evolute(idSequences, ad)
+    }
+    let arr : Array<Array<number>> = Array.from(idSequences)
+    arr = arr.filter((path) => path.includes(destinationId) )
+    return new Set(arr)
+  }
+
   //幅優先探索。最短の経路が複数あると、このメソッドはテストしにくいのでテストは経路が一通りに決まるデータで行う。
   getFastestPathTo(vertexId : number, lab : Labyrinth2D) : Array<number> {
     return Array.from(this.getAllFastestPathsByBreadFirstlyPathTo(vertexId, lab))[0]
+  }
+
+  static breadthFirstSearch(fromId : number, toId : number, lab : Labyrinth2D) : Array<number> {
+    return new Vertex(fromId).getFastestPathTo(toId, lab)
   }
 
 }
