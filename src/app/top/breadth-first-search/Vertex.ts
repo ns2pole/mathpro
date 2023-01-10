@@ -57,8 +57,6 @@ export class Vertex {
 
   //TODO:探索済を除外する
   //[[1 -> 2], [1 -> 5]] からの [[1 -> 2 -> 3], [1 -> 2 -> 6], [1 -> 5 -> 6], [1 -> 5 -> 9]] を作る方がいい気がする
-  //getAdjacentUnsearchedVertexIdsを作る
-  //で再帰で回す
   //こういう扱いやすいデータ構造を考えるのがむずい
   static evolute(sequence : Set<Array<number>>, ad : AdjacentMatrix) : Set<Array<number>> {
     const arr : Array<Array<number>> = Array.from(sequence);
@@ -95,6 +93,10 @@ export class Vertex {
   //幅優先探索。最短の経路が複数あると、このメソッドはテストしにくいのでテストは経路が一通りに決まるデータで行う。
   getFastestPathTo(vertexId : number, lab : Labyrinth2D) : Array<number> {
     return Array.from(this.getAllFastestPathsByBreadFirstlyPathTo(vertexId, lab))[0]
+  }
+
+  static getAllFastestPathsByBreadFirstlyPathTo(fromId : number, toId : number, lab : Labyrinth2D) : Set<Array<number>> {
+    return new Vertex(fromId).getAllFastestPathsByBreadFirstlyPathTo(toId, lab)
   }
 
   static breadthFirstSearch(fromId : number, toId : number, lab : Labyrinth2D) : Array<number> {

@@ -156,5 +156,19 @@ describe('BreadthFirstSearchComponent', () => {
       expect(actual2).toEqual([0, 1, 3]);
       const actual3 : Array<number> = lab3.solveByBreadthFirstSearch();
       expect(actual3).toEqual([0, 1, 4, 7]);
-    });})
+    });
+
+    test('labirinth2D.getAllSolutionsByBreadthFirstSearch', () => {
+      const actual1 : Set<Array<number>> = lab1.getAllSolutionsByBreadthFirstSearch();
+      expect(actual1).toEqual(
+        new Set([
+          [1, 2, 3, 7, 11],
+          [1, 2, 6, 7, 11],
+          [1, 2, 6, 10, 11],
+          [1, 5, 6, 7, 11],
+          [1, 5, 6, 10, 11]]
+        )
+      )
+    });
+  });
 });
