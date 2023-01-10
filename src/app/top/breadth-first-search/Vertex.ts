@@ -55,24 +55,17 @@ export class Vertex {
     return new Set(result.filter((x, i) => result.indexOf(x) === i).sort())
   }
 
-  getIdsSequenceOfBreadFirstlyPathTo(destinationId : number, ad : AdjacentMatrix) : Set<Array<number>> {
-    let sequenceOfIdsOnPath : Array<Array<[number, Array<number>]>> = []
-    if(destinationId == this.id) {
-      return new Set([[this.id]])
-    } else {
-      // let initPair : [number, Array<number>] = [this.id, [this.id]]
-      // sequenceOfIdsOnPath.push([initPair])
-      // let ids : Array<number> = initPair[1];
-      // while(!ids.includes(id)) {
-      //   let range : number = sequenceOfIdsOnPath.length
-      //   for(let i : number = 0; i < range; i++) {
-      //     sequenceOfIdsOnPath.push(Vertex.evolute(sequenceOfIdsOnPath[i], ad)) 
-      //   }
-      //   ids = Vertex.getNumsIncludedIn(sequenceOfIdsOnPath)
-      // }
-      return new Set([[]]);
+  //return all fastest courses to destination
+  getIdSequencesOfBreadFirstlyPathTo(destinationId : number, ad : AdjacentMatrix) : Set<Array<number>> {
+    let idSequences : Set<Array<number>> = new Set([[this.id]])
+    while(!Vertex.getNumsIncludedIn(idSequences).has(destinationId)) {
+      idSequences = Vertex.evolute(idSequences, ad)
     }
+    let arr : Array<Array<number>> =  Array.from(idSequences).filter((idSequence) => { idSequence.includes(destinationId) })
+    return new Set(arr)
   }
+
+
 
   //TODO:探索済を除外する
   //[[1 -> 2], [1 -> 5]] からの [[1 -> 2 -> 3], [1 -> 2 -> 6], [1 -> 5 -> 6], [1 -> 5 -> 9]] を作る方がいい気がする
@@ -95,11 +88,5 @@ export class Vertex {
       }
     }
     return result
-
-    return new Set([[]])
   }
-
-  // getIdsOfBreadFirstlyPathTo(id : number, ad : AdjacentMatrix) : Array<number> {
-  //   return [];
-  // }
 }
