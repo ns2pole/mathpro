@@ -1,5 +1,4 @@
 import { Edge } from './Edge';
-import { Vacant } from './Vacant';
 import { LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM, CANVAS_BACKGROUND_COLOR, getSquareSize, getXOriginForDrawing, getYOriginForDrawing} from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
@@ -34,9 +33,9 @@ export class Plane {
   getAllEdges() : Array<Edge> {
     return [];
   }
-  getAllVacants() : Array<Vacant> {
-    return [];
-  }
+  // getAllVacants() : Array<Vacant> {
+  //   return [];
+  // }
   // getGoal() : Goal {
   //   return new Goal(0);
   // }
