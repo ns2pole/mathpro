@@ -1,10 +1,9 @@
 import { Edge } from './Edge';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Labyrinth2D } from './Labyrinth2D';
+import { getNumsIncludedIn } from './FunctionModule';
 export class Vertex {
   id: number;
-  static searchedIds : Array<number> = []
-  static num : number = 0;
 
   constructor(id : number) {
     this.id = id;
@@ -19,17 +18,12 @@ export class Vertex {
     return allvertexes
   }
 
-  getAdjacentVertexIdsBy(ad : AdjacentMatrix, excludeFlg : boolean = false) : Array<number> {
+  getAdjacentVertexIdsBy(ad : AdjacentMatrix) : Array<number> {
     let vertexIds = []
     for(let i : number = 0; i < ad[this.id].length; i++) {
       if(ad[this.id][i] == "Adjacent") {
         vertexIds.push(i)
       }
-    }
-    if(excludeFlg) {
-      vertexIds = vertexIds.filter((id) => {
-        return !Vertex.searchedIds.includes(id)
-      })
     }
     return vertexIds;
   }
@@ -44,29 +38,20 @@ export class Vertex {
     return edges;
   }
 
-  static getNumsIncludedIn(set : Set<Array<number>>) : Set<number> {
-    const arr : Array<Array<number>> = Array.from(set)
-    let result : Array<number> = []
-    for(let i : number = 0; i < arr.length; i++) {
-      for(let j : number = 0; j < arr[i].length; j++) {
-        result.push(arr[i][j])
-      }
-    }
-    return new Set(result.filter((x, i) => result.indexOf(x) === i))
-  }
+  
 
-  //TODO:探索済を除外する
   //[[1 -> 2], [1 -> 5]] からの [[1 -> 2 -> 3], [1 -> 2 -> 6], [1 -> 5 -> 6], [1 -> 5 -> 9]] を作る方がいい気がする
   //こういう扱いやすいデータ構造を考えるのがむずい
   static evolute(sequence : Set<Array<number>>, ad : AdjacentMatrix) : Set<Array<number>> {
     const arr : Array<Array<number>> = Array.from(sequence);
-    let searchedIds : Set<number> = Vertex.getNumsIncludedIn(sequence)
+    let searchedIds : Set<number> = getNumsIncludedIn(sequence)
     let result : Set<Array<number>> = new Set()
-    //1つのpathを見るためにiを使う。
+    //1つのpath例えば[1 ->2]のみを見るためにiを使う。
     for(let i : number = 0; i < arr.length; i++) {
       let lastId : number = arr[i][arr[i].length - 1]
-      let adjacentIds : Array<number> = new Vertex(lastId).getAdjacentVertexIdsBy(ad, true)
-      //1つのpathから複数のpathが生まれる。そのpathを回すためにjを使う。
+      let adjacentIds : Array<number> = new Vertex(lastId).getAdjacentVertexIdsBy(ad)
+      //1つのpathから複数のpathが生まれる。例えば[1 ->2]から[1 ->2 -> 5],[1 -> 2 -> 6]が生まれたりする。
+      //そのpathsを生成するためにjを使う。
       for(let j : number = 0; j < adjacentIds.length; j++) {
         if(!searchedIds.has(adjacentIds[j])) {
           result.add(arr[i].concat([adjacentIds[j]]))
@@ -82,7 +67,7 @@ export class Vertex {
   getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {
     let ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab)
     let idSequences : Set<Array<number>> = new Set([[this.id]])
-    while(!Vertex.getNumsIncludedIn(idSequences).has(destinationId)) {
+    while(!getNumsIncludedIn(idSequences).has(destinationId)) {
       idSequences = Vertex.evolute(idSequences, ad)
     }
     let arr : Array<Array<number>> = Array.from(idSequences)

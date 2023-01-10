@@ -32,3 +32,15 @@ export	const isRightInSide : (map : Array<Array<any>>, row : number, column :num
 export const getRandomInt : (from : number, lessThan :number) => number 
   = (from, to) => Math.floor(Math.random() * (to - from)) + from;
 
+
+export const getNumsIncludedIn : (set : Set<Array<number>>) => Set<number>
+	= (set) => {
+		const arr : Array<Array<number>> = Array.from(set)
+		let result : Array<number> = []
+		for(let i : number = 0; i < arr.length; i++) {
+		for(let j : number = 0; j < arr[i].length; j++) {
+			result.push(arr[i][j])
+		}
+		}
+		return new Set(result.filter((x, i) => result.indexOf(x) === i))
+	}

@@ -4,6 +4,7 @@ import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Vertex } from './Vertex';
 import { Square } from './Square';
+import { getNumsIncludedIn } from './FunctionModule';
 
 describe('BreadthFirstSearchComponent', () => {
 
@@ -133,7 +134,7 @@ describe('BreadthFirstSearchComponent', () => {
     })
     test('vertex.getIdsIncludedIn', () => {
       const set : Set<Array<number>> = new Set([[1, 2], [1, 5]]);
-      const actual : Set<number> = Vertex.getNumsIncludedIn(set);
+      const actual : Set<number> = getNumsIncludedIn(set);
       expect(actual).toEqual(new Set([1, 2, 5]));
     })
     test('vertex.getFastestPathTo', () => {

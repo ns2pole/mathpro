@@ -48,7 +48,7 @@ export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 		return adjacentMatrix;
 	}
 
-	//
+	
 	setAdjacentInfoOtherwise(): void {
 		for( let i :number = 0; i < this.length; i++) {
 			for( let j :number = 0; j < this[i].length; j++) {
@@ -60,7 +60,6 @@ export class AdjacentMatrix extends Array<Array<IsAdjacent>> {
 	}
 
 
-	// setAdjacentInfoForEveryDirection(map : Labyrinth2D, row: number, column: number): void {
 	setAdjacentInfoForAbove(map : Labyrinth2D, row: number, column: number): void {
 		if(map[row][column].kind != "isObstacle" && map[row - 1][column].kind != "isObstacle") {
 			this[map.getVertexIdOf(row, column)][map.getVertexIdOf(row - 1, column)] = "Adjacent";
