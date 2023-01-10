@@ -1,8 +1,5 @@
 import { Edge } from './Edge';
 import { Vacant } from './Vacant';
-import { Start } from './Start';
-import { Goal } from './Goal';
-import { Obstacle } from './Obstacle';
 import { LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM, CANVAS_BACKGROUND_COLOR, getSquareSize, getXOriginForDrawing, getYOriginForDrawing} from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
@@ -28,21 +25,21 @@ export class Plane {
   }
 
   
-  getAllObstacles() : Array<Obstacle> {
-    return [];
-  }
-  getStart() : Start {
-    return new Start(0);
-  }
+  // getAllObstacles() : Array<Obstacle> {
+  //   return [];
+  // }
+  // getStart() : Start {
+  //   return new Start(0);
+  // }
   getAllEdges() : Array<Edge> {
     return [];
   }
   getAllVacants() : Array<Vacant> {
     return [];
   }
-  getGoal() : Goal {
-    return new Goal(0);
-  }
+  // getGoal() : Goal {
+  //   return new Goal(0);
+  // }
 
   getSquareStartPosition() : [Number, Number] {
     return [0, 0];
@@ -66,24 +63,24 @@ export class Plane {
     }
   }
 
-  paint(s:any): void {
-    for (let i = 0; i < this.lab.length; i++) {
-      for (let j = 0; j < this.lab[i].length; j++) {
-        switch (this.lab[i][j]) {
-          case "isObstacle":
-            s.fill('black');
-            break;
-          case "isStart":
-            s.fill('green');
-            break;
-          case "isGoal":
-            s.fill('red');
-            break;
-          case "isVacant":
-            s.fill('white');
-            break;
-        }
-      }
-    }
-  }
+  // paint(s:any): void {
+  //   for (let i = 0; i < this.lab.length; i++) {
+  //     for (let j = 0; j < this.lab[i].length; j++) {
+  //       switch (this.lab[i][j]) {
+  //         case "isObstacle":
+  //           s.fill('black');
+  //           break;
+  //         case "isStart":
+  //           s.fill('green');
+  //           break;
+  //         case "isGoal":
+  //           s.fill('red');
+  //           break;
+  //         case "isVacant":
+  //           s.fill('white');
+  //           break;
+  //       }
+  //     }
+  //   }
+  // }
 }

@@ -1,6 +1,6 @@
-import { Space } from './Union';
 import { getRandomInt } from './FunctionModule';
-export class Labyrinth2D extends Array<Array<Space>> {
+import { Square } from './Square';
+export class Labyrinth2D extends Array<Array<Square>> {
   constructor() {
     super();
   }
@@ -10,14 +10,14 @@ export class Labyrinth2D extends Array<Array<Space>> {
 		for( let i :number = 0; i < labRowNum; i++) {
 			map[i] = new Array(labColumnNum);
 			for( let j :number = 0; j < labColumnNum; j++) {
-				map[i][j] = "isVacant";
+				map[i][j] = new Square("isVacant");
 			}
 		}
 		for( let i :number = 0; i < obstaclesNum; i++) {
-			map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)] = "isObstacle";
+			map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)].kind = "isObstacle";
 		}
-		map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)] =  "isStart"
-		map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)] = "isGoal"
+		map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)].kind =  "isStart"
+		map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)].kind = "isGoal"
 		return map;
 	}
 

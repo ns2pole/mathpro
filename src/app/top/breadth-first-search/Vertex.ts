@@ -3,17 +3,21 @@ import { AdjacentMatrix } from './AdjacentMatrix';
 import { Labyrinth2D } from './Labyrinth2D';
 export class Vertex {
   id: number;
-  //使いづらい。
-  isSearched : boolean = false;
-  constructor(id : number) {
-    this.id = id;
+  static num : number = 0;
+  constructor() {
+    this.id = Vertex.num;
+    Vertex.num++;
   }
 
+  static getBy(id : number) : Vertex {
+
+    return new Vertex();
+  }
   static getAllVertexesFor(lab : Labyrinth2D) : Array<Vertex> {
     AdjacentMatrix.getAdjacentMatrixFor(lab)
     let allvertexes : Array<Vertex> = []
     for(let id = 0; id < lab.getIdCount(); id++) {
-      allvertexes.push(new Vertex(id))
+      allvertexes.push(new Vertex())
     }
     return allvertexes
   }
@@ -27,7 +31,7 @@ export class Vertex {
     }
     if(excludeFlg) {
       vertexIds = vertexIds.filter((id) => {
-        return id != this.id
+        Vertex.getBy(id)  != this.id
       })
     }
     return vertexIds;
@@ -83,6 +87,10 @@ export class Vertex {
 
   //TODO:探索済を除外する
   //ex. [[1, [2, 3]], [2, [4]]] => [[2, [7, 8]], [3, [11, 13]], [4, [9, 10]]]
+  //[[1 -> 2], [1 -> 3]] からの [[1 -> 2 -> 7], [1 -> 2 -> 8], [1 -> 3 -> 11], [1 -> 3 -> 13]] を作る方がいい気がする
+  //getAdjacentUnsearchedVertexIdsを作る
+  //で再帰で回す
+  //こういう扱いやすいデータ構造を考えるのがむずい
   static evolute(searchSequence : Array<[number, Array<number>]>, ad : AdjacentMatrix) : Array<[number, Array<number>]> {
     let evolutedSequence : Array<[number, Array<number>]> = []
     let ids = []
@@ -91,17 +99,13 @@ export class Vertex {
     }
     ids = ids.flat()
     for(let i : number = 0; i < ids.length; i++) {
-      let vertex : Vertex = new Vertex(ids[i])
+      let vertex : Vertex = Vertex.getBy(ids[i])
       evolutedSequence.push([ids[i], vertex.getAdjacentVertexIdsBy(ad, true)])
     }
     return evolutedSequence;
   }
 
   getIdsOfBreadFirstlyPathTo(id : number, ad : AdjacentMatrix) : Array<number> {
-    let sequenceOfIdsOnPath : Array<Array<number>> = []
-    for(let i : number = 0; i < ad.length; i++) {
-      sequenceOfIdsOnPath.push(this.getAdjacentVertexIdsBy(ad))
-    } 
     return [];
   }
 }

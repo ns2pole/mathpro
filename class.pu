@@ -1,7 +1,7 @@
 @startuml{test.png}
 title bread-first-search
 
-    class Space {
+    class Kind {
     }
     
     class IsAdjacent {
@@ -10,20 +10,6 @@ title bread-first-search
     class Color {
     }
 
-    class Start {
-    }
-
-    class Goal {
-    }
-
-    class Vacant {
-    }
-
-    abstract class NotObstacle {
-    }
-
-    class Obstacle {
-    }
 
     class Vertex {
     }
@@ -31,7 +17,7 @@ title bread-first-search
     class Edge {
     }
 
-    interface Square {
+    class Square {
     }
 
     class Plane {
@@ -41,24 +27,15 @@ title bread-first-search
     }
 
     class AdjacentMatrix
-
-    NotObstacle <|-- Start
-    NotObstacle <|-- Goal
-    NotObstacle <|-- Vacant
-    Square <|.. NotObstacle
-    Square <|.. Obstacle
-    Vertex <|-- NotObstacle
-    Vertex <|-- Obstacle
+    Vertex <|-- Square
+    Square *-- Kind
+    Square *-- Color
     Plane *-- Labyrinth2D
     Plane *-- AdjacentMatrix
-    Obstacle *-- Color
-    Vacant *-- Color
-    Start *-- Color
-    Goal *-- Color
     Vertex o--o Edge
     Vertex -- AdjacentMatrix
     Edge -- AdjacentMatrix
     AdjacentMatrix *-- IsAdjacent
-    Labyrinth2D *-- Space
+    Labyrinth2D *-- Square
     
 @enduml
