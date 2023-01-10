@@ -52,16 +52,18 @@ export class Vertex {
         result.push(arr[i][j])
       }
     }
-    return new Set(result.filter((x, i) => result.indexOf(x) === i).sort())
+    return new Set(result.filter((x, i) => result.indexOf(x) === i))
   }
 
   //return all fastest courses to destination
-  getIdSequencesOfBreadFirstlyPathTo(destinationId : number, ad : AdjacentMatrix) : Set<Array<number>> {
+  getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {
+    let ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab)
     let idSequences : Set<Array<number>> = new Set([[this.id]])
     while(!Vertex.getNumsIncludedIn(idSequences).has(destinationId)) {
       idSequences = Vertex.evolute(idSequences, ad)
     }
-    let arr : Array<Array<number>> =  Array.from(idSequences).filter((idSequence) => { idSequence.includes(destinationId) })
+    let arr : Array<Array<number>> = Array.from(idSequences)
+    arr = arr.filter((path) => path.includes(destinationId) )
     return new Set(arr)
   }
 
@@ -89,4 +91,10 @@ export class Vertex {
     }
     return result
   }
+
+  //幅優先探索。
+  getFastestPathTo(vertexId : number, lab : Labyrinth2D) : Array<number> {
+    return Array.from(this.getAllFastestPathsByBreadFirstlyPathTo(vertexId, lab))[0]
+  }
+
 }
