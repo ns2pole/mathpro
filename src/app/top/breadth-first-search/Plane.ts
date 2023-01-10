@@ -8,12 +8,10 @@ import { Color } from './Union';
 export class Plane {
   lab : Labyrinth2D;
   ad : AdjacentMatrix;
-  vertexes : Array<Vertex>;
   backGroundColor : Color = CANVAS_BACKGROUND_COLOR
   constructor() {
     this.lab = Labyrinth2D.generateLabyrinth(LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM)
     this.ad = AdjacentMatrix.getAdjacentMatrixFor(this.lab)
-    this.vertexes = []; 
   }
 
   getVertexIdBy(row: Number, col: Number) : Number {
