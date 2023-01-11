@@ -1,0 +1,41 @@
+@startuml{test.png}
+title bread-first-search
+
+    class Kind {
+    }
+    
+    class IsAdjacent {
+    }
+
+    class Color {
+    }
+
+
+    class Vertex {
+    }
+
+    class Edge {
+    }
+
+    class Square {
+    }
+
+    class Plane {
+    }
+
+    class Labyrinth2D {
+    }
+
+    class AdjacentMatrix
+    Vertex <|-- Square
+    Square *-- Kind
+    Square *-- Color
+    Plane *-- Labyrinth2D
+    Plane *-- AdjacentMatrix
+    Vertex o--o Edge
+    Vertex -- AdjacentMatrix
+    Edge -- AdjacentMatrix
+    AdjacentMatrix *-- IsAdjacent
+    Labyrinth2D *-- Square
+    
+@enduml
