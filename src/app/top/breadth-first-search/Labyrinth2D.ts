@@ -4,7 +4,7 @@ import { Vertex } from './Vertex';
 export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 30;
 	static columnNum : number = 30;
-	static obstaclesNum : number = 380;
+	static obstaclesNum : number = 300;
 	constructor() {
    		super();
   	}
@@ -36,7 +36,7 @@ export class Labyrinth2D extends Array<Array<Square>> {
 	}
 
 	//Vertexのidから、Mapのrowとcolumnを取得する
-	getRowColumnOf(vertexId : number) : [Number, Number] {
+	getRowColumnOf(vertexId : number) : [number, number] {
 		let count : number = 0;
 		for( let i :number = 0; i < this.length; i++) {
 			for( let j :number = 0; j < this[i].length; j++) {
@@ -74,5 +74,14 @@ export class Labyrinth2D extends Array<Array<Square>> {
 			this[i][j].draw(s);
 		  }
 		}
-	  }
+	}
+
+	//breadFirstSearchでidのリストを受け取り、そのidのリストに対応するsquareを塗る
+	drawSolution(s:any): void {
+		const path : Array<number> = this.solveByBreadthFirstSearch();
+		for (let i = 0; i < path.length; i++) {
+			let [row, column] = this.getRowColumnOf(path[i]);
+			this[row][column].drawSolution(s);
+		}
+	}
 }

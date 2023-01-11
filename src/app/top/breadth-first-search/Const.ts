@@ -3,7 +3,7 @@ import { Color } from './Union';
 import { Square } from './Square';
 export const CANVAS_WIDTH : number = 1 / 2;
 export const CANVAS_HEIGHT : number = 1 / 2;
-export const CANVAS_BACKGROUND_COLOR : Color = 'Red';
+export const CANVAS_BACKGROUND_COLOR : Color = 'White';
 
 
 export const getCanvasWidth: (s: any) => number = (s: any) => {

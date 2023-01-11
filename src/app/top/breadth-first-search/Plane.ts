@@ -46,6 +46,7 @@ export class Plane {
       s.background(this.backGroundColor);
       s.rectMode(s.CORNER);
       this.lab.draw(s)
+      this.lab.drawSolution(s)
     }
   }
 

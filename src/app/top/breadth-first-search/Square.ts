@@ -7,7 +7,7 @@ export class Square extends Vertex{
   row : number
   column : number
   isSearched : boolean = false;
-  static size : number = 1 / 70;
+  static size : number = 1 / 80;
   
   draw(s : any): void {
     switch (this.kind) {
@@ -29,9 +29,22 @@ export class Square extends Vertex{
         break;
     }
   }
-  // draw(s:any) : void {
-    
-  // }
+  drawSolution(s:any) : void {
+    switch (this.kind) {
+      case "isStart":
+        s.fill('green');
+        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
+        break;
+      case "isGoal":
+        s.fill('yellow');
+        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
+        break;
+      case "isVacant":
+        s.fill('blue');
+        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s)); 
+        break;
+    } 
+  }
   constructor(id : number, row : number, column : number, kind : Space) {
     super(id);
     this.row = row;
