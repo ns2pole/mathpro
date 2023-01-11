@@ -39,7 +39,6 @@ const ROUTE_TABLE: Routes = [
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     NgChartsModule,
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
