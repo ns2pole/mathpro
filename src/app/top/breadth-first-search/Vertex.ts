@@ -67,8 +67,13 @@ export class Vertex {
   getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {
     let ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab)
     let idSequences : Set<Array<number>> = new Set([[this.id]])
+    let searchmentCount = 0
     while(!getNumsIncludedIn(idSequences).has(destinationId)) {
       idSequences = Vertex.evolute(idSequences, ad)
+      searchmentCount++
+      if(searchmentCount > lab.length * lab.getMaxColumnNum()) {
+        throw new Error("No solution.")
+      }
     }
     let arr : Array<Array<number>> = Array.from(idSequences)
     arr = arr.filter((path) => path.includes(destinationId) )

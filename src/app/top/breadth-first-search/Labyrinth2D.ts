@@ -4,7 +4,7 @@ import { Vertex } from './Vertex';
 export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 30;
 	static columnNum : number = 30;
-	static obstaclesNum : number = 300;
+	static obstaclesNum : number = 450;
 	constructor() {
    		super();
   	}
@@ -75,6 +75,17 @@ export class Labyrinth2D extends Array<Array<Square>> {
 		  }
 		}
 	}
+
+	getMaxColumnNum() : number {
+		let maxColumnNum : number = 0;
+		for (let i = 0; i < this.length; i++) {
+			if(maxColumnNum < this[i].length) {
+				maxColumnNum = this[i].length;
+			}
+		}
+		return maxColumnNum;
+	}
+
 
 	//breadFirstSearchでidのリストを受け取り、そのidのリストに対応するsquareを塗る
 	drawSolution(s:any): void {
