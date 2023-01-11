@@ -3,7 +3,6 @@ import { CANVAS_BACKGROUND_COLOR, getXOriginForDrawing, getYOriginForDrawing} fr
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Color } from './Union';
-import { Square } from './Square';
 
 export class Plane {
   lab : Labyrinth2D;
@@ -46,42 +45,8 @@ export class Plane {
     return () => {
       s.background(this.backGroundColor);
       s.rectMode(s.CORNER);
-      for (let i = 0; i < this.lab.length; i++) {
-        for (let j = 0; j < this.lab[i].length; j++) {
-          s.rect(
-            getXOriginForDrawing(s) + i * Square.getSize(s),
-            getYOriginForDrawing(s) + j * Square.getSize(s),
-            Square.getSize(s),
-            Square.getSize(s),
-          );
-        }
-      }
-      this.paint(s)
+      this.lab.draw(s)
     }
   }
 
-  paint(s:any): void {
-    for (let i = 0; i < this.lab.length; i++) {
-      for (let j = 0; j < this.lab[i].length; j++) {
-        switch (this.lab[i][j].kind) {
-          case "isObstacle":
-            s.fill('black');
-            s.rect(40, 40,  50, 50);
-            break;
-          case "isStart":
-            s.fill('green');
-            s.rect(140, 100,  50, 50);
-            break;
-          case "isGoal":
-            s.fill('red');
-            s.rect(440, 400,  50, 50);
-            break;
-          case "isVacant":
-            s.fill('white');
-            s.rect(540 + 10, 500,  50, 50);
-            break;
-        }
-      }
-    }
-  }
 }

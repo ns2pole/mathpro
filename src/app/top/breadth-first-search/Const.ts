@@ -20,9 +20,3 @@ export const getXOriginForDrawing: (s: any) => number = (s: any) => {
 export const getYOriginForDrawing: (s: any) => number = (s: any) => { 
   return s.windowWidth * (CANVAS_WIDTH - (Labyrinth2D.rowNum * Square.size)) / 2;
 }
-export const getLeftTopCorner : (s: any, row: number, column: number) => [number, number] = (s :any, row : number, column : number) => {
-  return [
-    Square.getSize(s) * column + getXOriginForDrawing(s),
-    Square.getSize(s) * row + getYOriginForDrawing(s)
-  ];
-}
