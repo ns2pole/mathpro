@@ -11,6 +11,7 @@ import { FeeComponent } from './fee/fee.component';
 import { AboutComponent } from './about/about.component';
 import { BarChartComponent } from './top/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './top/breadth-first-search/breadth-first-search.component';
+import { SampleProgramComponent } from './top/sample-program/sample-program.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -22,6 +23,7 @@ const ROUTE_TABLE: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'fee', component: FeeComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'sample-program', component: SampleProgramComponent },
 ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const ROUTE_TABLE: Routes = [
     ContactComponent,
     BarChartComponent,
     BreadthFirstSearchComponent,
+    SampleProgramComponent,
   ],
   imports: [
     BrowserModule,

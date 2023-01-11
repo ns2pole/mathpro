@@ -2,7 +2,6 @@ import { Edge } from './Edge';
 import { LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM, CANVAS_BACKGROUND_COLOR, getSquareSize, getXOriginForDrawing, getYOriginForDrawing} from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
-import { Vertex } from './Vertex';
 import { Color } from './Union';
 
 export class Plane {
@@ -56,28 +55,32 @@ export class Plane {
           );
         }
       }
-      // this.paint(s)
+      this.paint(s)
     }
   }
 
-  // paint(s:any): void {
-  //   for (let i = 0; i < this.lab.length; i++) {
-  //     for (let j = 0; j < this.lab[i].length; j++) {
-  //       switch (this.lab[i][j]) {
-  //         case "isObstacle":
-  //           s.fill('black');
-  //           break;
-  //         case "isStart":
-  //           s.fill('green');
-  //           break;
-  //         case "isGoal":
-  //           s.fill('red');
-  //           break;
-  //         case "isVacant":
-  //           s.fill('white');
-  //           break;
-  //       }
-  //     }
-  //   }
-  // }
+  paint(s:any): void {
+    for (let i = 0; i < this.lab.length; i++) {
+      for (let j = 0; j < this.lab[i].length; j++) {
+        switch (this.lab[i][j].kind) {
+          case "isObstacle":
+            s.fill('black');
+            s.rect(40, 40,  50, 50);
+            break;
+          case "isStart":
+            s.fill('green');
+            s.rect(140, 100,  50, 50);
+            break;
+          case "isGoal":
+            s.fill('red');
+            s.rect(440, 400,  50, 50);
+            break;
+          case "isVacant":
+            s.fill('white');
+            s.rect(540 + 10, 500,  50, 50);
+            break;
+        }
+      }
+    }
+  }
 }
