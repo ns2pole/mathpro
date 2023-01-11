@@ -1,6 +1,7 @@
 import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
 import { Vertex } from './Vertex';
+
 export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 12;
 	static columnNum : number = 12;
