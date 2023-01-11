@@ -3,7 +3,7 @@ import { Space } from './Union';
 export class Square extends Vertex{
   kind : Space
   isSearched : boolean = false;
-  // size : Number | undefined;
+  static size : number = 1 / 30;
   // paint(): void
   // draw(s:any) : void
   // getCenter() : [Number, Number]
@@ -11,5 +11,9 @@ export class Square extends Vertex{
     super(id);
     this.kind = kind;
     this.isSearched = false;
+  }
+
+  static getSize(arg: any) : number {
+    return arg.windowWidth * Square.size;
   }
 }

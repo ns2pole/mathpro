@@ -2,23 +2,26 @@ import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
 import { Vertex } from './Vertex';
 export class Labyrinth2D extends Array<Array<Square>> {
-  constructor() {
+	static rowNum : number = 12;
+	static columnNum : number = 12;
+	static obstaclesNum : number = 20;
+	constructor() {
     super();
   }
 
-	static generateLabyrinth(labRowNum : number, labColumnNum : number, obstaclesNum : number) : Labyrinth2D {
+	static generateLabyrinth() : Labyrinth2D {
 		let map : Labyrinth2D = new Labyrinth2D();
-		for( let i :number = 0; i < labRowNum; i++) {
-			map[i] = new Array(labColumnNum);
-			for( let j :number = 0; j < labColumnNum; j++) {
-				map[i][j] = new Square(i * labRowNum + labColumnNum, "isVacant");
+		for( let i :number = 0; i < this.rowNum; i++) {
+			map[i] = new Array(this.columnNum);
+			for( let j :number = 0; j < this.columnNum; j++) {
+				map[i][j] = new Square(i * this.rowNum + this.columnNum, "isVacant");
 			}
 		}
-		for( let i :number = 0; i < obstaclesNum; i++) {
-			map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)].kind = "isObstacle";
+		for( let i :number = 0; i < this.obstaclesNum; i++) {
+			map[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isObstacle";
 		}
-		map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)].kind =  "isStart"
-		map[getRandomInt(0, labRowNum)][getRandomInt(0, labColumnNum)].kind = "isGoal"
+		map[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind =  "isStart"
+		map[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isGoal"
 		return map;
 	}
 

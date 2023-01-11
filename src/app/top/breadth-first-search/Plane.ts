@@ -1,15 +1,16 @@
 import { Edge } from './Edge';
-import { LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM, CANVAS_BACKGROUND_COLOR, getSquareSize, getXOriginForDrawing, getYOriginForDrawing} from './Const';
+import { CANVAS_BACKGROUND_COLOR, getXOriginForDrawing, getYOriginForDrawing} from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Color } from './Union';
+import { Square } from './Square';
 
 export class Plane {
   lab : Labyrinth2D;
   ad : AdjacentMatrix;
   backGroundColor : Color = CANVAS_BACKGROUND_COLOR
   constructor() {
-    this.lab = Labyrinth2D.generateLabyrinth(LABYRINTH_ROW_NUM, LABYRINTH_COLUMN_NUM, OBSTACLE_NUM)
+    this.lab = Labyrinth2D.generateLabyrinth()
     this.ad = AdjacentMatrix.getAdjacentMatrixFor(this.lab)
   }
 
@@ -48,10 +49,10 @@ export class Plane {
       for (let i = 0; i < this.lab.length; i++) {
         for (let j = 0; j < this.lab[i].length; j++) {
           s.rect(
-            getXOriginForDrawing(s) + i * getSquareSize(s),
-            getYOriginForDrawing(s) + j * getSquareSize(s),
-            getSquareSize(s),
-            getSquareSize(s)
+            getXOriginForDrawing(s) + i * Square.getSize(s),
+            getYOriginForDrawing(s) + j * Square.getSize(s),
+            Square.getSize(s),
+            Square.getSize(s),
           );
         }
       }
