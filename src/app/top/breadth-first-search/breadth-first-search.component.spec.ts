@@ -10,19 +10,19 @@ describe('BreadthFirstSearchComponent', () => {
 
   describe('UnitTest', () => {
     const lab1 : Labyrinth2D = new Labyrinth2D();
-    lab1[0] = [new Square(1, "isObstacle"), new Square(1, "isStart"), new Square(1, "isVacant"), new Square(1, "isVacant")],
-    lab1[1] = [new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isVacant"), new Square(1, "isVacant")],
-    lab1[2] = [new Square(1, "isObstacle"), new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isGoal")],
-    lab1[3] = [new Square(1, "isObstacle"), new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isVacant")]
+    lab1[0] = [new Square(0, 0, 0, "isObstacle"), new Square(1, 0, 1, "isStart"), new Square(2, 0, 2, "isVacant"), new Square(3, 0 , 3, "isVacant")],
+    lab1[1] = [new Square(1, 1, 0, "isObstacle"), new Square(5, 1, 1, "isVacant"), new Square(6, 1, 2, "isVacant"), new Square(7, 1, 3, "isVacant")],
+    lab1[2] = [new Square(5, 2, 0, "isObstacle"), new Square(9, 2, 1, "isObstacle"), new Square(10, 2, 2, "isVacant"), new Square(11, 2, 3, "isGoal")],
+    lab1[3] = [new Square(9, 3, 0, "isObstacle"), new Square(10, 3, 1, "isObstacle"), new Square(14, 3, 2, "isVacant"), new Square(15, 3, 3, "isVacant")]
 
     const lab2 : Labyrinth2D = new Labyrinth2D();
-    lab2[0] = [new Square(1, "isStart"), new Square(1, "isVacant")],
-    lab2[1] = [new Square(1, "isObstacle"), new Square(1, "isGoal")]
+    lab2[0] = [new Square(0, 0, 0, "isStart"), new Square(1, 0, 1, "isVacant")],
+    lab2[1] = [new Square(2, 1, 0, "isObstacle"), new Square(3, 1, 1, "isGoal")]
 
     const lab3 : Labyrinth2D = new Labyrinth2D();
-    lab3[0] = [new Square(1, "isStart"), new Square(1, "isVacant"), new Square(1, "isVacant")],
-    lab3[1] = [new Square(1, "isObstacle"), new Square(1, "isVacant"), new Square(1, "isVacant")]
-    lab3[2] = [new Square(1, "isObstacle"), new Square(1, "isGoal"), new Square(1, "isObstacle")]
+    lab3[0] = [new Square(0, 0, 0, "isStart"), new Square(1, 0, 1, "isVacant"), new Square(2, 0, 2, "isVacant")],
+    lab3[1] = [new Square(3, 1, 0, "isObstacle"), new Square(4, 1, 1, "isVacant"), new Square(5, 1, 2, "isVacant")]
+    lab3[2] = [new Square(6, 2, 0, "isObstacle"), new Square(7, 2, 1, "isGoal"), new Square(8, 2, 2, "isObstacle")]
 
     const ad1 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab1);
     const ad2 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab2);
