@@ -38,7 +38,7 @@ export class Vertex {
     return edges;
   }
 
-  
+
 
   //[[1 -> 2], [1 -> 5]] からの [[1 -> 2 -> 3], [1 -> 2 -> 6], [1 -> 5 -> 6], [1 -> 5 -> 9]] を作る方がいい気がする
   //こういう扱いやすいデータ構造を考えるのがむずい
@@ -50,11 +50,13 @@ export class Vertex {
     for(let i : number = 0; i < arr.length; i++) {
       let lastId : number = arr[i][arr[i].length - 1]
       let adjacentIds : Array<number> = new Vertex(lastId).getAdjacentVertexIdsBy(ad)
-      //1つのpathから複数のpathが生まれる。例えば[1 ->2]から[1 ->2 -> 5],[1 -> 2 -> 6]が生まれたりする。
+      //1つのpathから複数のpathが生まれる。例えば[1 -> 2]から[1 -> 2 -> 5],[1 -> 2 -> 6]が生まれたりする。
       //そのpathsを生成するためにjを使う。
       for(let j : number = 0; j < adjacentIds.length; j++) {
         if(!searchedIds.has(adjacentIds[j])) {
           result.add(arr[i].concat([adjacentIds[j]]))
+          //下記一行で経路が爆発的に増えないので高速化される。[1->2->6]と[1->5->6]みたいなのがどちらか片方しかできなくなる。
+          searchedIds.add(adjacentIds[j])
         }
       }
     }
@@ -67,12 +69,13 @@ export class Vertex {
   getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {
     let ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab)
     let idSequences : Set<Array<number>> = new Set([[this.id]])
-    let searchmentCount = 0
+    let evoluteCount = 0
     while(!getNumsIncludedIn(idSequences).has(destinationId)) {
       idSequences = Vertex.evolute(idSequences, ad)
-      searchmentCount++
-      if(searchmentCount > lab.length * lab.getMaxColumnNum()) {
-        throw new Error("No solution.")
+      evoluteCount++
+      console.log(evoluteCount)
+      if(evoluteCount > 100) {
+        return new Set()
       }
     }
     let arr : Array<Array<number>> = Array.from(idSequences)

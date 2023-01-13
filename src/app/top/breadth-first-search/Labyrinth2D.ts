@@ -4,7 +4,7 @@ import { Vertex } from './Vertex';
 export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 30;
 	static columnNum : number = 30;
-	static obstaclesNum : number = 450;
+	static obstaclesNum : number = 400;
 	constructor() {
    		super();
   	}
