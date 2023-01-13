@@ -20,7 +20,7 @@ export class Plane {
     return 0;
   }
 
-  
+
   // getAllObstacles() : Array<Obstacle> {
   //   return [];
   // }

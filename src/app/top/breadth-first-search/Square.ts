@@ -2,13 +2,13 @@ import { Vertex } from './Vertex';
 import { Space } from './Union';
 import { getXOriginForDrawing, getYOriginForDrawing } from './Const';
 export class Square extends Vertex{
-  
+
   kind : Space
   row : number
   column : number
   isSearched : boolean = false;
-  static size : number = 1 / 80;
-  
+  static size : number = 1 / 120;
+
   draw(s : any): void {
     switch (this.kind) {
       case "isObstacle":
@@ -25,7 +25,7 @@ export class Square extends Vertex{
         break;
       case "isVacant":
         s.fill('white');
-        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s)); 
+        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
         break;
     }
   }
@@ -41,9 +41,9 @@ export class Square extends Vertex{
         break;
       case "isVacant":
         s.fill('blue');
-        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s)); 
+        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
         break;
-    } 
+    }
   }
   constructor(id : number, row : number, column : number, kind : Space) {
     super(id);

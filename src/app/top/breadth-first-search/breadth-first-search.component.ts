@@ -11,16 +11,16 @@ import { Plane } from './Plane';
 export class BreadthFirstSearchComponent {
   ngOnInit() {
     const plane : Plane = new Plane();
-    let sketch = (s:any) => {
-      s.setup = () => {
-        let canvas = s.createCanvas(getCanvasWidth(s), getCanvasHeight(s));
-        let ele = document.getElementById('canvas');
+    let sketch = (p: p5) => {
+      p.setup = () => {
+        let canvas = p.createCanvas(getCanvasWidth(p), getCanvasHeight(p));
+        let ele : any = document.getElementById('canvas');
         canvas.parent(ele);
-        s.draw = plane.draw(s);
-
+        p.draw = plane.draw(p);
+        p.noLoop();
       };
-      s.windowResized = () => {
-        s.resizeCanvas(getCanvasWidth(s), getCanvasHeight(s));
+      p.windowResized = () => {
+        p.resizeCanvas(getCanvasWidth(p), getCanvasHeight(p));
       };
     }
     new p5(sketch);

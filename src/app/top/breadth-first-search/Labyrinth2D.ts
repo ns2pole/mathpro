@@ -2,9 +2,9 @@ import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
 import { Vertex } from './Vertex';
 export class Labyrinth2D extends Array<Array<Square>> {
-	static rowNum : number = 30;
-	static columnNum : number = 30;
-	static obstaclesNum : number = 400;
+	static rowNum : number = 50;
+	static columnNum : number = 50;
+	static obstaclesNum : number = Labyrinth2D.rowNum * Labyrinth2D.columnNum / 3;
 	constructor() {
    		super();
   	}
