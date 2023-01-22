@@ -56,7 +56,7 @@ export class Vertex {
         if(!searchedIds.has(adjacentIds[j])) {
           result.add(arr[i].concat([adjacentIds[j]]))
           //下記一行で経路が爆発的に増えないので高速化される。[1->2->6]と[1->5->6]みたいなのがどちらか片方しかできなくなる。
-          // searchedIds.add(adjacentIds[j])
+          searchedIds.add(adjacentIds[j])
         }
       }
     }
