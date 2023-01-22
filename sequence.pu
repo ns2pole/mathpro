@@ -1,0 +1,28 @@
+@startuml{TEST2.png}
+title 中央制御のシーケンス図
+hide footbox
+
+participant ": BreadthFirstSearchComponent" as BreadthFirstSearchComponent
+participant ": Plane" as Plane
+participant ": Labyrinth2D" as Labyrinth2D
+participant ": Vertex" as Vertex
+participant ": Square" as Square
+
+activate BreadthFirstSearchComponent
+activate Plane
+BreadthFirstSearchComponent -> Plane : new plane()
+BreadthFirstSearchComponent -> Plane : plane.draw\n(p: p5)
+
+activate Labyrinth2D
+Plane -> Labyrinth2D : this.lab.draw\n(s : any)
+Plane -> Labyrinth2D : this.lab.drawSolution\n(s : any)
+Labyrinth2D -> Labyrinth2D : this.solveByBreadthFirstSearch()
+Labyrinth2D -> Vertex : Vertex.breadthFirstSearch\n(start : number, goal : number, this : Labyrinth2D)
+
+Vertex -> Vertex : new Vertex(fromId).getFastestPathTo\n(toId, lab)
+Vertex -> Vertex : this.getAllFastestPathsByBreadFirstlyPathTo\n(vertexId, lab)
+Vertex -> Vertex : Vertex.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
+Labyrinth2D -> Square : drawSolution\n(s : any)
+BreadthFirstSearchComponent -> BreadthFirstSearchComponent : p.noloop()
+BreadthFirstSearchComponent -> BreadthFirstSearchComponent : new p5(sketch)
+
