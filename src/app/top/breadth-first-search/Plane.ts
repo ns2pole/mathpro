@@ -3,7 +3,7 @@ import { CANVAS_BACKGROUND_COLOR, getXOriginForDrawing, getYOriginForDrawing} fr
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Color } from './Union';
-
+import * as p5 from 'p5';
 export class Plane {
   lab : Labyrinth2D;
   ad : AdjacentMatrix;
@@ -16,10 +16,10 @@ export class Plane {
   getVertexIdBy(row: Number, col: Number) : Number {
     return 0;
   }
+
   static toNumberFor(row : Number, column : Number) : Number {
     return 0;
   }
-
 
   // getAllObstacles() : Array<Obstacle> {
   //   return [];
@@ -41,12 +41,12 @@ export class Plane {
     return [0, 0];
   }
 
-  draw(s:any): () => void {
+  draw(p: p5, path : Array<number>): () => void {
     return () => {
-      s.background(this.backGroundColor);
-      s.rectMode(s.CORNER);
-      this.lab.draw(s)
-      this.lab.drawSolution(s)
+      p.background(this.backGroundColor);
+      p.rectMode(p.CORNER);
+      this.lab.draw(p)
+      this.lab.drawSolution(p, path)
     }
   }
 

@@ -11,18 +11,21 @@ participant ": Square" as Square
 activate BreadthFirstSearchComponent
 activate Plane
 BreadthFirstSearchComponent -> Plane : new plane()
-BreadthFirstSearchComponent -> Plane : plane.draw\n(p: p5)
-
-activate Labyrinth2D
-Plane -> Labyrinth2D : this.lab.draw\n(s : any)
-Plane -> Labyrinth2D : this.lab.drawSolution\n(s : any)
-Labyrinth2D -> Labyrinth2D : this.solveByBreadthFirstSearch()
+BreadthFirstSearchComponent -> Plane
+Plane -> Labyrinth2D : solveByBreadthFirstSearch()
 Labyrinth2D -> Vertex : Vertex.breadthFirstSearch\n(start : number, goal : number, this : Labyrinth2D)
 
 Vertex -> Vertex : new Vertex(fromId).getFastestPathTo\n(toId, lab)
 Vertex -> Vertex : this.getAllFastestPathsByBreadFirstlyPathTo\n(vertexId, lab)
 Vertex -> Vertex : Vertex.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
-Labyrinth2D -> Square : drawSolution\n(s : any)
+
+BreadthFirstSearchComponent -> Plane : plane.draw\n(p: p5, path: Array<number>)
+
+activate Labyrinth2D
+Plane -> Labyrinth2D : this.lab.draw\n(p : p5)
+Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
+Plane -> Labyrinth2D : this.lab.drawSolution\n(p : p5, path : Array<number>)
+Labyrinth2D -> Square : drawForSolution\n(p : p5)
 BreadthFirstSearchComponent -> BreadthFirstSearchComponent : p.noloop()
 BreadthFirstSearchComponent -> BreadthFirstSearchComponent : new p5(sketch)
 

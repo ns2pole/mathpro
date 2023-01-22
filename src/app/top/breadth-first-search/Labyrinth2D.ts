@@ -1,6 +1,7 @@
 import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
 import { Vertex } from './Vertex';
+import * as p5 from 'p5';
 export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 50;
 	static columnNum : number = 50;
@@ -54,6 +55,8 @@ export class Labyrinth2D extends Array<Array<Square>> {
 		return this.flat().length;
 	}
 
+  //反省。やべえ何書いてあるのかわかんねぇ。なんだよnumberって。絶対に型をつけるべきだった。薄々思ってたよ。
+  //これ分かりにくくなるかもなぁって。
 	solveByBreadthFirstSearch() : Array<number> {
 		let start : number = this.flat().findIndex((square) => square.kind == "isStart");
 		let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
@@ -68,10 +71,10 @@ export class Labyrinth2D extends Array<Array<Square>> {
 		return paths;
 	}
 
-	draw(s:any): void {
+	draw(p: p5): void {
 		for (let i = 0; i < this.length; i++) {
 		  for (let j = 0; j < this[i].length; j++) {
-			this[i][j].draw(s);
+			this[i][j].draw(p);
 		  }
 		}
 	}
@@ -88,11 +91,11 @@ export class Labyrinth2D extends Array<Array<Square>> {
 
 
 	//breadFirstSearchでidのリストを受け取り、そのidのリストに対応するsquareを塗る
-	drawSolution(s:any): void {
-		const path : Array<number> = this.solveByBreadthFirstSearch();
+  //numberってなんだよ。おい。型つけろよ。
+	drawSolution(p: p5, path : Array<number>): void {
 		for (let i = 0; i < path.length; i++) {
 			let [row, column] = this.getRowColumnOf(path[i]);
-			this[row][column].drawSolution(s);
+			this[row][column].drawForSolution(p);
 		}
 	}
 }
