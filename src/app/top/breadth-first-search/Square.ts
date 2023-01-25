@@ -1,5 +1,5 @@
 import { Vertex } from './Vertex';
-import { Space } from './Union';
+import { IsSearched, Space } from './Union';
 import { getXOriginForDrawing, getYOriginForDrawing } from './Const';
 import * as p5 from 'p5';
 export class Square extends Vertex{
@@ -7,7 +7,7 @@ export class Square extends Vertex{
   kind : Space
   row : number
   column : number
-  isSearched : boolean = false;
+  isSearched : IsSearched = false;
   static size : number = 1 / 120;
 
   //TODO:sをp5にする
