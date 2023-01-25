@@ -1,6 +1,5 @@
 import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
-import { Vertex } from './Vertex';
 import * as p5 from 'p5';
 export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 50;
@@ -57,19 +56,19 @@ export class Labyrinth2D extends Array<Array<Square>> {
 
   //反省。やべえ何書いてあるのかわかんねぇ。なんだよnumberって。絶対に型をつけるべきだった。薄々思ってたよ。
   //これ分かりにくくなるかもなぁって。
-	solveByBreadthFirstSearch() : Array<number> {
-		let start : number = this.flat().findIndex((square) => square.kind == "isStart");
-		let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
-		let path : Array<number> = Vertex.breadthFirstSearch(start, goal, this);
-		return path;
-	}
+	// solveByBreadthFirstSearch() : Array<number> {
+	// 	let start : number = this.flat().findIndex((square) => square.kind == "isStart");
+	// 	let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
+	// 	let path : Array<number> = Vertex.breadthFirstSearch(start, goal, this);
+	// 	return path;
+	// }
 
-	getAllSolutionsByBreadthFirstSearch() : Set<Array<number>> {
-		let start : number = this.flat().findIndex((square) => square.kind == "isStart");
-		let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
-		let paths : Set<Array<number>> = Vertex.getAllFastestPathsByBreadFirstlyPathTo(start, goal, this);
-		return paths;
-	}
+	// getAllSolutionsByBreadthFirstSearch() : Set<Array<number>> {
+	// 	let start : number = this.flat().findIndex((square) => square.kind == "isStart");
+	// 	let goal : number = this.flat().findIndex((square) => square.kind == "isGoal");
+	// 	let paths : Set<Array<number>> = Vertex.getAllFastestPathsByBreadFirstlyPathTo(start, goal, this);
+	// 	return paths;
+	// }
 
 	draw(p: p5): void {
 		for (let i = 0; i < this.length; i++) {
@@ -98,4 +97,6 @@ export class Labyrinth2D extends Array<Array<Square>> {
 			this[row][column].drawForSolution(p);
 		}
 	}
+
+
 }

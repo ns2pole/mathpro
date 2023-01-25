@@ -1,4 +1,5 @@
 import { getNumsIncludedIn } from './FunctionModule';
+import { Plane } from './Plane';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Vertex } from './Vertex';
 import { isInside } from './FunctionModule';
@@ -26,6 +27,8 @@ describe('BreadthFirstSearchComponent', () => {
     const ad1 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab1);
     const ad2 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab2);
     const ad3 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab3);
+
+    const p1 = new Plane(lab1, ad1);
 
     test('labirinth2D.getIdCount', () => {
       const count : number = lab1.getIdCount();
@@ -136,27 +139,27 @@ describe('BreadthFirstSearchComponent', () => {
       const actual : Set<number> = getNumsIncludedIn(set);
       expect(actual).toEqual(new Set([1, 2, 5]));
     })
-    test('vertex.getFastestPathTo', () => {
-      const vertex1 : Vertex = new Vertex(0);
-      const actual1 : Array<number> = vertex1.getFastestPathTo(3, lab2);
-      expect(actual1).toEqual([0, 1, 3]);
+    // test('vertex.getFastestPathTo', () => {
+    //   const vertex1 : Vertex = new Vertex(0);
+    //   const actual1 : Array<number> = vertex1.getFastestPathTo(3, lab2);
+    //   expect(actual1).toEqual([0, 1, 3]);
 
-      const vertex2 : Vertex = new Vertex(0);
-      const actual2 : Array<number> = vertex2.getFastestPathTo(7, lab3);
-      expect(actual2).toEqual([0, 1, 4, 7]);
-    });
-    test('Vertex.breadthFirstSearch', () => {
-      const actual1 : Array<number> = Vertex.breadthFirstSearch(0, 3, lab2);
+    //   const vertex2 : Vertex = new Vertex(0);
+    //   const actual2 : Array<number> = vertex2.getFastestPathTo(7, lab3);
+    //   expect(actual2).toEqual([0, 1, 4, 7]);
+    // });
+    test('plane.breadthFirstSearch', () => {
+      const actual1 : Array<number> = p1.breadthFirstSearch(0, 3, lab2);
       expect(actual1).toEqual([0, 1, 3]);
-      const actual2 : Array<number> = Vertex.breadthFirstSearch(0, 7, lab3);
+      const actual2 : Array<number> = p1.breadthFirstSearch(0, 7, lab3);
       expect(actual2).toEqual([0, 1, 4, 7]);
     });
-    test('labirinth2D.solveBreadFirstSearch', () => {
-      const actual2 : Array<number> = lab2.solveByBreadthFirstSearch();
-      expect(actual2).toEqual([0, 1, 3]);
-      const actual3 : Array<number> = lab3.solveByBreadthFirstSearch();
-      expect(actual3).toEqual([0, 1, 4, 7]);
-    });
+    // test('labirinth2D.solveBreadFirstSearch', () => {
+    //   const actual2 : Array<number> = lab2.solveByBreadthFirstSearch();
+    //   expect(actual2).toEqual([0, 1, 3]);
+    //   const actual3 : Array<number> = lab3.solveByBreadthFirstSearch();
+    //   expect(actual3).toEqual([0, 1, 4, 7]);
+    // });
 
     // test('labirinth2D.getAllSolutionsByBreadthFirstSearch', () => {
     //   const actual1 : Set<Array<number>> = lab1.getAllSolutionsByBreadthFirstSearch();

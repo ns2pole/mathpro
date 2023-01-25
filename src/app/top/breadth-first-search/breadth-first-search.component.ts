@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { drawPoint } from 'chart.js/dist/helpers/helpers.canvas';
 import * as p5 from 'p5';
 import { getCanvasWidth, getCanvasHeight } from './Const';
+import { Labyrinth2D } from './Labyrinth2D';
+import { AdjacentMatrix } from './AdjacentMatrix';
 import { Plane } from './Plane';
 
 @Component({
@@ -12,9 +13,10 @@ import { Plane } from './Plane';
 
 export class BreadthFirstSearchComponent {
   ngOnInit() {
-    const plane : Plane = new Plane();
-
-    const solutionPath : Array<number> = plane.lab.solveByBreadthFirstSearch();
+    const lab : Labyrinth2D = Labyrinth2D.generateLabyrinth();
+    const ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab);
+    const plane : Plane = new Plane(lab, ad);
+    const solutionPath : Array<number> = plane.breadthFirstSearch();
     //TODO:
     //ボタンを押すとスタートとゴールとラビリンスのみが描かれる(黄色, 緑, 黒)
     // plane.draw(p);
