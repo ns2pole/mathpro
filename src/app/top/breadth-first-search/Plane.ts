@@ -1,5 +1,5 @@
 import { Edge } from './Edge';
-import { CANVAS_BACKGROUND_COLOR, getXOriginForDrawing, getYOriginForDrawing} from './Const';
+import { CANVAS_BACKGROUND_COLOR} from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Color } from './Union';
@@ -20,25 +20,9 @@ export class Plane {
     return 0;
   }
 
-  static toNumberFor(row : Number, column : Number) : Number {
-    return 0;
-  }
-
-  // getAllObstacles() : Array<Obstacle> {
-  //   return [];
-  // }
-  // getStart() : Start {
-  //   return new Start(0);
-  // }
   getAllEdges() : Array<Edge> {
     return [];
   }
-  // getAllVacants() : Array<Vacant> {
-  //   return [];
-  // }
-  // getGoal() : Goal {
-  //   return new Goal(0);
-  // }
 
   getSquareStartPosition() : [Number, Number] {
     return [0, 0];

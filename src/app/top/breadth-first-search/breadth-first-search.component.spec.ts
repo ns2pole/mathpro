@@ -128,31 +128,6 @@ describe('BreadthFirstSearchComponent', () => {
       expect(ids1_2).toEqual([2, 5]);
     });
 
-    // test('vertex.evolute', () => {
-    //   const sequence1 : Set<Array<number>> = new Set([[1]])
-    //   const actual1 : Set<Array<number>> = Vertex.evolute(sequence1, ad1);
-    //   expect(actual1).toEqual(new Set([[1, 2], [1, 5]]));
-    //   const sequence2 : Set<Array<number>> = new Set([[1, 2], [1, 5]])
-    //   const actual2 : Set<Array<number>> = Vertex.evolute(sequence2, ad1);
-    //   expect(actual2).toEqual(new Set([[1, 2, 3], [1, 5, 6], [1, 2, 6]]));
-    //   const sequence3 : Set<Array<number>> = new Set([[1, 2, 3], [1, 5, 6], [1, 2, 6]])
-    //   const actual3 : Set<Array<number>> = Vertex.evolute(sequence3, ad1);
-    //   expect(actual3).toEqual(new Set([[1, 2, 3, 7], [1, 2, 6, 7], [1, 2, 6, 10], [1, 5, 6, 7], [1, 5, 6, 10]]));
-    // });
-
-    // test('vertex.getAllFastestPathsByBreadFirstlyPathTo', () => {
-    //   const v1 : Vertex = new Vertex(1);
-    //   const idSequences1 : Set<Array<number>> = v1.getAllFastestPathsByBreadFirstlyPathTo(11, lab1);
-    //   expect(idSequences1).toEqual(
-    //     new Set([
-    //       [1, 2, 3, 7, 11],
-    //       [1, 2, 6, 7, 11],
-    //       [1, 2, 6, 10, 11],
-    //       [1, 5, 6, 7, 11],
-    //       [1, 5, 6, 10, 11]
-    //     ]
-    //     ));
-    // })
     test('vertex.getIdsIncludedIn', () => {
       const set : Set<Array<number>> = new Set([[1, 2], [1, 5]]);
       const actual : Set<number> = getNumsIncludedIn(set);
@@ -171,24 +146,5 @@ describe('BreadthFirstSearchComponent', () => {
       const actual2 : Array<number> = p5.breadthFirstSearch();
       expect(actual2).toEqual([4, 5, 1, 2, 3, 7, 11, 15, 14, 13, 12]);
     });
-    // test('labirinth2D.solveBreadFirstSearch', () => {
-    //   const actual2 : Array<number> = lab2.solveByBreadthFirstSearch();
-    //   expect(actual2).toEqual([0, 1, 3]);
-    //   const actual3 : Array<number> = lab3.solveByBreadthFirstSearch();
-    //   expect(actual3).toEqual([0, 1, 4, 7]);
-    // });
-
-    // test('labirinth2D.getAllSolutionsByBreadthFirstSearch', () => {
-    //   const actual1 : Set<Array<number>> = lab1.getAllSolutionsByBreadthFirstSearch();
-    //   expect(actual1).toEqual(
-    //     new Set([
-    //       [1, 2, 3, 7, 11],
-    //       [1, 2, 6, 7, 11],
-    //       [1, 2, 6, 10, 11],
-    //       [1, 5, 6, 7, 11],
-    //       [1, 5, 6, 10, 11]]
-    //     )
-    //   )
-    // });
   });
 });

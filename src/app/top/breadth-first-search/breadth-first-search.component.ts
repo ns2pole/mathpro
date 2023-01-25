@@ -38,7 +38,7 @@ export class BreadthFirstSearchComponent {
         const goalId : number = plane.lab.getGoalId();
         let sequence : Set<Array<number>> = new Set([[startId]]);
         let searchedIds : Set<number> = getNumsIncludedIn(sequence);
-        while(!plane.lab.searchedIds.has(goalId)) {
+        while(!searchedIds.has(goalId)) {
           sequence = plane.evolute(sequence);
           searchedIds = getNumsIncludedIn(sequence);
           plane.lab.updateSearchedStatusBy(searchedIds);

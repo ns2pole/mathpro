@@ -5,7 +5,6 @@ export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 50;
 	static columnNum : number = 50;
 	static obstaclesNum : number = Labyrinth2D.rowNum * Labyrinth2D.columnNum / 3;
-  searchedIds : Set<number> = new Set<number>();
 	constructor() {
   	super();
 	}
@@ -85,7 +84,6 @@ export class Labyrinth2D extends Array<Array<Square>> {
   }
 
   updateSearchedStatusBy(searchedIds : Set<number>) : void {
-    this.searchedIds = searchedIds;
     for(let i = 0; i < this.length; i++) {
       for(let j = 0; j < this[i].length; j++) {
         if(searchedIds.has(this[i][j].id)) {
