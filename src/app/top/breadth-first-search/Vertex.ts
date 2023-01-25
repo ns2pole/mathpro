@@ -1,7 +1,6 @@
 import { Edge } from './Edge';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Labyrinth2D } from './Labyrinth2D';
-import { getNumsIncludedIn } from './FunctionModule';
 export class Vertex {
   id: number;
 
@@ -37,11 +36,6 @@ export class Vertex {
     }
     return edges;
   }
-
-
-
-
-
 
 }
 // native camp

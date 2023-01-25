@@ -16,11 +16,12 @@ Plane -> Labyrinth2D : this.lab.draw\n(p : p5)
 activate Square
 Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
 
-Vertex -> Vertex : Vertex.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
+BreadthFirstSearchComponent -> Plane : plane.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
 BreadthFirstSearchComponent -> Plane : plane.draw\n(p: p5, path: Array<number>)
 Plane -> Labyrinth2D : this.lab.draw\n(p : p5)
 Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
-Vertex -> Vertex : Vertex.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
+
+BreadthFirstSearchComponent -> Plane : plane.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
 BreadthFirstSearchComponent -> Plane : plane.draw\n(p: p5, path: Array<number>)
 Plane -> Labyrinth2D : this.lab.draw\n(p : p5)
 Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
