@@ -64,6 +64,7 @@ export class Vertex {
   }
 
 
+
   //return all fastest courses to destination
   //TODO:startからgoalへの経路が存在しない時の処理
   getAllFastestPathsByBreadFirstlyPathTo(destinationId : number, lab : Labyrinth2D) : Set<Array<number>> {

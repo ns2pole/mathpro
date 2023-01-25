@@ -7,8 +7,8 @@ export class Labyrinth2D extends Array<Array<Square>> {
 	static columnNum : number = 50;
 	static obstaclesNum : number = Labyrinth2D.rowNum * Labyrinth2D.columnNum / 3;
 	constructor() {
-   		super();
-  	}
+  	super();
+	}
 
 	static generateLabyrinth() : Labyrinth2D {
 		let map : Labyrinth2D = new Labyrinth2D();
