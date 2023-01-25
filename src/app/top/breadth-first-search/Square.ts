@@ -20,6 +20,11 @@ export class Square extends Vertex{
       p.fill('white');
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
     }
+    if(this.kind == "isOnSolutionPath") {
+      p.fill('green');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+    }
+
     if(this.isSearched) {
       p.fill('yellow');
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
@@ -30,26 +35,6 @@ export class Square extends Vertex{
     } else if(this.kind == "isGoal") {
       p.fill('red');
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-    } else if(this.kind == "isOnSolutionPath") {
-      p.fill('green');
-      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-    }
-  }
-
-  drawForSolution(p: p5) : void {
-    switch (this.kind) {
-      case "isStart":
-        p.fill('green');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
-      case "isGoal":
-        p.fill('yellow');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
-      case "isVacant":
-        p.fill('blue');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
     }
   }
 

@@ -5,24 +5,25 @@ export class Labyrinth2D extends Array<Array<Square>> {
 	static rowNum : number = 50;
 	static columnNum : number = 50;
 	static obstaclesNum : number = Labyrinth2D.rowNum * Labyrinth2D.columnNum / 3;
+  searchedIds : Set<number> = new Set<number>();
 	constructor() {
   	super();
 	}
 
 	static generateLabyrinth() : Labyrinth2D {
-		let map : Labyrinth2D = new Labyrinth2D();
+		let lab : Labyrinth2D = new Labyrinth2D();
 		for( let i :number = 0; i < this.rowNum; i++) {
-			map[i] = new Array(this.columnNum);
+			lab[i] = new Array(this.columnNum);
 			for( let j :number = 0; j < this.columnNum; j++) {
-				map[i][j] = new Square(i * this.rowNum + this.columnNum, i, j, "isVacant");
+				lab[i][j] = new Square(i * this.rowNum + j, i, j, "isVacant");
 			}
 		}
 		for( let i :number = 0; i < this.obstaclesNum; i++) {
-			map[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isObstacle";
+			lab[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isObstacle";
 		}
-		map[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind =  "isStart"
-		map[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isGoal"
-		return map;
+		lab[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind =  "isStart"
+		lab[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isGoal"
+		return lab;
 	}
 
 	getVertexIdOf(row : number, column : number) : number {
@@ -83,15 +84,25 @@ export class Labyrinth2D extends Array<Array<Square>> {
     return this.flat().findIndex((square) => square.kind == "isStart");
   }
 
+  updateSearchedStatusBy(searchedIds : Set<number>) : void {
+    this.searchedIds = searchedIds;
+    for(let i = 0; i < this.length; i++) {
+      for(let j = 0; j < this[i].length; j++) {
+        if(searchedIds.has(this[i][j].id)) {
+          this[i][j].isSearched = true;
+        }
+      }
+    }
+  }
 
-	//breadFirstSearchでidのリストを受け取り、そのidのリストに対応するsquareを塗る
-  //numberってなんだよ。おい。型つけろよ。
-	drawSolution(p: p5, path : Array<number>): void {
-		for (let i = 0; i < path.length; i++) {
-			let [row, column] = this.getRowColumnOf(path[i]);
-			this[row][column].drawForSolution(p);
-		}
-	}
-
+  updateShortestPathBy(shortestPathIds : Array<number>) : void {
+    for(let i = 0; i < this.length; i++) {
+      for(let j = 0; j < this[i].length; j++) {
+        if(shortestPathIds.includes(this[i][j].id) && this[i][j].kind != "isStart" && this[i][j].kind != "isGoal") {
+          this[i][j].kind = "isOnSolutionPath";
+        }
+      }
+    }
+  }
 
 }
