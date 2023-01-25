@@ -29,6 +29,10 @@ export class BreadthFirstSearchComponent {
     //ボタンを押すと解が描かれる(赤)
     //p2 = getCopiedPlaneOverwrittenFor(solutionPath);
     //plane2.draw(p);
+    //TODO: 以下のようにする
+    //ボタンで段階的にアニメーション
+    //解なし対応
+    //mapサイズ変更しやすいよう対応
     let sketch = (p: p5) => {
       p.setup = () => {
         let canvas = p.createCanvas(getCanvasWidth(p), getCanvasHeight(p));
