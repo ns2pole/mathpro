@@ -15,6 +15,7 @@ export class BreadthFirstSearchComponent {
     const plane : Plane = new Plane();
 
     const solutionPath : Array<number> = plane.lab.solveByBreadthFirstSearch();
+    //TODO:
     //ボタンを押すとスタートとゴールとラビリンスのみが描かれる
     // plane.draw(p);
     //drawSolutionをやめてSpaceに状態を持たせる。つまり、SpaceにisSearched, isOnSolutionを追加して描画はdraw(p)に統一。

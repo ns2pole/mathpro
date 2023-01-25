@@ -11,7 +11,7 @@ participant ": Square" as Square
 activate BreadthFirstSearchComponent
 activate Plane
 BreadthFirstSearchComponent -> Plane : new plane()
-BreadthFirstSearchComponent -> Plane
+BreadthFirstSearchComponent -> Plane : solveByBreadthFirstSearch()
 Plane -> Labyrinth2D : solveByBreadthFirstSearch()
 Labyrinth2D -> Vertex : Vertex.breadthFirstSearch\n(start : number, goal : number, this : Labyrinth2D)
 

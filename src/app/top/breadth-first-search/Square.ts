@@ -10,23 +10,24 @@ export class Square extends Vertex{
   isSearched : boolean = false;
   static size : number = 1 / 120;
 
-  draw(s : any): void {
+  //TODO:sをp5にする
+  draw(p : p5): void {
     switch (this.kind) {
       case "isObstacle":
-        s.fill('black');
-        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
+        p.fill('black');
+        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
         break;
       case "isStart":
-        s.fill('green');
-        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
+        p.fill('green');
+        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
         break;
       case "isGoal":
-        s.fill('yellow');
-        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
+        p.fill('yellow');
+        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
         break;
       case "isVacant":
-        s.fill('white');
-        s.rect(this.getLeftTopCornerX(s), this.getLeftTopCornerY(s), Square.getSize(s), Square.getSize(s));
+        p.fill('white');
+        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
         break;
     }
   }
@@ -60,12 +61,12 @@ export class Square extends Vertex{
     return s.windowWidth * Square.size;
   }
 
-  getLeftTopCornerX(s: any): number {
-    return Square.getSize(s) * this.column + getXOriginForDrawing(s)
+  getLeftTopCornerX(p: p5): number {
+    return Square.getSize(p) * this.column + getXOriginForDrawing(p)
   }
 
-  getLeftTopCornerY(s: any): number {
-    return Square.getSize(s) * this.row + getYOriginForDrawing(s)
+  getLeftTopCornerY(p: p5): number {
+    return Square.getSize(p) * this.row + getYOriginForDrawing(p)
   }
 
 }
