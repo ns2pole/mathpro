@@ -1,41 +1,79 @@
 @startuml{test.png}
 title bread-first-search
 
-    class Kind {
-    }
-    
-    class IsAdjacent {
+    class Union {
     }
 
-    class Color {
+    enum Space {
+      "isGoal"
+      "isStart"
+      "isObstacle"
+      "isVacant";
+    }
+
+    enum IsAdjacent {
+      "Adjacent"
+      "NotAdjacent"
+    }
+
+    enum Color {
+      "Red"
+      "Green"
+      "Blue"
+      "Yellow"
+      "Purple"
+      "Orange"
+      "Black"
+      "White";
     }
 
 
     class Vertex {
+        id: number
     }
 
     class Edge {
+      idsOfVertex : [number, number]
     }
 
+
     class Square {
+      id : number
+      kind : Space
     }
 
     class Plane {
+      lab : Labyrinth2D
+      adj : AdjacentMatrix
+        backGroundColor : Color
     }
 
     class Labyrinth2D {
+      static rowNum
+	    static columnNum
+	    static obstaclesNum
     }
 
-    class AdjacentMatrix
+    class "Array<Array<IsAdjacent>>"
+
+    class AdjacentMatrix {
+    }
+
+    Labyrinth2D --|> "Array<Array<Square>>"
+    AdjacentMatrix --|> "Array<Array<IsAdjacent>>"
     Vertex <|-- Square
-    Square *-- Kind
-    Square *-- Color
     Plane *-- Labyrinth2D
     Plane *-- AdjacentMatrix
     Vertex o--o Edge
     Vertex -- AdjacentMatrix
     Edge -- AdjacentMatrix
-    AdjacentMatrix *-- IsAdjacent
-    Labyrinth2D *-- Square
-    
+    Union --- "Array<Array<IsAdjacent>>"
+    "Array<Array<Square>>" --- Square
+    Space --- Square
+    IsAdjacent --- "Array<Array<IsAdjacent>>"
+    Color --- Plane
+    Union --- Color
+    Union --- IsAdjacent
+    Union --- Space
+
 @enduml

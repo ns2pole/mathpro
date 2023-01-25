@@ -16,13 +16,14 @@ export class BreadthFirstSearchComponent {
 
     const solutionPath : Array<number> = plane.lab.solveByBreadthFirstSearch();
     //TODO:
-    //ボタンを押すとスタートとゴールとラビリンスのみが描かれる
+    //ボタンを押すとスタートとゴールとラビリンスのみが描かれる(黄色, 緑, 黒)
     // plane.draw(p);
     //drawSolutionをやめてSpaceに状態を持たせる。つまり、SpaceにisSearched, isOnSolutionを追加して描画はdraw(p)に統一。
-    //ボタンを押すと水が満たされていく様子が描かれる
+    //planeが持つ更新される。
+    //ボタンを押すと水が満たされていく様子が描かれる(水色)
     //plane1 = getCopiedPlaneOverwrittenFor(searchedIds);
     //plane1.draw(p);
-    //ボタンを押すと解が描かれる
+    //ボタンを押すと解が描かれる(赤)
     //p2 = getCopiedPlaneOverwrittenFor(solutionPath);
     //plane2.draw(p);
     let sketch = (p: p5) => {
