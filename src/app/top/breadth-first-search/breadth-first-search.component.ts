@@ -33,7 +33,7 @@ export class BreadthFirstSearchComponent {
         let canvas = p.createCanvas(getCanvasWidth(p), getCanvasHeight(p));
         let ele : any = document.getElementById('canvas');
         canvas.parent(ele);
-        p.draw = plane.draw(p, solutionPath);
+        p.draw = plane.draw(p);
         p.noLoop();
       };
       p.windowResized = () => {

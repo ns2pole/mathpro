@@ -12,23 +12,27 @@ export class Square extends Vertex{
 
   //TODO:sをp5にする
   draw(p : p5): void {
-    switch (this.kind) {
-      case "isObstacle":
-        p.fill('black');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
-      case "isStart":
-        p.fill('green');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
-      case "isGoal":
-        p.fill('yellow');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
-      case "isVacant":
-        p.fill('white');
-        p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
-        break;
+    //TODO:色塗りの順番に注意する必要あり。どうしたら文脈に依存しなくて済むように書けるのだろう？
+    if(this.kind == "isObstacle") {
+          p.fill('black');
+          p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+    } else if(this.kind == "isVacant") {
+      p.fill('white');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+    }
+    if(this.isSearched) {
+      p.fill('yellow');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+    }
+    if(this.kind == "isStart") {
+      p.fill('blue');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+    } else if(this.kind == "isGoal") {
+      p.fill('red');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+    } else if(this.kind == "isOnSolutionPath") {
+      p.fill('green');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
     }
   }
 

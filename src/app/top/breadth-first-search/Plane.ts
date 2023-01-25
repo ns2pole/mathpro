@@ -68,12 +68,11 @@ export class Plane {
     return result
   }
 
-  draw(p: p5, path : Array<number>): () => void {
+  draw(p: p5): () => void {
     return () => {
       p.background(this.backGroundColor);
       p.rectMode(p.CORNER);
       this.lab.draw(p)
-      this.lab.drawSolution(p, path)
     }
   }
 
