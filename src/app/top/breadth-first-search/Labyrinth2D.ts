@@ -88,6 +88,14 @@ export class Labyrinth2D extends Array<Array<Square>> {
 		return maxColumnNum;
 	}
 
+  getGoalId() : number {
+    return this.flat().findIndex((square) => square.kind == "isGoal");
+  }
+
+  getStartId() : number {
+    return this.flat().findIndex((square) => square.kind == "isStart");
+  }
+
 
 	//breadFirstSearchでidのリストを受け取り、そのidのリストに対応するsquareを塗る
   //numberってなんだよ。おい。型つけろよ。

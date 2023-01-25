@@ -24,11 +24,30 @@ describe('BreadthFirstSearchComponent', () => {
     lab3[1] = [new Square(3, 1, 0, "isObstacle"), new Square(4, 1, 1, "isVacant"), new Square(5, 1, 2, "isVacant")]
     lab3[2] = [new Square(6, 2, 0, "isObstacle"), new Square(7, 2, 1, "isGoal"), new Square(8, 2, 2, "isObstacle")]
 
+    const lab4 : Labyrinth2D = new Labyrinth2D();
+    lab4[0] = [new Square(0, 0, 0, "isStart"), new Square(1, 0, 1, "isVacant"), new Square(2, 0, 2, "isObstacle")],
+    lab4[1] = [new Square(3, 1, 0, "isObstacle"), new Square(4, 1, 1, "isVacant"), new Square(5, 1, 2, "isObstacle")]
+    lab4[2] = [new Square(6, 2, 0, "isObstacle"), new Square(7, 2, 1, "isVacant"), new Square(8, 2, 2, "isGoal")]
+
+    const lab5 : Labyrinth2D = new Labyrinth2D();
+    lab5[0] = [new Square(0, 0, 0, "isObstacle"), new Square(1, 0, 1, "isVacant"), new Square(2, 0, 2, "isVacant"), new Square(3, 0 , 3, "isVacant")],
+    lab5[1] = [new Square(1, 1, 0, "isStart"), new Square(5, 1, 1, "isVacant"), new Square(6, 1, 2, "isObstacle"), new Square(7, 1, 3, "isVacant")],
+    lab5[2] = [new Square(5, 2, 0, "isObstacle"), new Square(9, 2, 1, "isObstacle"), new Square(10, 2, 2, "isObstacle"), new Square(11, 2, 3, "isVacant")],
+    lab5[3] = [new Square(9, 3, 0, "isGoal"), new Square(10, 3, 1, "isVacant"), new Square(14, 3, 2, "isVacant"), new Square(15, 3, 3, "isVacant")]
+
+
     const ad1 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab1);
     const ad2 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab2);
     const ad3 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab3);
+    const ad4 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab4);
+    const ad5 : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(lab5);
+
 
     const p1 = new Plane(lab1, ad1);
+    const p2 = new Plane(lab2, ad2);
+    const p3 = new Plane(lab3, ad3);
+    const p4 = new Plane(lab4, ad4);
+    const p5 = new Plane(lab5, ad5);
 
     test('labirinth2D.getIdCount', () => {
       const count : number = lab1.getIdCount();
@@ -139,20 +158,18 @@ describe('BreadthFirstSearchComponent', () => {
       const actual : Set<number> = getNumsIncludedIn(set);
       expect(actual).toEqual(new Set([1, 2, 5]));
     })
-    // test('vertex.getFastestPathTo', () => {
-    //   const vertex1 : Vertex = new Vertex(0);
-    //   const actual1 : Array<number> = vertex1.getFastestPathTo(3, lab2);
-    //   expect(actual1).toEqual([0, 1, 3]);
-
-    //   const vertex2 : Vertex = new Vertex(0);
-    //   const actual2 : Array<number> = vertex2.getFastestPathTo(7, lab3);
-    //   expect(actual2).toEqual([0, 1, 4, 7]);
-    // });
-    test('plane.breadthFirstSearch', () => {
-      const actual1 : Array<number> = p1.breadthFirstSearch(0, 3, lab2);
+    test('plane.getFastestPathTo', () => {
+      const actual1 : Array<number> = p2.getFastestPathTo(0, 3);
       expect(actual1).toEqual([0, 1, 3]);
-      const actual2 : Array<number> = p1.breadthFirstSearch(0, 7, lab3);
+      const actual2 : Array<number> = p3.getFastestPathTo(0, 7);
       expect(actual2).toEqual([0, 1, 4, 7]);
+    });
+
+    test('plane.breadthFirstSearch', () => {
+      const actual1 : Array<number> = p4.breadthFirstSearch();
+      expect(actual1).toEqual([0, 1, 4, 7 , 8]);
+      const actual2 : Array<number> = p5.breadthFirstSearch();
+      expect(actual2).toEqual([4, 5, 1, 2, 3, 7, 11, 15, 14, 13, 12]);
     });
     // test('labirinth2D.solveBreadFirstSearch', () => {
     //   const actual2 : Array<number> = lab2.solveByBreadthFirstSearch();

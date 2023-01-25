@@ -98,15 +98,11 @@ export class Plane {
   }
 
   //幅優先探索。最短の経路が複数あると、このメソッドはテストしにくいのでテストは経路が一通りに決まるデータで行う。
-  // getFastestPathTo(vertexId : number, lab : Labyrinth2D) : Array<number> {
-  //   return Array.from(this.getAllFastestPathsByBreadFirstlyPathTo(vertexId, lab))[0]
-  // }
+  getFastestPathTo(fromId : number, toId : number) : Array<number> {
+    return Array.from(this.getAllFastestPathsByBreadFirstlyPathTo(fromId, toId))[0]
+  }
 
-  // static getAllFastestPathsByBreadFirstlyPathTo(fromId : number, toId : number, lab : Labyrinth2D) : Set<Array<number>> {
-  //   return new Vertex(fromId).getAllFastestPathsByBreadFirstlyPathTo(toId, lab)
-  // }
-
-  breadthFirstSearch(fromId : number, toId : number) : Array<number> {
-    return Array.from(this.getAllFastestPathsByBreadFirstlyPathTo(fromId, toId))[0];
+  breadthFirstSearch() : Array<number> {
+    return this.getFastestPathTo(this.lab.getStartId(), this.lab.getGoalId());
   }
 }
