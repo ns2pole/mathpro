@@ -4,7 +4,7 @@ import { getCanvasWidth, getCanvasHeight } from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Plane } from './Plane';
-import { getNumsIncludedIn } from './FunctionModule';
+import { getNumsIncludedIn, sleep } from './FunctionModule';
 
 @Component({
   selector: 'app-breadth-first-search',
@@ -46,13 +46,15 @@ export class BreadthFirstSearchComponent {
           sequence = plane.evolute(sequence);
           searchedIds = getNumsIncludedIn(sequence);
           plane.lab.updateSearchedStatusBy(searchedIds);
+          p.draw = plane.draw(p);
         }
         const solutionPathId : Array<number> = plane.breadthFirstSearch();
         plane.lab.updateSearchedStatusBy(searchedIds);
         plane.lab.updateShortestPathBy(solutionPathId);
-        p.draw = plane.draw(p);
+        // p.draw = plane.draw(p);
         p.noLoop();
       };
+
       p.windowResized = () => {
         p.resizeCanvas(getCanvasWidth(p), getCanvasHeight(p));
       };
