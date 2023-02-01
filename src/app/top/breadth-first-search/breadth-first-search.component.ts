@@ -9,7 +9,7 @@ import { getNumsIncludedIn, sleep } from './FunctionModule';
 @Component({
   selector: 'app-breadth-first-search',
   templateUrl: './breadth-first-search.component.html',
-  styleUrls: ['./breadth-first-search.component.css']
+  styleUrls: ['../top.component.css']
 })
 
 export class BreadthFirstSearchComponent {

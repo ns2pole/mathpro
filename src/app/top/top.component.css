@@ -9,3 +9,38 @@
     margin-top: 2em;
     background-color: antiquewhite;
 }
+
+#canvas {
+  width: 100%;
+  text-align: center;
+}
+
+.button_wrapper {
+  text-align: center;
+  height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  button {
+      width: 30%;
+      height: 100%;
+  }
+  canvas {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+  button {
+      width: 20%;
+      height: 100%;
+  }
+  canvas {
+      width: 60%;
+      height: auto;
+      margin: 0 auto;
+  }
+}

@@ -7,7 +7,7 @@ import { BaseChartDirective } from 'ng2-charts';
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
-  styleUrls: [ './bar-chart.component.css' ],
+  styleUrls: [ '../top.component.css' ],
 })
 export class BarChartComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
@@ -61,7 +61,7 @@ export class BarChartComponent {
   public async bubbleSort(): Promise<void> {
     for(let i = 0; i < 10 ; i++) {
       this.getSortedArr(this.barChartData.datasets[0].data as number[], i);
-      this.chart?.update();  
+      this.chart?.update();
       await new Promise(resolve => setTimeout(resolve, 1000)) // 3秒待つ
     }
   }
