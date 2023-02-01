@@ -70,7 +70,6 @@ export class Plane {
     while(!getNumsIncludedIn(idSequences).has(toId)) {
       idSequences = this.evolute(idSequences)
       evoluteCount++
-      console.log(evoluteCount)
       if(evoluteCount > 100) {
         return new Set()
       }

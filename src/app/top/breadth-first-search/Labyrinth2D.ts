@@ -1,27 +1,36 @@
 import { getRandomInt } from './FunctionModule';
 import { Square } from './Square';
 import * as p5 from 'p5';
+import { LARGE_LABYRINTH_SIZE, SMALL_LABYRINTH_SIZE } from './Const';
 export class Labyrinth2D extends Array<Array<Square>> {
-	static rowNum : number = 50;
-	static columnNum : number = 50;
-	static obstaclesNum : number = Labyrinth2D.rowNum * Labyrinth2D.columnNum / 3;
 	constructor() {
   	super();
 	}
 
 	static generateLabyrinth() : Labyrinth2D {
+    let rowNum : number = 0;
+    let columnNum : number = 0;
+    let obstaclesNum : number = 0;
+    if(screen.width < 1000) {
+      rowNum = SMALL_LABYRINTH_SIZE;
+      columnNum = SMALL_LABYRINTH_SIZE;
+    } else {
+      rowNum = LARGE_LABYRINTH_SIZE;
+      columnNum = LARGE_LABYRINTH_SIZE;
+    }
+    obstaclesNum = rowNum * columnNum / 3;
 		let lab : Labyrinth2D = new Labyrinth2D();
-		for( let i :number = 0; i < this.rowNum; i++) {
-			lab[i] = new Array(this.columnNum);
-			for( let j :number = 0; j < this.columnNum; j++) {
-				lab[i][j] = new Square(i * this.rowNum + j, i, j, "isVacant");
+		for( let i :number = 0; i < rowNum; i++) {
+			lab[i] = new Array(columnNum);
+			for( let j :number = 0; j < columnNum; j++) {
+				lab[i][j] = new Square(i * rowNum + j, i, j, "isVacant");
 			}
 		}
-		for( let i :number = 0; i < this.obstaclesNum; i++) {
-			lab[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isObstacle";
+		for( let i :number = 0; i < obstaclesNum; i++) {
+			lab[getRandomInt(0, rowNum)][getRandomInt(0, columnNum)].kind = "isObstacle";
 		}
-		lab[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind =  "isStart"
-		lab[getRandomInt(0, this.rowNum)][getRandomInt(0, this.columnNum)].kind = "isGoal"
+		lab[getRandomInt(0, rowNum)][getRandomInt(0, columnNum)].kind =  "isStart"
+		lab[getRandomInt(0, rowNum)][getRandomInt(0, columnNum)].kind = "isGoal"
 		return lab;
 	}
 

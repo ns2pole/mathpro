@@ -2,13 +2,13 @@ import { Vertex } from './Vertex';
 import { IsSearched, Space } from './Union';
 import { getXOriginForDrawing, getYOriginForDrawing } from './Const';
 import * as p5 from 'p5';
+import { SQUARE_SIZE_FOR_LARGE_LABYRINTH, SQUARE_SIZE_FOR_SMALL_LABYRINTH } from './Const';
 export class Square extends Vertex{
 
   kind : Space
   row : number
   column : number
   isSearched : IsSearched = false;
-  static size : number = 1 / 120;
 
   //TODO:sをp5にする
   draw(p : p5): void {
@@ -48,7 +48,11 @@ export class Square extends Vertex{
   }
 
   static getSize(s: any) : number {
-    return s.windowWidth * Square.size;
+    if(s.windowWidth < 1000) {
+      return s.windowWidth * SQUARE_SIZE_FOR_SMALL_LABYRINTH;
+    } else {
+      return s.windowWidth * SQUARE_SIZE_FOR_LARGE_LABYRINTH;
+    }
   }
 
   getLeftTopCornerX(p: p5): number {
