@@ -1,11 +1,11 @@
 import { Color } from './Union';
-export const CANVAS_WIDTH : number = 1 / 2;
-export const CANVAS_HEIGHT : number = 1 / 2;
+export const CANVAS_WIDTH : number = 4 / 5;
+export const CANVAS_HEIGHT : number = 4 / 5;
 export const CANVAS_BACKGROUND_COLOR : Color = 'White';
 export const LARGE_LABYRINTH_SIZE : number = 50;
-export const SQUARE_SIZE_FOR_LARGE_LABYRINTH : number = 1 / (LARGE_LABYRINTH_SIZE * 2.4);
-export const SMALL_LABYRINTH_SIZE : number = 15;
-export const SQUARE_SIZE_FOR_SMALL_LABYRINTH : number = 1 / (SMALL_LABYRINTH_SIZE * 2.4);
+export const SQUARE_SIZE_FOR_LARGE_LABYRINTH : number = 1 / (LARGE_LABYRINTH_SIZE * 1.6);
+export const SMALL_LABYRINTH_SIZE : number = 20;
+export const SQUARE_SIZE_FOR_SMALL_LABYRINTH : number = 1 / (SMALL_LABYRINTH_SIZE * 1.6);
 
 export const getCanvasWidth: (s: any) => number = (s: any) => {
   return s.windowWidth * CANVAS_WIDTH;
