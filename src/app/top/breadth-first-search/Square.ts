@@ -23,7 +23,7 @@ export class Square extends Vertex{
 
 
     if(this.isSearched) {
-      p.fill('yellow');
+      p.fill('cyan');
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
     }
     if(this.kind == "isStart") {
@@ -34,7 +34,7 @@ export class Square extends Vertex{
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
     }
     if(this.kind == "isOnSolutionPath") {
-      p.fill('green');
+      p.fill('yellow');
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
     }
   }
