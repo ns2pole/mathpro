@@ -1,0 +1,13 @@
+ul {
+  display: -webkit-flex;
+  display: flex;
+  list-style: none;
+}
+li:first-child {
+  margin-right: auto;
+}
+li {
+  margin: 9px;
+  padding: 10px;
+  border-radius: 5px;
+}
