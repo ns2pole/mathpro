@@ -19,7 +19,7 @@ li {
 
 @media screen and (max-width:768px) {
   #me {
-    width: 70%;
+    width: 60%;
     height: auto;
   }
 }
