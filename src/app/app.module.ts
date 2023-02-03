@@ -7,11 +7,10 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TopComponent } from './top/top.component';
 import { ContactComponent } from './contact/contact.component';
-import { FeeComponent } from './fee/fee.component';
 import { AboutComponent } from './about/about.component';
 import { BarChartComponent } from './top/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './top/breadth-first-search/breadth-first-search.component';
-import { SampleProgramComponent } from './top/sample-program/sample-program.component';
+import { ProgramComponent } from './top/program/program.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -21,9 +20,8 @@ import { SampleProgramComponent } from './top/sample-program/sample-program.comp
 const ROUTE_TABLE: Routes = [
   { path: 'top', component: TopComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'fee', component: FeeComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'sample-program', component: SampleProgramComponent },
+  { path: 'program', component: ProgramComponent },
 ];
 
 @NgModule({
@@ -31,11 +29,10 @@ const ROUTE_TABLE: Routes = [
     AppComponent,
     TopComponent,
     AboutComponent,
-    FeeComponent,
     ContactComponent,
     BarChartComponent,
     BreadthFirstSearchComponent,
-    SampleProgramComponent,
+    ProgramComponent,
   ],
   imports: [
     BrowserModule,
