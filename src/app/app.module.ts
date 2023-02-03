@@ -18,7 +18,7 @@ import { ProgramComponent } from './program/program.component';
 //    '' で [/] のルートパスを指定できる
 //    '**' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
-  { path: 'top', component: TopComponent },
+  { path: '', component: TopComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'program', component: ProgramComponent },
