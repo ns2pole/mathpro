@@ -16,3 +16,18 @@ li {
 .me {
   width: 10%;
 }
+
+@media screen and (max-width:768px) {
+  #me {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #me {
+    width: 20%;
+    height: auto;
+  }
+}
+
