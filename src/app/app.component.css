@@ -18,7 +18,7 @@ li:not(:first-child) {
 }
 
 a {
-  margin: 7px;
+  margin: 2px;
   text-decoration: none;
   color: #000;
 }
