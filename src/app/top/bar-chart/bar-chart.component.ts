@@ -62,7 +62,7 @@ export class BarChartComponent {
     for(let i = 0; i < 10 ; i++) {
       this.getSortedArr(this.barChartData.datasets[0].data as number[], i);
       this.chart?.update();
-      await new Promise(resolve => setTimeout(resolve, 1000)) // 3秒待つ
+      await new Promise(resolve => setTimeout(resolve, 600)) // 3秒待つ
     }
   }
 
