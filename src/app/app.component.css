@@ -22,18 +22,3 @@ a {
   text-decoration: none;
   color: #000;
 }
-
-@media screen and (max-width:768px) {
-  #me {
-    width: 60%;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  #me {
-    width: 20%;
-    height: auto;
-  }
-}
-
