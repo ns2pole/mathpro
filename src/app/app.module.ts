@@ -12,6 +12,8 @@ import { BarChartComponent } from './top/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './top/breadth-first-search/breadth-first-search.component';
 import { ProgramComponent } from './program/program.component';
 import { PrimeFactorizationComponent } from './top/prime-factorization/prime-factorization.component';
+import { InvaderGameComponent } from './top/invader-game/invader-game.component';
+import { MechanicsComponent } from './top/mechanics/mechanics.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -35,6 +37,8 @@ const ROUTE_TABLE: Routes = [
     BreadthFirstSearchComponent,
     ProgramComponent,
     PrimeFactorizationComponent,
+    InvaderGameComponent,
+    MechanicsComponent,
   ],
   imports: [
     BrowserModule,
