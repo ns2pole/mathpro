@@ -47,13 +47,16 @@ export class BreadthFirstSearchComponent {
     const goalId : number = this.plane.lab.getGoalId();
     let sequence : Set<Array<number>> = new Set([[startId]]);
     let searchedIds : Set<number> = getNumsIncludedIn(sequence);
-    while(!searchedIds.has(goalId)) {
+    let evoluteCount : number = 0;
+    while(!searchedIds.has(goalId) && evoluteCount < this.plane.lab.getIdCount()) {
       sequence = this.plane.evolute(sequence);
       searchedIds = getNumsIncludedIn(sequence);
       this.plane.lab.updateSearchedStatusBy(searchedIds);
       this.p.draw();
       this.p.noLoop();
       await sleep(100);
+      evoluteCount++;
+      console.log('evolute');
     }
   };
 
