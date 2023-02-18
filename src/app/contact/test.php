@@ -1,18 +1,10 @@
-    <?php
-      mb_language("Japanese");
-      mb_internal_encoding("UTF-8");
-
-      $to = "spaceofstar2@gmail.com";
-      $title = "test";
-      $message = "message";
-      $headers = "From: from@example.com";
-
-      if(mb_send_mail($to, $title, $message, $headers))
-      {
-        echo "メール送信成功です";
-      }
-      else
-      {
-        echo "メール送信失敗です";
-      }
-    ?>
+<?php
+// クエリ情報nameを取得
+$r = $_GET['name'];
+// クエリ情報nameが空の場合はエラー
+if (empty($r)) {
+  header('HTTP/1.1 500 Internal Server Error');
+} else {
+  // 空でなければ、メッセージを出力
+  print('Hello,'.$r.'！');
+}

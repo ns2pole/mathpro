@@ -5,6 +5,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { TopComponent } from './top/top.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
@@ -44,7 +45,8 @@ const ROUTE_TABLE: Routes = [
     BrowserModule,
     AppRoutingModule,
     NgChartsModule,
-    RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する
+    RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
