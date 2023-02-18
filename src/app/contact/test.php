@@ -1,8 +1,3 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body>
     <?php
       mb_language("Japanese");
       mb_internal_encoding("UTF-8");
@@ -21,5 +16,3 @@
         echo "メール送信失敗です";
       }
     ?>
-  </body>
-</html>

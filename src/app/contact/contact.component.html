@@ -3,12 +3,12 @@
 <br>
 お申し込みの際は、下記フォーム,メール,お電話のいずれかにてお問合せ下さい。
 <br><br><br><br>
-<form action="./test_mail.php" method="post">
-  <p>送り先</p><input type="text" name="to">
-  <p>件名</p><input type="text" name="title">
-  <p>メッセージ</p><textarea name="content" cols="60" rows="10"></textarea>
-  <p><input type="submit" name="send" value="送信"></p>
-</form>
+  <p>お名前　<input type="text" name="name"></p>
+  <p>Email　<input type="text" name="to"></p>
+  <p>件名　<input type="text" name="title"></p>
+  <p>メッセージ</p>
+    <textarea name="content" cols="60" rows="10"></textarea>
+  <p><button (click)="send()" name="send" >送信</button></p>
 <br><br><br><br>
 所在地: 〒510-0211 三重県鈴鹿市東旭ヶ丘4 - 9 - 18
 <br><br>
