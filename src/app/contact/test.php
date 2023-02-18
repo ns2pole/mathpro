@@ -10,5 +10,5 @@ $r = $_GET['name'];
   $body = "これはテストです。\n"; // 本文
   $to = 'yyyyy@example.com';
   $header = "From: $email\nReply-To: $email\n";
-  mb_send_mail($to, $subject, $body, $header);
+  mb_send_mail($email, $subject, $body, $header);
 ?>
