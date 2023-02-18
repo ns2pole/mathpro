@@ -19,9 +19,12 @@ export class ContactComponent {
     .subscribe(
       data => {
         this.result = data
+        console.log('通信に成功しました。');
+        console.log(data);
       },
       error => {
         this.result = '通信に失敗しました。';
+        console.log(this.result);
       }
     );
     }

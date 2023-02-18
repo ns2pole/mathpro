@@ -7,4 +7,7 @@ if (empty($r)) {
 } else {
   // 空でなければ、メッセージを出力
   print('Hello,'.$r.'！');
+  $cmd = 'echo "これはテストです" | mail -s "テスト" spaceofstar2@gmail.com';
+  exec($cmd);
+
 }
