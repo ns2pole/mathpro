@@ -11,11 +11,7 @@ export class ContactComponent {
   result = '';  // 最終的に生成されるメッセージ
 
   send(name : string) {
-    this.http.post('/mail.php', {
-      responseType: 'text',
-      // ［3］URLにクエリパラメーターを指定
-      params: new HttpParams().set('name', name),
-    }).subscribe(res => {
+    this.http.post('/mail.php', name).subscribe(res => {
       console.log(res);
     }
     );
