@@ -10,8 +10,8 @@ export class ContactComponent {
   constructor(private http: HttpClient) { }
   result = '';  // 最終的に生成されるメッセージ
 
-  send(name : string) {
-    this.http.post('/mail.php', name).subscribe(res => {
+  send(name : string, message : string) {
+    this.http.post('/mail.php', {'name' : name,'massage' : message}).subscribe(res => {
       console.log(res);
     }
     );

@@ -7,8 +7,8 @@
   <p>Email　<input type="text" name="to"></p>
   <p>件名　<input type="text" name="title"></p>
   <p>メッセージ</p>
-    <textarea name="content" cols="60" rows="10"></textarea>
-  <p><button (click)="send(name.value)" name="send" >送信</button></p>
+    <textarea name="content" cols="60" rows="10" #message></textarea>
+  <p><button (click)="send(name.value, message.value)" name="send" >送信</button></p>
 <br><br><br><br>
 所在地: 〒510-0211 三重県鈴鹿市東旭ヶ丘4 - 9 - 18
 <br><br>
