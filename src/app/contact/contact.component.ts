@@ -11,10 +11,12 @@ export class ContactComponent {
   result = '';  // 最終的に生成されるメッセージ
 
   send() {
+    // ［1］フォームの値を取得
+    const name = (document.getElementById('name') as HTMLInputElement).value;
     this.http.get('/mail.php', {
       responseType: 'text',
       // ［3］URLにクエリパラメーターを指定
-      params: new HttpParams().set('name', "test"),
+      params: new HttpParams().set('name', name),
     })
     .subscribe(
       data => {
