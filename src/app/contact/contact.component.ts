@@ -11,9 +11,15 @@ export class ContactComponent {
   result = '';  // 最終的に生成されるメッセージ
 
   send(name : string, title : string , email : string, message : string) {
-    this.http.post('/mail.php', {name : name, title : title, email : email, message : message}).subscribe(res => {
-      console.log(res);
+    if(window.confirm("送信しますか？")) {
+      this.http.post('/mail.php', {name : name, title : title, email : email, message : message}).subscribe(res => {
+        console.log(res);
+      });
+      window.alert("送信が完了致しました。ご返信まで少々お待ち下さい。")
+      location.href='/'
+    } else {
+
     }
-    );
+
   }
 }
