@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-mechanics',
   templateUrl: './mechanics.component.html',
-  styleUrls: ['../top.component.css']
+  styleUrls: ['../program.component.css']
 })
 export class MechanicsComponent {
 

@@ -9,12 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopComponent } from './top/top.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { BarChartComponent } from './top/bar-chart/bar-chart.component';
-import { BreadthFirstSearchComponent } from './top/breadth-first-search/breadth-first-search.component';
+import { BarChartComponent } from './program/bar-chart/bar-chart.component';
+import { BreadthFirstSearchComponent } from './program/breadth-first-search/breadth-first-search.component';
 import { ProgramComponent } from './program/program.component';
-import { PrimeFactorizationComponent } from './top/prime-factorization/prime-factorization.component';
-import { InvaderGameComponent } from './top/invader-game/invader-game.component';
-import { MechanicsComponent } from './top/mechanics/mechanics.component';
+import { PrimeFactorizationComponent } from './program/prime-factorization/prime-factorization.component';
+import { InvaderGameComponent } from './program/invader-game/invader-game.component';
+import { MechanicsComponent } from './program/mechanics/mechanics.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される

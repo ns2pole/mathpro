@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-prime-factorization',
   templateUrl: './prime-factorization.component.html',
-  styleUrls: ['../top.component.css']
+  styleUrls: ['../program.component.css']
 })
 export class PrimeFactorizationComponent {
   public getPrimeFactorsOf(n: number): number[] {
