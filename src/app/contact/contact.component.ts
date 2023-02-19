@@ -10,24 +10,16 @@ export class ContactComponent {
   constructor(private http: HttpClient) { }
   result = '';  // 最終的に生成されるメッセージ
 
-  send() {
+  send(name : string) {
     // ［1］フォームの値を取得
-    const name = (document.getElementById('name') as HTMLInputElement).value;
     this.http.get('/mail.php', {
       responseType: 'text',
       // ［3］URLにクエリパラメーターを指定
       params: new HttpParams().set('name', name),
-    })
-    .subscribe(
-      data => {
-        this.result = data
-        console.log('通信に成功しました。');
-        console.log(data);
-      },
-      error => {
-        this.result = '通信に失敗しました。';
-        console.log(this.result);
-      }
-    );
-    }
+    }).subscribe((res: any) => {
+      // ［4］サーバーからのレスポンスを表示
+      this.result = res;
+      });
+
+   }
 }
