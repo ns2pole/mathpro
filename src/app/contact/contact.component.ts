@@ -11,15 +11,21 @@ export class ContactComponent {
   result = '';  // 最終的に生成されるメッセージ
 
   send(name : string) {
-    // ［1］フォームの値を取得
     this.http.get('/mail.php', {
       responseType: 'text',
       // ［3］URLにクエリパラメーターを指定
       params: new HttpParams().set('name', name),
-    }).subscribe((res: any) => {
-      // ［4］サーバーからのレスポンスを表示
-      this.result = res;
-      });
-
-   }
+    })
+    .subscribe(
+      data => {
+        this.result = data
+        console.log('通信に成功しました。');
+        console.log(data);
+      },
+      error => {
+        this.result = '通信に失敗しました。';
+        console.log(this.result);
+      }
+    );
+    }
 }
