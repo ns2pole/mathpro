@@ -11,7 +11,7 @@ export class ContactComponent {
   result = '';  // 最終的に生成されるメッセージ
 
   send(name : string, message : string) {
-    this.http.post('/mail.php', name).subscribe(res => {
+    this.http.post('/mail.php', {name : name}).subscribe(res => {
       console.log(res);
     }
     );
