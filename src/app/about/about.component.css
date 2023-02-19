@@ -12,3 +12,7 @@
     height: auto;
   }
 }
+
+.bold {
+  font-weight: bold;
+}
