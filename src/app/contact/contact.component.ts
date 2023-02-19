@@ -11,7 +11,7 @@ export class ContactComponent {
   result = '';  // 最終的に生成されるメッセージ
 
   send() {
-    this.http.get('/app/contact/test.php', {
+    this.http.get('/mail.php', {
       responseType: 'text',
       // ［3］URLにクエリパラメーターを指定
       params: new HttpParams().set('name', "test"),
