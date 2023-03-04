@@ -15,10 +15,10 @@ export class ContactComponent {
         this.http.post('/mail.php', {name : name, title : title, email : email, message : message}).subscribe(res => {
       });
       window.alert("送信が完了致しました。ご返信まで少々お待ち下さい。")
+      this.http.post('/mail.php', {name : name, title : title, email : email, message : message}).subscribe(res => {
+      });
       location.href='/'
     } else {
     }
-    this.http.post('/mail.php', {name : name, title : title, email : email, message : message}).subscribe(res => {
-    });
   }
 }
