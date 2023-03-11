@@ -1,0 +1,39 @@
+.form-container {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 1rem;
+}
+
+.form-container label {
+  font-weight: bold;
+}
+
+.form-container input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.form-container textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.button-container {
+  width: 100%;
+  text-align: right;
+}
+
+button {
+  width: 30%;
+  color: #000000;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #000000;
+}

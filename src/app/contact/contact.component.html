@@ -2,13 +2,22 @@
 <br>
 <br>
 お申し込みの際は、下記フォーム,メール,お電話のいずれかにてお問合せ下さい。
-<br><br><br><br>
-  <p>お名前　<input id="txtName" name="txtName" type="text" #name /></p>
-  <p>Email　<input type="text" #email></p>
-  <p>件名　<input type="text" #title></p>
-  <p>メッセージ</p>
-    <textarea name="content" cols="60" rows="10" #message></textarea>
-  <p><button (click)="send(name.value, title.value, email.value, message.value)" name="send" >送信</button></p>
+<br><br>
+<div class="form-container">
+  <label>お名前</label>
+  <input id="txtName" name="txtName" type="text" #name />
+  <label>Email</label>
+  <input type="text" #email />
+  <label>件名</label>
+  <input type="text" #title [value]="titleDefaultVal"/>
+  <label>メッセージ</label>
+  <textarea name="content" cols="60" rows="10" #message [value]="messageDefaultVal"></textarea>
+  <label></label>
+  <div class="button-container">
+    <button (click)="send(name.value, title.value, email.value, message.value)" name="send" >送信</button>
+  </div>
+</div>
+
 <br><br><br><br>
 所在地: 〒510-0211 三重県鈴鹿市東旭ヶ丘4 - 9 - 18
 <br><br>

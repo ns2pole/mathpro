@@ -7,8 +7,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  constructor(private http: HttpClient) { }
-  result = '';  // 最終的に生成されるメッセージ
+  titleDefaultVal : string|null = '';
+  messageDefaultVal : string|null = '';
+  constructor(private http: HttpClient) {
+    // 現在のURLからクエリパラメータを取得する
+    const searchParams = new URLSearchParams(window.location.search);
+    this.titleDefaultVal = searchParams.get('title');
+    this.messageDefaultVal = searchParams.get('message');
+  }
 
   send(name : string, title : string , email : string, message : string) {
     if(window.confirm("送信しますか？")) {

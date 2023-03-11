@@ -1,26 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>プログラミング教室</title>
+</head>
+<body>
+<body>
+  <div class="container">
+
 <div>
   <h4>■時間帯
-    <li>対面(集団)：水曜日,金曜日15:00〜18:00の間(祝日休み)</li>
-    <li>オンライン(集団)：土曜日19:30〜21:00(祝日休み)</li>
-    ※当面の間、少人数での指導となります
+    <li>対面：水曜日,金曜日15:00〜18:00の間(祝日休み)</li>
+    <li>オンライン：土曜日19:30〜21:00(祝日休み)</li>
   </h4>
 </div>
-<div>
-  <h4>■対面プラン料金
-    <li>お試しコース：3980円 月2回 1回1時間程度</li>
-    <li>スタンダードコース：7700円 週1回 1回1時間程度</li>
-    <li>プレミアムコース：15000円 週2回 1回1時間程度</li>
+  <h4>■対面プラン
+    <div class="plan-container">
+      <button class="plan-button" (click)="toContact()">
+        <div>お試しコース</div>
+        <div>3980円 月2回</div>
+        <div>1回1時間程度</div>
+        <button class="plan-inner-button">
+          <div>無料体験申込</div>
+        </button>
+      </button>
+      <button class="plan-button" (click)="toContact()">
+        <div>スタンダードコース</div>
+        <div>7700円 週1回</div>
+        <div>1回1時間程度</div>
+        <button class="plan-inner-button">
+          <div>無料体験申込</div>
+        </button>
+      </button>
+      <button class="plan-button" (click)="toContact()">
+        <div>プレミアムコース</div>
+        <div>15000円 週2回</div>
+        <div>1回1時間程度</div>
+        <button class="plan-inner-button">
+          <div>無料体験申込</div>
+        </button>
+      </button>
+    </div>
   </h4>
-</div>
-<div>
-  <h4>■オンラインプラン料金
-    <li>オンラインコース：4980円 週1回 1回1.5時間程度</li>
+  <h4>■オンラインプラン
+    <div class="plan-container" (click)="toContact()">
+      <button class="plan-button">
+        <div>オンラインコース</div>
+        <div>4980円 週1回</div>
+        <div>1回1.5時間程度</div>
+        <button class="plan-inner-button">
+          <div>無料体験申込</div>
+        </button>
+      </button>
+    </div>
   </h4>
-</div>
 <div>
   <h4>■対象
     <li>
-      小学校高学年以上, 社会人
+      小学校高学年以上〜社会人
     </li>
   </h4>
 </div>
@@ -51,3 +88,5 @@
   </h4>
 </div>
 <br>
+  </div>
+</body>
