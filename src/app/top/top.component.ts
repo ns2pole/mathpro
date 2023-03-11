@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
-  styleUrls: ['./top.component.css']
+  styleUrls: ['../app.component.css' , './top.component.css']
 })
 export class TopComponent {
   constructor(private router: Router) {}

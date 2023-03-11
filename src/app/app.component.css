@@ -1,23 +1,29 @@
-ul {
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+header ul {
   display: -webkit-flex;
   display: flex;
   list-style: none;
   padding: 0px;
 }
 
-li:first-child {
+header li:first-child {
   margin-right: auto;
   font-weight: bold;
 }
 
-li:not(:first-child) {
+header li:not(:first-child) {
   margin: 3px;
   padding: 2px;
   border-radius: 5px;
   border: solid 1px #000000;
 }
 
-a {
+header a {
   margin: 2px;
   text-decoration: none;
   color: #000;

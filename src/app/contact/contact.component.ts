@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['../app.component.css', './contact.component.css']
 })
 export class ContactComponent {
   titleDefaultVal : string|null = '';
