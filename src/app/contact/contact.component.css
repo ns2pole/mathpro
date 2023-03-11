@@ -37,3 +37,10 @@ button {
   cursor: pointer;
   border: 1px solid #000000;
 }
+
+
+@media (max-width: 767px) {
+  .form-container {
+    width: 95%;
+  }
+}

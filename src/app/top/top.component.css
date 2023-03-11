@@ -95,3 +95,15 @@ li {
   white-space: pre-wrap;
   border: 1px solid #000000;
 }
+
+@media (max-width: 767px) {
+  .plan-container {
+    flex-direction: column;
+  }
+
+  .plan-button {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
