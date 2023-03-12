@@ -13,6 +13,11 @@ text-align: center;
   height: 30px;
 }
 
+.program-container li, .program-container a, .explanation {
+  word-wrap: break-word;
+  padding-left: 1rem;
+}
+
 @media screen and (max-width: 768px) {
 button {
     width: 30%;
