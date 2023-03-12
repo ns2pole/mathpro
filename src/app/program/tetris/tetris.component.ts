@@ -5,7 +5,7 @@ import { Field } from './Field';
 @Component({
   selector: 'app-tetris',
   templateUrl: './tetris.component.html',
-  styleUrls: ['./tetris.component.css']
+  styleUrls: ['../program.component.css']
 })
 export class TetrisComponent {
   field : Field = new Field();
@@ -13,10 +13,9 @@ export class TetrisComponent {
     p.setup = () => {
       let canvas = p.createCanvas(getCanvasWidth(p), getCanvasHeight(p));
       let ele : any = document.getElementById('tetris-canvas');
-
       canvas.parent(ele);
     };
-    p.draw = this.field.draw(p);
+    p.draw = this.field.timeElapse(p);
     p.noLoop();
     p.windowResized = () => {
       p.resizeCanvas(getCanvasWidth(p), getCanvasHeight(p));
