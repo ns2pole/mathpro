@@ -1,0 +1,15 @@
+const INITIAL_POSITION_VEC_2D = new Vec2D(2, 1)
+const ONE_CELL_SIZE = 30
+const BLOCK_SIZE = ONE_CELL_SIZE
+const WALL_CODE = 1;
+const FIXED_BLOCK_CODE = 2;
+const HOW_MANY_SHAPES = 2
+const SHAPE_CODE_OF_SHAPE_S = 0;
+const SHAPE_CODE_OF_SHAPE_T = 1;
+
+// const EMPTY = 0;
+// const BLACK_STONE = 1;
+// [[EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+// [BLACK, BLACK, BLACK]]
+// [[0,0,0]
+// [1,1,1]]

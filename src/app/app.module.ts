@@ -15,6 +15,7 @@ import { ProgramComponent } from './program/program.component';
 import { PrimeFactorizationComponent } from './program/prime-factorization/prime-factorization.component';
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
+import { TetrisComponent } from './program/tetris/tetris.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -40,6 +41,7 @@ const ROUTE_TABLE: Routes = [
     PrimeFactorizationComponent,
     InvaderGameComponent,
     MechanicsComponent,
+    TetrisComponent,
   ],
   imports: [
     BrowserModule,
