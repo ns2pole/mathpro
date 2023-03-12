@@ -13,9 +13,9 @@ export class FourPiece {
       this.position = position;
   }
 
-  canBePlacedIn(field: Field): boolean {
+  canBePlaced(): boolean {
       for (let i = 0; i < this.blocks.length; i++) {
-          if (!this.blocks[i].canBePlacedIn(field)) {
+          if (!this.blocks[i].canBePlaced()) {
               return false;
           }
       }
@@ -41,8 +41,9 @@ export class FourPiece {
     return new FourPiece(position);
   }
 
+  //質問。汚い。
   getInstanceMovedDown(): FourPiece {
-      return FourPiece.getFourPieceOf(this.position.getAddedVecFor(new Vec2D(0, 1)));
+      return new ShapeS(this.position.getAddedVecFor(new Vec2D(0, 1)));
   }
 
   getInstanceMovedRight(): FourPiece {

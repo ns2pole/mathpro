@@ -9,10 +9,10 @@ export class Block {
       this.position = position;
   }
 
-  public canBePlacedIn(field: Field): boolean {
-      if (field.map[this.position.y][this.position.x] == FIXED_BLOCK_CODE) {
+  public canBePlaced(): boolean {
+      if (Field.map[this.position.y][this.position.x] == FIXED_BLOCK_CODE) {
           return false;
-      } else if (field.map[this.position.y][this.position.x] == WALL_CODE) {
+      } else if (Field.map[this.position.y][this.position.x] == WALL_CODE) {
           return false;
       } else {
           return true;

@@ -8,43 +8,36 @@ import { Color } from '../Union';
 import { ShapeS } from './ShapeS';
 import { INITIAL_POSITION_VEC_2D } from './Constants';
 export class Field {
-    public map: number[][];
-    private backGroundColor : Color = 'White';
-    private controllingFourPiece : FourPiece;
-
-    constructor() {
-        this.map = [
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,1],
-            [1,1,1,1,1,1,1,1,1],
-        ];
-        this.controllingFourPiece = new ShapeS(INITIAL_POSITION_VEC_2D);
+    public static map: number[][] = [
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1],
+  ];
+    public static backGroundColor : Color = 'White';
+    public static getWidth(): number {
+        return Field.map[0].length;
     }
 
-    public getWidth(): number {
-        return this.map[0].length;
+    public static getDepth(): number {
+        return Field.map.length;
     }
 
-    public getDepth(): number {
-        return this.map.length;
-    }
-
-    public getBlocks(): Block[] {
+    public static getBlocks(): Block[] {
         const blocks: Block[] = [];
-        for (let y = 0; y < this.map.length; y++) {
-            for (let x = 0; x < this.map[y].length; x++) {
-                if (this.map[y][x] === FIXED_BLOCK_CODE) {
+        for (let y = 0; y < Field.map.length; y++) {
+            for (let x = 0; x < Field.map[y].length; x++) {
+                if (Field.map[y][x] === FIXED_BLOCK_CODE) {
                     blocks.push(new Block(new Vec2D(x, y)));
                 }
             }
@@ -52,11 +45,11 @@ export class Field {
         return blocks;
     }
 
-    public getWalls(): Wall[] {
+    public static getWalls(): Wall[] {
         const walls: Wall[] = [];
-        for (let y = 0; y < this.map.length; y++) {
-            for (let x = 0; x < this.map[y].length; x++) {
-                if (this.map[y][x] === WALL_CODE) {
+        for (let y = 0; y < Field.map.length; y++) {
+            for (let x = 0; x < Field.map[y].length; x++) {
+                if (Field.map[y][x] === WALL_CODE) {
                     walls.push(new Wall(new Vec2D(x, y)));
                 }
             }
@@ -64,9 +57,9 @@ export class Field {
         return walls;
     }
 
-    public draw(p: p5): () => void {
+    public static draw(p: p5): () => void {
       return () => {
-        p.background(this.backGroundColor);
+        p.background(Field.backGroundColor);
         const walls = this.getWalls();
         for (let i = 0; i < walls.length; i++) {
             walls[i].draw(p);
@@ -82,37 +75,12 @@ export class Field {
     }
 
 
-    public place(fourPiece: FourPiece): void {
+    public static place(fourPiece: FourPiece): void {
         for (let i = 0; i < fourPiece.blocks.length; i++) {
-            this.map[fourPiece.blocks[i].position.y][fourPiece.blocks[i].position.x] = FIXED_BLOCK_CODE;
+            Field.map[fourPiece.blocks[i].position.y][fourPiece.blocks[i].position.x] = FIXED_BLOCK_CODE;
         }
     }
 
 
-    public timeElapse(p:p5): () => void {
-      return () => {
-      this.controllingFourPiece = new ShapeS(INITIAL_POSITION_VEC_2D);
-      //ここ直す
-      const virtualFourPiece = this.controllingFourPiece.getInstanceMovedDown();
 
-      if (virtualFourPiece.canBePlacedIn(this)) {
-        // newしないと、controlledFourPieces.yを+1してもblocksのy座標が変わらない
-        this.controllingFourPiece = virtualFourPiece;
-      } else {
-        this.place(this.controllingFourPiece);
-        this.controllingFourPiece = new ShapeS(INITIAL_POSITION_VEC_2D);
-      }
-      p.background(this.backGroundColor);
-      const walls = this.getWalls();
-      for (let i = 0; i < walls.length; i++) {
-          walls[i].draw(p);
-      }
-      const blocks = this.getBlocks();
-      for (let i = 0; i < blocks.length; i++) {
-          blocks[i].draw(p);
-      }
-      console.log("this.controllingFourPiece");
-      this.controllingFourPiece.draw(p);
-    }
-  }
 }

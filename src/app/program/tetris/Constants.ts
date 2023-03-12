@@ -10,7 +10,7 @@ export const FIELD_WIDTH = 9;
 export const FIELD_HEIGHT = 14;
 export const CANVAS_WIDTH : number = 4 / 5;
 export const CANVAS_HEIGHT : number = 4 / 5;
-
+export const FPS_PER_SECOND = 1;
 export const getCanvasWidth: (s: any) => number = (s: any) => {
   return s.windowWidth * CANVAS_WIDTH;
 };

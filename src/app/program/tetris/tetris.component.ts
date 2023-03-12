@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import * as p5 from 'p5';
-import { getCanvasWidth, getCanvasHeight} from './Constants';
+import { getCanvasWidth, getCanvasHeight, FPS_PER_SECOND} from './Constants';
 import { Field } from './Field';
+import { ViewManager } from './ViewManager';
 @Component({
   selector: 'app-tetris',
   templateUrl: './tetris.component.html',
@@ -15,8 +16,8 @@ export class TetrisComponent {
       let ele : any = document.getElementById('tetris-canvas');
       canvas.parent(ele);
     };
-    p.draw = this.field.timeElapse(p);
-    p.noLoop();
+    p.draw = ViewManager.timeElapse(p);
+    p.frameRate(FPS_PER_SECOND);
     p.windowResized = () => {
       p.resizeCanvas(getCanvasWidth(p), getCanvasHeight(p));
     };
