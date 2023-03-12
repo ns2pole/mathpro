@@ -15,7 +15,8 @@ text-align: center;
 
 .program-container li, .program-container a, .explanation {
   word-wrap: break-word;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
