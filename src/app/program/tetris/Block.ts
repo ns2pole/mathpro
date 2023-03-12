@@ -1,5 +1,5 @@
 class Block {
-  private position: Vec2D;
+  public position: Vec2D;
   private img: HTMLImageElement;
 
   constructor(position: Vec2D) {

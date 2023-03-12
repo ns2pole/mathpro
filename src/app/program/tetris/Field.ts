@@ -1,6 +1,6 @@
 
 class Field {
-    private map: number[][];
+    public map: number[][];
 
     constructor() {
         this.map = [

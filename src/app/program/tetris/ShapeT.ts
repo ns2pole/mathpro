@@ -1,4 +1,4 @@
-class ShapeT extends FourPieces {
+class ShapeT extends FourPiece {
   private shapeCode: number;
 
   constructor(positionVec2D: Vec2D) {
