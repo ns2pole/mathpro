@@ -3,7 +3,8 @@
   幅優先探索というアルゴリズムで最短経路を機械に計算させる事が出来ます。
 </div>
 <div id="canvas"></div>
+<br>
 <div class="button_wrapper">
-  <button (click)="reset()">reset</button>&nbsp;&nbsp;
-  <button (click)="draw()">search</button>&nbsp;&nbsp;
+  <button [disabled]="buttonDisabled" (click)="reset()">reset</button>&nbsp;&nbsp;
+  <button [disabled]="buttonDisabled" (click)="draw()">search</button>&nbsp;&nbsp;
 </div>

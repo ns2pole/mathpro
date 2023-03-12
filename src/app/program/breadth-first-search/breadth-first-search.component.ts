@@ -5,6 +5,7 @@ import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Plane } from './Plane';
 import { getNumsIncludedIn, sleep } from './FunctionModule';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-breadth-first-search',
@@ -16,6 +17,7 @@ export class BreadthFirstSearchComponent {
   lab : Labyrinth2D = Labyrinth2D.generateLabyrinth();
   ad : AdjacentMatrix = AdjacentMatrix.getAdjacentMatrixFor(this.lab);
   plane : Plane = new Plane(this.lab, this.ad);
+  buttonDisabled : boolean = false;
 
   sketch = (p: p5) => {
     p.setup = () => {
@@ -38,8 +40,10 @@ export class BreadthFirstSearchComponent {
 
   async draw() {
     console.log('draw');
+    this.buttonDisabled = true;
     await this.evoluteAndDraw();
     this.drawSolution();
+    this.buttonDisabled = false;
   }
 
   async evoluteAndDraw() {
