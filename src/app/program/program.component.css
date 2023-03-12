@@ -1,29 +1,16 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
-}
-.explanation {
-  font-size: 1.2em;
-  margin: 0 0 1em 0;
-}
-
-.theme {
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 2em;
-  background-color: antiquewhite;
-}
-
 #canvas {
-width: 100%;
 text-align: center;
+}
+.program-container {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  background-color: #f8f8f8;
 }
 
 .button_wrapper {
-text-align: center;
-height: 30px;
+  text-align: center;
+  height: 30px;
 }
 
 @media screen and (max-width: 768px) {
