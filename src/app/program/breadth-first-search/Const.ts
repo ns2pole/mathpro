@@ -1,4 +1,4 @@
-import { Color } from './Union';
+import { Color } from '../Union';
 export const CANVAS_WIDTH : number = 4 / 5;
 export const CANVAS_HEIGHT : number = 4 / 5;
 export const CANVAS_BACKGROUND_COLOR : Color = 'White';

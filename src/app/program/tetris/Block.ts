@@ -1,4 +1,8 @@
-class Block {
+import * as p5 from 'p5';
+import { Field } from './Field';
+import { getXOriginForDrawing, getYOriginForDrawing, WALL_CODE, FIXED_BLOCK_CODE, WIDTH } from './Constants';
+import { Vec2D } from './Vec2D';
+export class Block {
   public position: Vec2D;
   private img: HTMLImageElement;
 
@@ -17,13 +21,22 @@ class Block {
       }
   }
 
-  public draw(context2d: CanvasRenderingContext2D): void {
-      context2d.drawImage(
-          this.img,
-          this.position.x * ONE_CELL_SIZE,
-          this.position.y * ONE_CELL_SIZE,
-          BLOCK_SIZE,
-          BLOCK_SIZE
-      );
+  draw(p: p5) {
+    p.fill('black');
+    p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Block.getSize(p), Block.getSize(p));
   }
+
+
+  static getSize(s: any) : number {
+      return s.windowWidth * WIDTH;
+  }
+
+  getLeftTopCornerX(p: p5): number {
+    return Block.getSize(p) * this.position.x + getXOriginForDrawing(p)
+  }
+
+  getLeftTopCornerY(p: p5): number {
+    return Block.getSize(p) * this.position.y + getYOriginForDrawing(p)
+  }
+
 }

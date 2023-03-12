@@ -5,7 +5,6 @@ import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
 import { Plane } from './Plane';
 import { getNumsIncludedIn, sleep } from './FunctionModule';
-import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-breadth-first-search',
@@ -22,7 +21,7 @@ export class BreadthFirstSearchComponent {
   sketch = (p: p5) => {
     p.setup = () => {
       let canvas = p.createCanvas(getCanvasWidth(p), getCanvasHeight(p));
-      let ele : any = document.getElementById('canvas');
+      let ele : any = document.getElementById('bread-first-search-canvas');
       canvas.parent(ele);
 
     };

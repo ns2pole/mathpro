@@ -1,4 +1,10 @@
-class FourPiece {
+import { Block } from './Block';
+import { Field } from './Field';
+import { ShapeS } from './ShapeS';
+import { ShapeT } from './ShapeT';
+import { SHAPE_CODE_OF_SHAPE_S, SHAPE_CODE_OF_SHAPE_T, HOW_MANY_SHAPES, INITIAL_POSITION_VEC_2D} from './Constants';
+import { Vec2D } from './Vec2D';
+export class FourPiece {
   protected position: Vec2D;
   public blocks = new Array<Block>();
 

@@ -1,5 +1,10 @@
-
-class Field {
+import * as p5 from 'p5';
+import { Block } from './Block';
+import { FourPiece } from './FourPiece';
+import { Wall } from './Wall';
+import { Vec2D } from './Vec2D';
+import { FIXED_BLOCK_CODE, WALL_CODE } from './Constants';
+export class Field {
     public map: number[][];
 
     constructor() {
@@ -53,16 +58,18 @@ class Field {
         return walls;
     }
 
-    public draw(context2d: CanvasRenderingContext2D): void {
+    public draw(p: p5): () => void {
+      return () => {
         const walls = this.getWalls();
         for (let i = 0; i < walls.length; i++) {
-            walls[i].draw(context2d);
+            walls[i].draw(p);
         }
 
         const blocks = this.getBlocks();
         for (let i = 0; i < blocks.length; i++) {
-            blocks[i].draw(context2d);
+            blocks[i].draw(p);
         }
+      }
     }
 
     public place(fourPiece: FourPiece): void {

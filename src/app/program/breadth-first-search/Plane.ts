@@ -2,7 +2,7 @@ import { Edge } from './Edge';
 import { CANVAS_BACKGROUND_COLOR} from './Const';
 import { Labyrinth2D } from './Labyrinth2D';
 import { AdjacentMatrix } from './AdjacentMatrix';
-import { Color } from './Union';
+import { Color } from '../Union';
 import { Vertex } from './Vertex';
 import { getNumsIncludedIn } from './FunctionModule';
 import * as p5 from 'p5';

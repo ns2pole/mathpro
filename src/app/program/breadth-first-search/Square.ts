@@ -14,8 +14,8 @@ export class Square extends Vertex{
   draw(p : p5): void {
     //TODO:色塗りの順番に注意する必要あり。どうしたら文脈に依存しなくて済むように書けるのだろう？
     if(this.kind == "isObstacle") {
-          p.fill('black');
-          p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
+      p.fill('black');
+      p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));
     } else if(this.kind == "isVacant") {
       p.fill('white');
       p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Square.getSize(p), Square.getSize(p));

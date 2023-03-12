@@ -1,4 +1,4 @@
-class Vec2D {
+export class Vec2D {
   constructor(public x: number, public y: number) {}
 
   public getAddedVecFor(vec2D: Vec2D): Vec2D {

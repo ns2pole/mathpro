@@ -1,4 +1,8 @@
-class ShapeT extends FourPiece {
+import { Block } from './Block';
+import { FourPiece } from './FourPiece';
+import { SHAPE_CODE_OF_SHAPE_T } from './Constants';
+import { Vec2D } from './Vec2D';
+export class ShapeT extends FourPiece {
   private shapeCode: number;
 
   constructor(positionVec2D: Vec2D) {
@@ -13,7 +17,7 @@ class ShapeT extends FourPiece {
 
   public draw(context2d: CanvasRenderingContext2D): void {
       for (let i = 0; i < this.blocks.length; i++) {
-          this.blocks[i].draw(context2d);
+          // this.blocks[i].draw(context2d);
       }
   }
 }
