@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import * as p5 from 'p5';
-import { getCanvasWidth, getCanvasHeight, FPS_PER_SECOND} from './Constants';
-import { Field } from './Field';
-import { ViewManager } from './ViewManager';
+import { getCanvasWidth, getCanvasHeight, FPS_PER_SECOND} from './calc/Constants';
+import { Field } from './calc/Field';
+import { ViewManager } from './view/ViewManager';
 @Component({
   selector: 'app-tetris',
   templateUrl: './tetris.component.html',
-  styleUrls: ['../program.component.css']
+  styleUrls:['../program.component.css']
 })
 export class TetrisComponent {
   field : Field = new Field();

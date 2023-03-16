@@ -6,41 +6,72 @@
 </head>
 <body>
   <div class="container">
-<div>
-  <h4>■時間帯
-    <li>対面：水曜日,金曜日15:00〜18:00の間(祝日休み)</li>
-    <li>オンライン：土曜日19:30〜21:00(祝日休み)</li>
-  </h4>
-</div>
-  <h4>■対面プラン
-    <div class="plan-container">
-      <button class="plan-button" (click)="toContact()">
-        <div>お試しコース</div>
-        <div>3980円 月2回</div>
-        <div>1回1時間程度</div>
-        <button class="plan-inner-button">
-          <div>無料体験申込</div>
-        </button>
-      </button>
-      <button class="plan-button" (click)="toContact()">
-        <div>スタンダードコース</div>
-        <div>7700円 週1回</div>
-        <div>1回1時間程度</div>
-        <button class="plan-inner-button">
-          <div>無料体験申込</div>
-        </button>
-      </button>
-      <button class="plan-button" (click)="toContact()">
-        <div>プレミアムコース</div>
-        <div>15000円 週2回</div>
-        <div>1回1時間程度</div>
-        <button class="plan-inner-button">
-          <div>無料体験申込</div>
-        </button>
-      </button>
+    <video id="video" webkit-playsinline="" playsinline="" muted="" autoplay="" loop="">
+      <source src="/assets/movies/breadFirsrSearch.mov">
+    </video>
+    <br>
+    <div class="sub-container">
+      <span>
+        対象
+        <br><br>
+        <li>
+          小学校高学年以上〜社会人
+        </li>
+      </span>
     </div>
-  </h4>
-  <h4>■オンラインプラン
+    <div class="sub-container">
+      <span>
+        時間帯
+          <li>対面：水曜日,金曜日15:00〜18:00の間(祝日休み)</li>
+          <li>オンライン：土曜日19:30〜21:00(祝日休み)</li>
+      </span>
+    </div>
+    <div class="sub-container">
+      <span>
+        内容
+          <li>プログラミングの基礎,基本を指導します</li>
+          <li>for文,if文,などの基本構文やオブジェクト指向プログラミングを指導します</li>
+          <li>パソコンの操作に慣れていない生徒には、タイピングから覚えていただきます</li>
+      </span>
+    </div>
+    <div class="sub-container">
+      <span>
+      対面プラン
+    </span>
+  </div>
+        <div class="plan-container">
+          <button class="plan-button" (click)="toContact()">
+            <div>お試しコース</div>
+            <div>3980円 月2回</div>
+            <div>1回1時間程度</div>
+            <button class="plan-inner-button">
+              <div>無料体験申込</div>
+            </button>
+          </button>
+          <button class="plan-button" (click)="toContact()">
+            <div>スタンダードコース</div>
+            <div>7700円 週1回</div>
+            <div>1回1時間程度</div>
+            <button class="plan-inner-button">
+              <div>無料体験申込</div>
+            </button>
+          </button>
+          <button class="plan-button" (click)="toContact()">
+            <div>プレミアムコース</div>
+            <div>15000円 週2回</div>
+            <div>1回1時間程度</div>
+            <button class="plan-inner-button">
+              <div>無料体験申込</div>
+            </button>
+          </button>
+        </div>
+
+    <div class="sub-container">
+      <span>
+    オンラインプラン
+  </span>
+</div>
+
     <div class="plan-container" (click)="toContact()">
       <button class="plan-button">
         <div>オンラインコース</div>
@@ -51,40 +82,25 @@
         </button>
       </button>
     </div>
-  </h4>
-<div>
-  <h4>■対象
-    <li>
-      小学校高学年以上〜社会人
-    </li>
-  </h4>
-</div>
-<div>
-  <h4>■指導プログラミング言語
-    <li>
-      Java, Haskell, Typescriptなど(Javascript, Html, Cssは必要に応じて)
-    </li>
-  </h4>
-</div>
-<div>
-  <h4>■理念
-    <li>プログラミング(主にアルゴリズム,数値の計算)を通して理系人材の育成を主に行います。</li>
-    <li>機械にさせるべき事と自らが時間と労力を割いてすべき事を見分ける力を養います。</li>
-  </h4>
-</div>
-<div>
-  <h4>■内容
-    <li>プログラミングの基礎,基本を指導します</li>
-    <li>for文,if文,などの基本構文やオブジェクト指向プログラミングを指導します</li>
-    <li>パソコンの操作に慣れていない生徒には、タイピングから覚えていただきます</li>
-  </h4>
-</div>
-<div>
-  <h4>■その他
-    <li>学習用PC有</li>
-    <li>PC持ち込み可能</li>
-  </h4>
-</div>
-<br>
+
+    <div class="sub-container">
+      <span>
+        <div>
+          指導プログラミング言語
+            <li>
+              Java, Haskell, Typescriptなど(Javascript, Html, Cssは必要に応じて)
+            </li>
+        </div>
+      </span>
+    </div>
+    <div class="sub-container">
+      <span>
+      <div>
+        その他
+          <li>学習用PC有</li>
+          <li>PC持ち込み可能</li>
+      </div>
+      </span>
+    </div>
   </div>
 </body>

@@ -4,9 +4,7 @@ import { FourPiece } from './FourPiece';
 import { Wall } from './Wall';
 import { Vec2D } from './Vec2D';
 import { FIXED_BLOCK_CODE, WALL_CODE } from './Constants';
-import { Color } from '../Union';
-import { ShapeS } from './ShapeS';
-import { INITIAL_POSITION_VEC_2D } from './Constants';
+import { Color } from '../../Union';
 export class Field {
     public static map: number[][] = [
       [1,0,0,0,0,0,0,0,1],

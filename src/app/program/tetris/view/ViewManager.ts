@@ -1,9 +1,9 @@
 import * as p5 from "p5";
-import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE } from "./Constants";
-import { INITIAL_POSITION_VEC_2D } from "./Constants";
-import { Field } from "./Field";
-import { FourPiece } from "./FourPiece";
-import { ShapeS } from "./ShapeS";
+import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE } from "../calc/Constants";
+import { INITIAL_POSITION_VEC_2D } from "../calc/Constants";
+import { Field } from "../calc/Field";
+import { FourPiece } from "../calc/FourPiece";
+import { ShapeS } from "../calc/ShapeS";
 
 export class ViewManager {
   public static controllingFourPiece : FourPiece = new ShapeS(INITIAL_POSITION_VEC_2D);

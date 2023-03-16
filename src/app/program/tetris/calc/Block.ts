@@ -1,6 +1,6 @@
 import * as p5 from 'p5';
-import { Field } from './Field';
-import { getXOriginForDrawing, getYOriginForDrawing, WALL_CODE, FIXED_BLOCK_CODE, CELL_SIZE} from './Constants';
+import { Field } from '../calc/Field';
+import { getXOriginForDrawing, getYOriginForDrawing, WALL_CODE, FIXED_BLOCK_CODE, CELL_SIZE} from '../calc/Constants';
 import { Vec2D } from './Vec2D';
 export class Block {
   public position: Vec2D;

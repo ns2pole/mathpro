@@ -3,6 +3,7 @@
   background-color: #f8f8f8;
   margin: 0;
   padding: 0;
+  opacity: 0.6;
 }
 
 
@@ -80,6 +81,23 @@ li {
   margin-bottom: 0.5rem;
 }
 
+.online-plan-button {
+  width: 85%;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  border: 1px solid #000000;
+}
+
 .plan-inner-button {
   padding: 0.5rem;
   margin-left: 0.5rem;
@@ -108,4 +126,28 @@ li {
     margin-right: 0;
     width: 85%;
   }
+}
+
+video {
+  padding-top: 5%;
+  display: block;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.22;
+}
+
+.sub-container {
+  text-align: center;
+}
+span {
+  margin-top: 2%;
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #000000;
 }
