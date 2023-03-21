@@ -2,6 +2,7 @@ import * as p5 from 'p5';
 import { Field } from '../calc/Field';
 import { getXOriginForDrawing, getYOriginForDrawing, WALL_CODE, FIXED_BLOCK_CODE, CELL_SIZE} from '../calc/Constants';
 import { Vec2D } from './Vec2D';
+import { CELL_STATUS } from './Union';
 export class Block {
   public position: Vec2D;
 
@@ -9,13 +10,11 @@ export class Block {
       this.position = position;
   }
 
-  public canBePlaced(): boolean {
-      if (Field.map[this.position.y][this.position.x] == FIXED_BLOCK_CODE) {
-          return false;
-      } else if (Field.map[this.position.y][this.position.x] == WALL_CODE) {
+  public canPlaceTo(map : CELL_STATUS[][]): boolean {
+      if (map[this.position.y][this.position.x] == "WALL" || Field.map[this.position.y][this.position.x] == "FIXED_BLOCK") {
           return false;
       } else {
-          return true;
+        return true;
       }
   }
 

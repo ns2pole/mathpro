@@ -1,3 +1,0 @@
-interface Movable {
-  moveDown(): Movable
-}

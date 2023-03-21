@@ -1,0 +1,34 @@
+@startuml{TEST2.png}
+title 中央制御のシーケンス図
+hide footbox
+
+participant "TetrisComponent" as TetrisComponent
+participant "Field" as Field
+participant "ViewManager" as ViewManager
+participant ": Labyrinth2D" as Labyrinth2D
+participant ": Vertex" as Vertex
+participant ": Square" as Square
+
+activate TetrisComponent
+activate Field
+TetrisComponent -> TetrisComponent : ngOnInit()
+TetrisComponent -> ViewManager : ViewManager.timeElapse(p)
+TetrisComponent -> Field : new Field()
+activate Labyrinth2D
+Field -> Labyrinth2D : this.lab.draw\n(p : p5)
+activate Square
+Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
+
+TetrisComponent -> Field : Field.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
+TetrisComponent -> Field : Field.draw\n(p: p5, path: Array<number>)
+Field -> Labyrinth2D : this.lab.draw\n(p : p5)
+Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
+
+TetrisComponent -> Field : Field.evolute\n(idSequences : Set<Array<number>>, ad : AdjacentMatrix)
+TetrisComponent -> Field : Field.draw\n(p: p5, path: Array<number>)
+Field -> Labyrinth2D : this.lab.draw\n(p : p5)
+Labyrinth2D -> Square : this[i][j].draw\n(p : p5)
+
+TetrisComponent -> TetrisComponent : p.noloop()
+TetrisComponent -> TetrisComponent : new p5(sketch)
+

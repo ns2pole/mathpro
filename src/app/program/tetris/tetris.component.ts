@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import * as p5 from 'p5';
 import { getCanvasWidth, getCanvasHeight, FPS_PER_SECOND} from './calc/Constants';
 import { Field } from './calc/Field';
-import { ViewManager } from './view/ViewManager';
+import { ViewManager } from './ViewManager';
 @Component({
   selector: 'app-tetris',
   templateUrl: './tetris.component.html',
