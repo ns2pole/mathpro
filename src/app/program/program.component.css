@@ -23,28 +23,35 @@ text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-button {
-    width: 30%;
-    height: 100%;
-}
-canvas {
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-}
+  button {
+      width: 30%;
+      height: 100%;
+  }
+  canvas {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+  }
 
 }
 
 
 @media screen and (min-width: 769px) {
-button {
-    width: 20%;
-    height: 100%;
-}
-canvas {
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-}
+  button {
+      width: 20%;
+      height: 100%;
+  }
+  canvas {
+      width: 60%;
+      height: auto;
+      margin: 0 auto;
+  }
+
+  input {
+      width: 30%;
+      height: 100%;
+      font-size: 1.4rem;
+      text-align: center;
+  }
 }
 

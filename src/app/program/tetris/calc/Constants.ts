@@ -14,6 +14,7 @@ export const SHAPE_CODE_OF_SHAPE_O = 6;
 export const CELL_SIZE = 1 / 20;
 export const FIELD_WIDTH = 6;
 export const FIELD_HEIGHT = 12;
+export const FIELD_WIDTH_INCLUDING_WALL = FIELD_WIDTH + 2;
 export const CANVAS_WIDTH : number = 4 / 5;
 export const CANVAS_HEIGHT : number = 4 / 5;
 export const FPS_PER_SECOND = 1;
@@ -26,7 +27,7 @@ export const getCanvasHeight: (s: any) => number = (s: any) => {
 };
 
 export const getXOriginForDrawing: (s: any) => number = (s: any) => {
-  return (s.windowWidth * CANVAS_WIDTH / 2) - s.windowWidth * CELL_SIZE * FIELD_WIDTH / 2;
+  return (s.windowWidth * CANVAS_WIDTH / 2) - s.windowWidth * CELL_SIZE * FIELD_WIDTH_INCLUDING_WALL / 2;
 }
 
 export const getYOriginForDrawing: (s: any) => number = (s: any) => {
