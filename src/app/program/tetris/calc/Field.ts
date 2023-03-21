@@ -2,6 +2,7 @@ import * as p5 from 'p5';
 import { Block } from './Block';
 import { FourPiece } from './FourPiece';
 import { Wall } from './Wall';
+import {FIELD_WIDTH, FIELD_HEIGHT} from './Constants';
 import { Vec2D } from './Vec2D';
 import { Color } from '../../Union';
 import { CELL_STATUS } from './Union';
@@ -9,20 +10,42 @@ export class Field {
     public static map: CELL_STATUS[][] = Field.getMap();
     public static backGroundColor : Color = 'White';
     public static getMap() : CELL_STATUS[][] {
-      return [["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"],
-      ["WALL","WALL","WALL","WALL","WALL","WALL","WALL","WALL","WALL"]];
+      let map : CELL_STATUS[][] = new Array<Array<CELL_STATUS>>();
+      for(let i = 0; i < FIELD_HEIGHT; i++) {
+        map.push(Field.getEmptyLine());
+      }
+      map.push(Field.getBottomLine());
+      return map;
+    }
+
+    private static getEmptyLine() : CELL_STATUS[] {
+      let line : CELL_STATUS[] = [];
+      line.push("WALL");
+      for(let i = 0; i < FIELD_WIDTH; i++) {
+        line.push("EMPTY");
+      }
+      line.push("WALL");
+      return line;
+    }
+
+    public static getBottomLine() : CELL_STATUS[] {
+      let line : CELL_STATUS[] = [];
+      line.push("WALL");
+      for(let i = 0; i < FIELD_WIDTH; i++) {
+        line.push("WALL");
+      }
+      line.push("WALL");
+      return line;
+    }
+
+    public static getFilledLine() : CELL_STATUS[] {
+      let line : CELL_STATUS[] = [];
+      line.push("WALL");
+      for(let i = 0; i < FIELD_WIDTH; i++) {
+        line.push("FIXED_BLOCK");
+      }
+      line.push("WALL");
+      return line;
     }
 
     public static getWidth(): number {
@@ -72,9 +95,23 @@ export class Field {
       }
     }
 
+    private static isFilled(line : CELL_STATUS[] ) : boolean {
+      if(line === Field.getFilledLine()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
     public static place(fourPiece: FourPiece, map: CELL_STATUS[][]): CELL_STATUS[][]{
       for(let i = 0; i < fourPiece.blocks.length; i++) {
         map[fourPiece.blocks[i].position.y][fourPiece.blocks[i].position.x] = "FIXED_BLOCK";
+      }
+      for(let i = 0; i < map.length; i++) {
+        if(Field.isFilled(map[i])) {
+          map.splice(i, 1);
+          map.unshift(["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"]);
+        }
       }
       return map;
     }

@@ -1,5 +1,4 @@
 import * as p5 from "p5";
-import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE } from "./calc/Constants";
 import { INITIAL_POSITION_VEC_2D } from "./calc/Constants";
 import { Field } from "./calc/Field";
 import { FourPiece } from "./calc/FourPiece";
@@ -15,7 +14,7 @@ export class ViewManager {
         ViewManager.controllingFourPiece = virtualFourPiece;
       } else {
         Field.map = Field.place(this.controllingFourPiece, Field.map);
-        ViewManager.controllingFourPiece = new ShapeS(INITIAL_POSITION_VEC_2D);
+        ViewManager.controllingFourPiece = new FourPiece(FourPiece.getShapeRandomly(), INITIAL_POSITION_VEC_2D);
       }
       p.background(Field.backGroundColor);
       const walls = Field.getWalls();
