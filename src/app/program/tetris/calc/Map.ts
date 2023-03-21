@@ -1,20 +1,16 @@
-import * as p5 from 'p5';
 import { Block } from './Block';
 import { FourPiece } from './FourPiece';
 import { Wall } from './Wall';
 import {FIELD_WIDTH, FIELD_HEIGHT} from './Constants';
 import { Vec2D } from './Vec2D';
-import { Color } from '../../Union';
 import { CELL_STATUS } from './Union';
-export class Field {
-    public static map: CELL_STATUS[][] = Field.getMap();
-    public static backGroundColor : Color = 'White';
+export class Map {
     public static getMap() : CELL_STATUS[][] {
       let map : CELL_STATUS[][] = new Array<Array<CELL_STATUS>>();
       for(let i = 0; i < FIELD_HEIGHT; i++) {
-        map.push(Field.getEmptyLine());
+        map.push(Map.getEmptyLine());
       }
-      map.push(Field.getBottomLine());
+      map.push(Map.getBottomLine());
       return map;
     }
 
@@ -48,31 +44,23 @@ export class Field {
       return line;
     }
 
-    public static getWidth(): number {
-        return Field.map[0].length;
-    }
-
-    public static getDepth(): number {
-        return Field.map.length;
-    }
-
-    public static getFixedBlocks(): Block[] {
+    public static getFixedBlocksOf(map : CELL_STATUS[][]): Block[] {
         const blocks: Block[] = [];
-        for (let y = 0; y < Field.map.length; y++) {
-            for (let x = 0; x < Field.map[y].length; x++) {
-                if (Field.map[y][x] === "FIXED_BLOCK") {
-                    blocks.push(new Block(new Vec2D(x, y)));
+        for (let y = 0; y < map.length; y++) {
+            for (let x = 0; x < map[y].length; x++) {
+                if (map[y][x] === "FIXED_BLOCK") {
+                    blocks.push(new Block(new Vec2D(x, y), true));
                 }
             }
         }
         return blocks;
     }
 
-    public static getWalls(): Wall[] {
+    public static getWallsOf(map : CELL_STATUS[][]): Wall[] {
         const walls: Wall[] = [];
-        for (let y = 0; y < Field.map.length; y++) {
-            for (let x = 0; x < Field.map[y].length; x++) {
-                if (Field.map[y][x] === "WALL") {
+        for (let y = 0; y < map.length; y++) {
+            for (let x = 0; x < map[y].length; x++) {
+                if (map[y][x] === "WALL") {
                     walls.push(new Wall(new Vec2D(x, y)));
                 }
             }
@@ -80,27 +68,15 @@ export class Field {
         return walls;
     }
 
-    public static draw(p: p5): () => void {
-      return () => {
-        p.background(Field.backGroundColor);
-        const walls = this.getWalls();
-        for (let i = 0; i < walls.length; i++) {
-            walls[i].draw(p);
-        }
 
-        const blocks = this.getFixedBlocks();
-        for (let i = 0; i < blocks.length; i++) {
-            blocks[i].draw(p);
+    private static isFilled(line : CELL_STATUS[]) : boolean {
+      const filledLine: CELL_STATUS[] = Map.getFilledLine();
+      for(let i = 0; i < line.length; i++) {
+        if(line[i] != filledLine[i]) {
+          return false;
         }
       }
-    }
-
-    private static isFilled(line : CELL_STATUS[] ) : boolean {
-      if(line === Field.getFilledLine()) {
-        return true;
-      } else {
-        return false;
-      }
+      return true;
     }
 
     public static place(fourPiece: FourPiece, map: CELL_STATUS[][]): CELL_STATUS[][]{
@@ -108,9 +84,9 @@ export class Field {
         map[fourPiece.blocks[i].position.y][fourPiece.blocks[i].position.x] = "FIXED_BLOCK";
       }
       for(let i = 0; i < map.length; i++) {
-        if(Field.isFilled(map[i])) {
+        if(Map.isFilled(map[i])) {
           map.splice(i, 1);
-          map.unshift(["WALL","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","EMPTY","WALL"]);
+          map.unshift(Map.getEmptyLine());
         }
       }
       return map;

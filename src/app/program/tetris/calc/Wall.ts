@@ -9,10 +9,6 @@ export class Wall {
     this.img = document.getElementById("wallImg") as HTMLImageElement;
   }
 
-  draw(p: p5) {
-    p.fill('gray');
-    p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Wall.getSize(p), Wall.getSize(p));
-  }
 
   static getSize(s: any) : number {
     return s.windowWidth * CELL_SIZE;

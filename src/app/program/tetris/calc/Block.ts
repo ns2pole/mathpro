@@ -1,27 +1,24 @@
 import * as p5 from 'p5';
-import { Field } from '../calc/Field';
-import { getXOriginForDrawing, getYOriginForDrawing, WALL_CODE, FIXED_BLOCK_CODE, CELL_SIZE} from '../calc/Constants';
+import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE} from '../calc/Constants';
 import { Vec2D } from './Vec2D';
 import { CELL_STATUS } from './Union';
 export class Block {
   public position: Vec2D;
+  public isFixed: boolean;
 
-  constructor(position: Vec2D) {
+  constructor(position: Vec2D, isFixed: boolean = false) {
       this.position = position;
+      this.isFixed = isFixed;
   }
 
   public canPlaceTo(map : CELL_STATUS[][]): boolean {
-      if (map[this.position.y][this.position.x] == "WALL" || Field.map[this.position.y][this.position.x] == "FIXED_BLOCK") {
+      if (map[this.position.y][this.position.x] == "WALL" || map[this.position.y][this.position.x] == "FIXED_BLOCK") {
           return false;
       } else {
         return true;
       }
   }
 
-  draw(p: p5) {
-    p.fill('green');
-    p.rect(this.getLeftTopCornerX(p), this.getLeftTopCornerY(p), Block.getSize(p), Block.getSize(p));
-  }
 
 
   static getSize(s: any) : number {
@@ -34,6 +31,30 @@ export class Block {
 
   getLeftTopCornerY(p: p5): number {
     return Block.getSize(p) * this.position.y + getYOriginForDrawing(p)
+  }
+
+  canMoveRight(map: CELL_STATUS[][]): boolean {
+    const virtualPosition = new Vec2D(this.position.x + 1, this.position.y);
+    const virtualBlock = new Block(virtualPosition);
+    return virtualBlock.canPlaceTo(map);
+  }
+
+  canMoveLeft(map: CELL_STATUS[][]): boolean {
+    const virtualPosition = new Vec2D(this.position.x - 1, this.position.y);
+    const virtualBlock = new Block(virtualPosition);
+    return virtualBlock.canPlaceTo(map);
+  }
+
+  canMoveDown(map: CELL_STATUS[][]): boolean {
+    const virtualPosition = new Vec2D(this.position.x, this.position.y + 1);
+    const virtualBlock = new Block(virtualPosition);
+    return virtualBlock.canPlaceTo(map);
+  }
+
+  canRotateAntiClockWiseAround(position: Vec2D, map: CELL_STATUS[][]): boolean {
+    const virtualPosition = this.position.rotateAround(position, 90);
+    const virtualBlock = new Block(virtualPosition);
+    return virtualBlock.canPlaceTo(map);
   }
 
 }
