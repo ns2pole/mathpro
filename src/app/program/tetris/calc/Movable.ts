@@ -1,0 +1,3 @@
+interface Movable {
+  moveDown(): Movable
+}

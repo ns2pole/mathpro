@@ -10,7 +10,7 @@ export class ViewManager {
 
   public static timeElapse(p:p5): () => void {
     return () => {
-      let virtualFourPiece : FourPiece | null = ViewManager.controllingFourPiece.getInstanceMovedDown();
+      let virtualFourPiece : Movable = ViewManager.controllingFourPiece.moveDown();
       if (virtualFourPiece !== null && virtualFourPiece.canBePlaced()) {
         ViewManager.controllingFourPiece = virtualFourPiece;
       } else {
