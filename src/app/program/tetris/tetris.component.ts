@@ -45,7 +45,9 @@ export class TetrisComponent {
   }
 
   rotateAntiClockWise() {
+    if (ViewManager.controllingFourPiece.canRotateAntiClockWise(ViewManager.map)) {
       ViewManager.controllingFourPiece = ViewManager.controllingFourPiece.getFourPieceAntiClockWiselyRotated();
+    }
   }
 
 
