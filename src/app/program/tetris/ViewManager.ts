@@ -4,6 +4,7 @@ import { Map } from "./calc/Map";
 import { FourPiece } from "./calc/FourPiece";
 import { Block } from "./calc/Block";
 import { Wall } from "./calc/Wall";
+import { CANVAS_HEIGHT } from "../breadth-first-search/Const";
 
 export class ViewManager {
   public static controllingFourPiece : FourPiece = new FourPiece(FourPiece.getShapeRandomly(), INITIAL_POSITION_VEC_2D, INITIAL_ROTATION);
@@ -15,9 +16,13 @@ export class ViewManager {
       if(Map.isGameOver(ViewManager.map)) {
         ViewManager.gameEndFlg = true;
         p.noLoop();
+        // テキストのサイズを画面サイズに応じて調整
+        let textSize = p.windowHeight * CANVAS_HEIGHT / 6;
+        p.textSize(textSize);
+        // テキストを中央に表示
+        p.textAlign(p.CENTER, p.CENTER);
         p.fill('red');
-        p.textSize(100);
-        p.text('Game Over', 50, 120);
+        p.text('Game Over', p.width / 2, p.height / 2);
         return;
       }
       console.log('timeElapse');
