@@ -4,7 +4,7 @@ import { Map } from "./calc/Map";
 import { FourPiece } from "./calc/FourPiece";
 import { Block } from "./calc/Block";
 import { Wall } from "./calc/Wall";
-import { CANVAS_HEIGHT } from "../breadth-first-search/Const";
+import { CANVAS_HEIGHT, CANVAS_WIDTH } from "../breadth-first-search/Const";
 
 export class ViewManager {
   public static controllingFourPiece : FourPiece = new FourPiece(FourPiece.getShapeRandomly(), INITIAL_POSITION_VEC_2D, INITIAL_ROTATION);
@@ -71,7 +71,7 @@ export class ViewManager {
 
   private static setStringGameOver(p: p5): () => void {
     return () => {
-      p.textSize(p.windowHeight * CANVAS_HEIGHT / 6);
+      p.textSize(p.width / 6);
         p.textAlign(p.CENTER, p.CENTER);
         p.fill('red');
         p.text('Game Over', p.width / 2, p.height / 2);
