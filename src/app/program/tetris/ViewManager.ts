@@ -15,14 +15,8 @@ export class ViewManager {
     return () => {
       if(Map.isGameOver(ViewManager.map)) {
         ViewManager.gameEndFlg = true;
+        ViewManager.setStringGameOver(p)();
         p.noLoop();
-        // テキストのサイズを画面サイズに応じて調整
-        let textSize = p.windowHeight * CANVAS_HEIGHT / 6;
-        p.textSize(textSize);
-        // テキストを中央に表示
-        p.textAlign(p.CENTER, p.CENTER);
-        p.fill('red');
-        p.text('Game Over', p.width / 2, p.height / 2);
         return;
       }
       console.log('timeElapse');
@@ -75,4 +69,12 @@ export class ViewManager {
     }
   }
 
+  private static setStringGameOver(p: p5): () => void {
+    return () => {
+      p.textSize(p.windowHeight * CANVAS_HEIGHT / 6);
+        p.textAlign(p.CENTER, p.CENTER);
+        p.fill('red');
+        p.text('Game Over', p.width / 2, p.height / 2);
+    }
+  }
 }
