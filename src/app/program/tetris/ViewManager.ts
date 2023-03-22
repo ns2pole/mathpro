@@ -9,8 +9,18 @@ export class ViewManager {
   public static controllingFourPiece : FourPiece = new FourPiece(FourPiece.getShapeRandomly(), INITIAL_POSITION_VEC_2D, INITIAL_ROTATION);
   public static map = Map.getMap();
   public static backgroundColor : string = 'White';
+  public static gameEndFlg : boolean = false;
   public static timeElapse(p:p5): () => void {
     return () => {
+      if(Map.isGameOver(ViewManager.map)) {
+        ViewManager.gameEndFlg = true;
+        p.noLoop();
+        p.fill('red');
+        p.textSize(100);
+        p.text('Game Over', 50, 120);
+        return;
+      }
+      console.log('timeElapse');
       if (ViewManager.controllingFourPiece.canMoveDown(ViewManager.map)) {
         ViewManager.controllingFourPiece = ViewManager.controllingFourPiece.getFourPieceMovedDown();
       } else {
