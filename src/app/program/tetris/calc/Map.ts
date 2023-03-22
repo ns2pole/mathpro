@@ -68,6 +68,15 @@ export class Map {
         return walls;
     }
 
+    public static isGameOver(map: CELL_STATUS[][]): boolean {
+      for(let i = 0; i < map[0].length; i++) {
+        if(map[0][i] == "FIXED_BLOCK") {
+          return true;
+        }
+      }
+      return false;
+    }
+
 
     private static isFilled(line : CELL_STATUS[]) : boolean {
       const filledLine: CELL_STATUS[] = Map.getFilledLine();
