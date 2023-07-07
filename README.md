@@ -1,5 +1,5 @@
 # webで見れるように動かす方法
-ng build > update.sh実行でapacheで動かせる。
+ng build > chmod 744 ./update.sh > update.sh実行でapacheで動かせる。
 
 # Mathpro
 
