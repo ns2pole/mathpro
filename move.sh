@@ -1,1 +1,0 @@
-sudo mv ./dist/mathpro/* ../
