@@ -2,7 +2,7 @@ import { Block } from './Block';
 import { SHAPE_CODE_OF_SHAPE_S, SHAPE_CODE_OF_SHAPE_T, SHAPE_CODE_OF_SHAPE_I, SHAPE_CODE_OF_SHAPE_J, SHAPE_CODE_OF_SHAPE_L, SHAPE_CODE_OF_SHAPE_O, SHAPE_CODE_OF_SHAPE_Z, HOW_MANY_SHAPES} from './Constants';
 import { Vec2D } from './Vec2D';
 import { CELL_STATUS, Shape, Rotation } from './Union';
-export class FourPiece{
+export class FourPiece {
   protected shape: Shape;
   protected position: Vec2D;
   public blocks = new Array<Block>();

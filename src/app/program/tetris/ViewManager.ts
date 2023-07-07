@@ -4,7 +4,6 @@ import { Map } from "./calc/Map";
 import { FourPiece } from "./calc/FourPiece";
 import { Block } from "./calc/Block";
 import { Wall } from "./calc/Wall";
-import { CANVAS_HEIGHT, CANVAS_WIDTH } from "../breadth-first-search/Const";
 
 export class ViewManager {
   public static controllingFourPiece : FourPiece = new FourPiece(FourPiece.getShapeRandomly(), INITIAL_POSITION_VEC_2D, INITIAL_ROTATION);
