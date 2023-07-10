@@ -12,6 +12,5 @@ export class TopComponent {
   toContact() {
     const queryParams = { title: '無料体験の申し込み', message: '無料体験を申し込み致します。よろしくお願いします。' };
     this.router.navigate(['/contact'], { queryParams });
-
   }
 }

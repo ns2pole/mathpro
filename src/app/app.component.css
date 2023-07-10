@@ -28,3 +28,7 @@ header a {
   text-decoration: none;
   color: #000;
 }
+
+#header-title {
+  font-size: 32px;
+}

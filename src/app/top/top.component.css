@@ -1,31 +1,6 @@
-.container {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
-  opacity: 0.6;
-}
-
-
 h1 {
   color: #007bff;
   font-size: 32px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#title {
-  color: #000000;
-  font-size: 52px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#prime-factor-ex {
-  color: #53ff39;
-  font-size: 42px;
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
@@ -47,6 +22,41 @@ ul {
 li {
   margin-bottom: 5px;
 }
+
+video {
+  padding-top: 5%;
+  display: block;
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.10;
+  background: repeat;
+}
+
+span {
+  margin-top: 2%;
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+figcaption {
+  font-size: 20px;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  opacity: 0.6;
+}
+
 
 .plan-container {
   display: flex;
@@ -117,6 +127,7 @@ li {
   border: 1px solid #000000;
 }
 
+
 @media (max-width: 767px) {
   .plan-container {
     flex-direction: column;
@@ -130,31 +141,47 @@ li {
   }
 }
 
-video {
-  padding-top: 5%;
-  display: block;
-  width: 100%;
-  height: 200%;
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
-  opacity: 0.10;
-  background: repeat;
-
-}
-
-#video-area {
-}
-
 .sub-container {
   text-align: center;
 }
-span {
-  margin-top: 2%;
-  display: inline-block;
-  width: auto;
-  padding: 5px;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid #000000;
+
+.explanation {
+  text-align: center;
+  font-size: 30px;
+}
+
+.recommend-title {
+  text-align: center;
+  font-size: 35px;
+}
+
+#title {
+  color: #000000;
+  font-size: 52px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#prime-factor-ex {
+  color: #000000;
+  font-size: 49px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+#prime-factors-img {
+  width: 50%;
+  height: 50%;
+  border-top: #000000 1px solid;
+  border-bottom: #000000 1px solid;
+  border-left: #000000 1px solid;
+  border-right: #000000 1px solid;
+}
+
+#prime-factors-img-container {
+  text-align: center;
 }
