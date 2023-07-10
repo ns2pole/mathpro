@@ -1,48 +1,60 @@
-h1 {
-  color: #007bff;
-  font-size: 32px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
+.plan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-ul {
-  margin-top: 0;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  line-height: 1.5;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-span {
-  margin-top: 2%;
-  display: inline-block;
-  width: auto;
-  padding: 5px;
-  background-color: white;
-  border-radius: 10px;
+.plan-button {
+  width: 25%;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
   border: 1px solid #000000;
 }
 
-figcaption {
-  font-size: 20px;
+.plan-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-.container {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
-  opacity: 0.6;
+
+.plan-button div {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.online-plan-button {
+  width: 85%;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  border: 1px solid #000000;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .plan-button {
@@ -120,48 +132,6 @@ figcaption {
     width: 85%;
   }
 }
-
 .sub-container {
-  text-align: center;
-}
-
-.explanation {
-  text-align: center;
-  font-size: 30px;
-}
-
-.recommend-title {
-  text-align: center;
-  font-size: 35px;
-}
-
-#title {
-  color: #000000;
-  font-size: 52px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#prime-factor-ex {
-  color: #000000;
-  font-size: 49px;
-  font-weight: bolder;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-
-#prime-factors-img {
-  width: 50%;
-  height: 50%;
-  border-top: #000000 1px solid;
-  border-bottom: #000000 1px solid;
-  border-left: #000000 1px solid;
-  border-right: #000000 1px solid;
-}
-
-#prime-factors-img-container {
   text-align: center;
 }

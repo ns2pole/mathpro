@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopComponent } from './top/top.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { PlanComponent } from './plan/plan.component';
 import { BarChartComponent } from './program/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './program/breadth-first-search/breadth-first-search.component';
 import { ProgramComponent } from './program/program.component';
@@ -25,6 +26,7 @@ import { TetrisComponent } from './program/tetris/tetris.component';
 const ROUTE_TABLE: Routes = [
   { path: '', component: TopComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'plan', component: PlanComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'program', component: ProgramComponent },
 ];
