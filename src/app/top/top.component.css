@@ -1,10 +1,4 @@
-h1 {
-  color: #007bff;
-  font-size: 32px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-}
+
 
 p {
   margin-top: 0;
@@ -130,10 +124,7 @@ figcaption {
   font-size: 18px;
 }
 
-.recommend-title {
-  text-align: center;
-  font-size: 23px;
-}
+
 
 #title {
   color: #000000;
@@ -169,6 +160,19 @@ figcaption {
     border-left: #000000 1px solid;
     border-right: #000000 1px solid;
   }
+
+  h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .recommend-title {
+    text-align: center;
+    font-size: 19px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -179,5 +183,18 @@ figcaption {
     border-bottom: #000000 1px solid;
     border-left: #000000 1px solid;
     border-right: #000000 1px solid;
+  }
+
+  h1 {
+    color: #007bff;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .recommend-title {
+    text-align: center;
+    font-size: 23px;
   }
 }
