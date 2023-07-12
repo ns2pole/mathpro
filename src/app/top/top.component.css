@@ -128,14 +128,7 @@ figcaption {
 
 
 
-#prime-factor-ex {
-  color: #000000;
-  font-size: 49px;
-  font-weight: bolder;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-}
+
 
 
 
@@ -168,6 +161,15 @@ figcaption {
     font-size: 19px;
   }
 
+  #prime-factor-ex {
+    color: #000000;
+    font-size: 29px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
   #title {
     color: #000000;
     font-size: 30px;
@@ -198,6 +200,15 @@ figcaption {
   .recommend-title {
     text-align: center;
     font-size: 23px;
+  }
+
+  #prime-factor-ex {
+    color: #000000;
+    font-size: 49px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
   #title {
