@@ -32,7 +32,7 @@ header a {
 
 @media (max-width: 767px) {
   #header-title {
-    font-size: 22px;
+    font-size: 19px;
   }
 }
 @media (min-width: 767px) {

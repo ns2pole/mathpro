@@ -126,13 +126,7 @@ figcaption {
 
 
 
-#title {
-  color: #000000;
-  font-size: 52px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-}
+
 
 #prime-factor-ex {
   color: #000000;
@@ -173,6 +167,14 @@ figcaption {
     text-align: center;
     font-size: 19px;
   }
+
+  #title {
+    color: #000000;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -196,5 +198,13 @@ figcaption {
   .recommend-title {
     text-align: center;
     font-size: 23px;
+  }
+
+  #title {
+    color: #000000;
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
