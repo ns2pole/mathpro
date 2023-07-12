@@ -16,12 +16,6 @@ header li:first-child {
   font-weight: bold;
 }
 
-header li:not(:first-child) {
-  margin: 3px;
-  padding: 2px;
-  border-radius: 5px;
-  border: solid 1px #000000;
-}
 
 header a {
   margin: 2px;
@@ -34,9 +28,23 @@ header a {
   #header-title {
     font-size: 19px;
   }
+
+  header li:not(:first-child) {
+    margin: 1.5px;
+    padding: 1.5px;
+    border-radius: 5px;
+    border: solid 1px #000000;
+  }
 }
 @media (min-width: 767px) {
   #header-title {
     font-size: 32px;
+  }
+
+  header li:not(:first-child) {
+    margin: 3px;
+    padding: 2px;
+    border-radius: 5px;
+    border: solid 1px #000000;
   }
 }
