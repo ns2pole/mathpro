@@ -127,12 +127,12 @@ figcaption {
 
 .explanation {
   text-align: center;
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .recommend-title {
   text-align: center;
-  font-size: 35px;
+  font-size: 23px;
 }
 
 #title {
@@ -153,15 +153,31 @@ figcaption {
 }
 
 
-#prime-factors-img {
-  width: 50%;
-  height: 50%;
-  border-top: #000000 1px solid;
-  border-bottom: #000000 1px solid;
-  border-left: #000000 1px solid;
-  border-right: #000000 1px solid;
-}
+
 
 #prime-factors-img-container {
   text-align: center;
+}
+
+
+@media (max-width: 767px) {
+  #prime-factors-img {
+    width: 90%;
+    height: 90%;
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-left: #000000 1px solid;
+    border-right: #000000 1px solid;
+  }
+}
+
+@media (min-width: 768px) {
+  #prime-factors-img {
+    width: 50%;
+    height: 50%;
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-left: #000000 1px solid;
+    border-right: #000000 1px solid;
+  }
 }
