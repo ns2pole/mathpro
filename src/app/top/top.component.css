@@ -211,7 +211,7 @@ figcaption {
     text-align: center;
   }
 
-  #title {
+  .title {
     color: #000000;
     font-size: 52px;
     margin-top: 0;
