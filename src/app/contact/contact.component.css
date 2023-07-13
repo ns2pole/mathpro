@@ -43,4 +43,31 @@ button {
   .form-container {
     width: 93%;
   }
+
+  #home {
+    width: 80%;
+    height: 80%;
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-left: #000000 1px solid;
+    border-right: #000000 1px solid;
+  }
+}
+#home-img-container {
+  text-align: center;
+}
+
+figcaption {
+  font-size: 17px;
+}
+
+@media (min-width: 768px) {
+  #home {
+    width: 60%;
+    height: 60%;
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-left: #000000 1px solid;
+    border-right: #000000 1px solid;
+  }
 }
