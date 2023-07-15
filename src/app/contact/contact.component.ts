@@ -14,6 +14,7 @@ export class ContactComponent {
     const searchParams = new URLSearchParams(window.location.search);
     this.titleDefaultVal = searchParams.get('title');
     this.messageDefaultVal = searchParams.get('message');
+
   }
 
   send(name : string, title : string , email : string, message : string) {
