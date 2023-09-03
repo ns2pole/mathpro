@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgChartsModule } from 'ng2-charts';
+import { MathjaxModule } from "mathjax-angular";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { InvaderGameComponent } from './program/invader-game/invader-game.compon
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
 import { TetrisComponent } from './program/tetris/tetris.component';
 
+import { OrbitSpaceComponent } from './math/article/orbit-space.component';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -33,6 +36,7 @@ const ROUTE_TABLE: Routes = [
   { path: 'math', component: MathComponent },
   { path: 'physics', component: PhysicsComponent },
   { path: 'program', component: ProgramComponent },
+  { path: 'math/orbit-space', component: OrbitSpaceComponent }
 ];
 
 @NgModule({
@@ -56,7 +60,8 @@ const ROUTE_TABLE: Routes = [
     AppRoutingModule,
     NgChartsModule,
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する,
-    HttpClientModule
+    HttpClientModule,
+    MathjaxModule.forRoot(/*Optional Config*/),
   ],
   providers: [],
   bootstrap: [AppComponent]
