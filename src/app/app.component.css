@@ -33,19 +33,20 @@ body {
     border: none;
   }
 
-  header li:not(:first-child) {
+  header li {
+    margin: 3px;
+    padding: 2px;
+    border-radius: 5px;
     border: solid 1px #000000;
-    justify-content: center;
-    align-items: center;
   }
 
   #youtube {
     width: 12px;
     height: 12px;
     vertical-align: middle; /* 画像を垂直方向に中央揃えに */
-
   }
 }
+
 @media (min-width: 767px) {
   #header-title {
     font-size: 32px;
