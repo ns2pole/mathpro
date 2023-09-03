@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { PlanComponent } from './plan/plan.component';
 import { BarChartComponent } from './program/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './program/breadth-first-search/breadth-first-search.component';
+import { MathComponent } from './math/math.component';
+import { PhysicsComponent } from './physics/physics.component';
 import { ProgramComponent } from './program/program.component';
 import { PrimeFactorizationComponent } from './program/prime-factorization/prime-factorization.component';
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
@@ -28,6 +30,8 @@ const ROUTE_TABLE: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'plan', component: PlanComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'math', component: MathComponent },
+  { path: 'physics', component: PhysicsComponent },
   { path: 'program', component: ProgramComponent },
 ];
 
@@ -39,6 +43,8 @@ const ROUTE_TABLE: Routes = [
     ContactComponent,
     BarChartComponent,
     BreadthFirstSearchComponent,
+    MathComponent,
+    PhysicsComponent,
     ProgramComponent,
     PrimeFactorizationComponent,
     InvaderGameComponent,
