@@ -20,7 +20,6 @@ import { PrimeFactorizationComponent } from './program/prime-factorization/prime
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
 import { TetrisComponent } from './program/tetris/tetris.component';
-
 import { OrbitSpaceComponent } from './math/article/orbit-space.component';
 
 // Routing を行う対象のコンポーネントを管理する
