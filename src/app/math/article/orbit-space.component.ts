@@ -5,6 +5,7 @@ declare var MathJax: any;
 @Component({
   selector: 'app-contact',
   templateUrl: './orbit-space.component.html',
+  styleUrls: ['../../app.component.css', './orbit-space.component.css']
 })
 
 

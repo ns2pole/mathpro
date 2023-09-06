@@ -1,0 +1,6 @@
+ul li {
+  list-style: none;
+  font-size: 14px;  /* Smaller font size */
+  margin-left: -2em;  /* Adjust the margin if necessary */
+
+}
