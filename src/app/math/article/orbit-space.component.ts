@@ -14,7 +14,6 @@ export class OrbitSpaceComponent implements AfterViewChecked{
 
   ngAfterViewChecked() {
     if(MathJax.isReady !== false) {
-      console.log(MathJax);
       MathJax.startup.defaultPageReady();
     }
   }
