@@ -11,17 +11,34 @@ img {
   margin: auto;
 }
 
-/* 全体のコンテナ */
-.articles-title{
-  width: 30%;  /* または適切なサイズに調整 */
-  height: 25%;
-  margin: auto;  /* 中央寄せ */
-  text-align: center;
+@media (max-width: 768px) {
+  /* 全体のコンテナ */
+  .articles-title{
+    width: 90%;  /* または適切なサイズに調整 */
+    height: 55%;
+    margin: auto;  /* 中央寄せ */
+    text-align: center;
+  }
+
+  .articles {
+    width: 90%  ;  /* または適切なサイズに調整 */
+    margin: auto;  /* 中央寄せ */
+  }
 }
 
-.articles {
-  width: 30%  ;  /* または適切なサイズに調整 */
-  margin: auto;  /* 中央寄せ */
+@media (min-width: 768px) {
+  /* 全体のコンテナ */
+  .articles-title{
+    width: 30%;  /* または適切なサイズに調整 */
+    height: 25%;
+    margin: auto;  /* 中央寄せ */
+    text-align: center;
+  }
+
+  .articles {
+    width: 30%  ;  /* または適切なサイズに調整 */
+    margin: auto;  /* 中央寄せ */
+  }
 }
 
 .articles li {
