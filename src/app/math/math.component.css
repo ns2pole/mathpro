@@ -3,3 +3,45 @@ ul li {
   font-size: 17px;  /* Smaller font size */
   margin-left: -2.5em;  /* Adjust the margin if necessary */
 }
+
+img {
+  width: 70%;
+  height: 80%;
+  display: block;
+  margin: auto;
+}
+
+/* 全体のコンテナ */
+.articles-title{
+  width: 30%;  /* または適切なサイズに調整 */
+  height: 25%;
+  margin: auto;  /* 中央寄せ */
+  text-align: center;
+}
+
+.articles {
+  width: 30%  ;  /* または適切なサイズに調整 */
+  margin: auto;  /* 中央寄せ */
+}
+
+.articles li {
+  margin-left: 3em;  /* Adjust the margin if necessary */
+}
+
+/* リスト項目 */
+div li {
+  list-style-type: square;  /* マーカーのスタイル */
+  margin-bottom: 10px;      /* 下マージン */
+}
+
+/* リンク */
+a {
+  text-decoration: none;    /* アンダーラインを削除 */
+  color: #007BFF;           /* テキストの色 */
+  transition: color 0.3s;   /* 色の遷移 */
+}
+
+/* ホバー時のリンク */
+a:hover {
+  color: #0056b3;           /* ホバー時の色 */
+}

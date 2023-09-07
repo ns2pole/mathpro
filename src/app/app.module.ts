@@ -24,6 +24,7 @@ import { CombiOrbitSpaceComponent } from './math/article/combi-orbit-space.compo
 import { DupCombiOrbitSpaceComponent } from './math/article/dup-combi-orbit-space.component';
 import { PermutationComponent } from './math/article/permutation.component';
 import { DupPermutationComponent } from './math/article/dup-permutation.component';
+import { CyclePermutationComponent } from './math/article/cycle-permutation.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -41,7 +42,9 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/combi-orbit-space', component: CombiOrbitSpaceComponent },
   { path: 'math/dup-combi-orbit-space', component: DupCombiOrbitSpaceComponent },
   { path: 'math/permutation', component: PermutationComponent },
-  { path: 'math/dup-permutation', component: DupPermutationComponent }
+  { path: 'math/dup-permutation', component: DupPermutationComponent },
+  { path: 'math/cycle-permutation', component: CyclePermutationComponent }
+
 ];
 
 @NgModule({
