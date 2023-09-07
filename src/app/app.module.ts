@@ -20,7 +20,10 @@ import { PrimeFactorizationComponent } from './program/prime-factorization/prime
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
 import { TetrisComponent } from './program/tetris/tetris.component';
-import { OrbitSpaceComponent } from './math/article/orbit-space.component';
+import { CombiOrbitSpaceComponent } from './math/article/combi-orbit-space.component';
+import { DupCombiOrbitSpaceComponent } from './math/article/dup-combi-orbit-space.component';
+import { PermutationComponent } from './math/article/permutation.component';
+import { DupPermutationComponent } from './math/article/dup-permutation.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -35,7 +38,10 @@ const ROUTE_TABLE: Routes = [
   { path: 'math', component: MathComponent },
   { path: 'physics', component: PhysicsComponent },
   { path: 'program', component: ProgramComponent },
-  { path: 'math/orbit-space', component: OrbitSpaceComponent }
+  { path: 'math/combi-orbit-space', component: CombiOrbitSpaceComponent },
+  { path: 'math/dup-combi-orbit-space', component: DupCombiOrbitSpaceComponent },
+  { path: 'math/permutation', component: PermutationComponent },
+  { path: 'math/dup-permutation', component: DupPermutationComponent }
 ];
 
 @NgModule({

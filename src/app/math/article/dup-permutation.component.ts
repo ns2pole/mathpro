@@ -4,12 +4,12 @@ declare var MathJax: any;
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './orbit-space.component.html',
-  styleUrls: ['../../app.component.css', './orbit-space.component.css']
+  templateUrl: './dup-permutation.component.html',
+  styleUrls: ['../../app.component.css', '../math.component.css']
 })
 
 
-export class OrbitSpaceComponent implements AfterViewChecked{
+export class DupPermutationComponent implements AfterViewChecked{
   constructor(private router: Router) {}
 
   ngAfterViewChecked() {
