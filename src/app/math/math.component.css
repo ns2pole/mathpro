@@ -62,3 +62,21 @@ a {
 a:hover {
   color: #0056b3;           /* ホバー時の色 */
 }
+
+.styled-h3 {
+  display: inline-block;  /* インラインブロックとして表示 */
+  border: 2px solid #000;  /* 枠を黒で囲む */
+  background-color: rgba(0, 255, 0, 0.1);  /* 背景色を薄い緑にする */
+  padding: 10px;  /* パディングを追加 */
+  margin: 10px;  /* マージンを追加 */
+}
+
+.styled-h4 {
+  display: inline-block;
+  border: 1px solid #aaa;  /* 薄い枠 */
+  background-color: rgba(117, 149, 253, 0.1);  /* 薄い背景色 */
+  padding: 5px;  /* 少ないパディング */
+  margin: 5px;  /* 少ないマージン */
+  font-size: 0.9em;  /* 小さなフォントサイズ */
+}
+
