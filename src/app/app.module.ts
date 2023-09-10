@@ -26,6 +26,7 @@ import { PermutationComponent } from './math/article/ts/permutation.component';
 import { DupPermutationComponent } from './math/article/ts/dup-permutation.component';
 import { CyclePermutationComponent } from './math/article/ts/cycle-permutation.component';
 import { RotationToStandardComponent } from './math/article/ts/rotation-to-standard.component';
+import { ComingSoonComponent } from './math/article/ts/coming-soon.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -45,8 +46,8 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/permutation', component: PermutationComponent },
   { path: 'math/dup-permutation', component: DupPermutationComponent },
   { path: 'math/cycle-permutation', component: CyclePermutationComponent },
-  { path: 'math/rotation-to-standard', component: RotationToStandardComponent }
-
+  { path: 'math/rotation-to-standard', component: RotationToStandardComponent },
+  { path: 'math/coming-soon', component: ComingSoonComponent }
 ];
 
 @NgModule({
