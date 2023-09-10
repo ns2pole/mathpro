@@ -26,6 +26,8 @@ import { PermutationComponent } from './math/article/ts/permutation.component';
 import { DupPermutationComponent } from './math/article/ts/dup-permutation.component';
 import { CyclePermutationComponent } from './math/article/ts/cycle-permutation.component';
 import { RotationToStandardComponent } from './math/article/ts/rotation-to-standard.component';
+import { ImmutabilityForSlideComponent } from './math/article/ts/immutability-for-slide.component';
+import { ImmutabilityForRotationComponent } from './math/article/ts/immutability-for-rotation.component';
 import { ComingSoonComponent } from './math/article/ts/coming-soon.component';
 
 // Routing を行う対象のコンポーネントを管理する
@@ -47,7 +49,9 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/dup-permutation', component: DupPermutationComponent },
   { path: 'math/cycle-permutation', component: CyclePermutationComponent },
   { path: 'math/rotation-to-standard', component: RotationToStandardComponent },
-  { path: 'math/coming-soon', component: ComingSoonComponent }
+  { path: 'math/coming-soon', component: ComingSoonComponent },
+  { path: 'math/immutability-for-slide', component: ImmutabilityForSlideComponent },
+  { path: 'math/immutability-for-rotation', component: ImmutabilityForRotationComponent }
 ];
 
 @NgModule({
