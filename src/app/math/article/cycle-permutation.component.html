@@ -22,26 +22,26 @@
   <h3>def 円順列</h3>
   <p>$n$人の円順列とは順列全体$F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }}$に巡回群$C_n$を右から群作用させた時の軌道空間$\displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }} $である。</p>
 
-  <h3>Prop 1: 完全代表系と円順列における「固定」</h3>
-  任意に$k,l\in [n]$を取ってくる。(つまり番号$k$を$l$番目に配置する。)
-  この時、$R(k,l)$ は軌道空間$\displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }} $の完全代表系である。<br>
+  <h3>Prop 1:〜完全代表系と円順列における固定〜$\ \ \ \ $任意に$k,l\in [n]$を取ってくる。(つまり番号$k$を$l$番目に配置する。)
+    この時、$R(k,l)$ は軌道空間$\displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }} $の完全代表系である。<br>
+  </h3>
 
   <h3>Proof of Prop1</h3>
   命題は「包含写像と標準射影の合成$\pi : R(k,l)\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が全単射である」ことと同値。
   これはLem2,Lem3より従う。 $\ \ Q.E.D$
 
 
-  <h4>Lem 1</h4>
-  任意の$k,l\in [n]$を取ってくる。この時$R(k,l)$のどの元に対しても、単位元以外の$C_n$の元を右から作用させると、この集合から飛び出す。
+  <h4>Lem 1$\ \ \ \ $任意の$k,l\in [n]$を取ってくる。この時$R(k,l)$のどの元に対しても、単位元以外の$C_n$の元を右から作用させると、この集合から飛び出す。</h4>
+
 
   <h4>Proof of Lem1</h4>
   単位元以外の元$\sigma\in C_n$を取ってくる。この時、$\sigma$は$C_n$の元だから、$\sigma(k)\neq k$。よって$\forall f\in R$に対して、$f$は定義より単射だから$\ \ f\circ \sigma(k)\neq f(k)=l$。よって$R$の定義より、$f\circ \sigma  \notin  R$
 
-  <h4>Lem2: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が単射</h4>
+  <h4>Lem2: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$は単射である。</h4>
   <h4>Proof of Lem2</h4>
   <p>$f,g\in R$に対して、$\pi (f) =\pi (g) $とする。この時、$f \sim g$より、$ \exists c \in C_n,f\circ c=g$　Lem1よりこれを満たすのは$c$が単位元の時に限る。よって$f=g$  $\ \ Q.E.D$
   </p>
-  <h4>Lem3: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が全射</h4>
+  <h4>Lem3: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$は全射である。</h4>
   <h4>Proof of Lem3</h4>
   <p>「軌道空間の任意の元に対して、あるRの元が取って来れて$\pi$で対応させる事が出来る」事を示せばよい。言い換えると、軌道空間の任意の元に対して、どういう風に代表元$f$を取ってきても、$f$と同じ軌道にある$R$の元$g$が存在する事を示せばよい。
   任意の$\overline{{ '{' }}f{{ '}' }} \in F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$に対して、$f\in F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }}$より、$f(a)=l$なる$a \in [n]$が存在する。$\sigma \in C_n$を$\sigma(k)=a$となるように取ってきて、$g=f\circ \sigma$とすると、$g\sim f$であってかつ、$g(k)=f\circ \sigma (k)= f(a) =l$より$g\in R\ $ よって$\pi (g)=\overline{{ '{' }}f{{ '}' }}$ $\ \ Q.E.D$
