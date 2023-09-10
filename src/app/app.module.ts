@@ -20,11 +20,12 @@ import { PrimeFactorizationComponent } from './program/prime-factorization/prime
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
 import { TetrisComponent } from './program/tetris/tetris.component';
-import { CombiOrbitSpaceComponent } from './math/article/combi-orbit-space.component';
-import { DupCombiOrbitSpaceComponent } from './math/article/dup-combi-orbit-space.component';
-import { PermutationComponent } from './math/article/permutation.component';
-import { DupPermutationComponent } from './math/article/dup-permutation.component';
-import { CyclePermutationComponent } from './math/article/cycle-permutation.component';
+import { CombiOrbitSpaceComponent } from './math/article/ts/combi-orbit-space.component';
+import { DupCombiOrbitSpaceComponent } from './math/article/ts/dup-combi-orbit-space.component';
+import { PermutationComponent } from './math/article/ts/permutation.component';
+import { DupPermutationComponent } from './math/article/ts/dup-permutation.component';
+import { CyclePermutationComponent } from './math/article/ts/cycle-permutation.component';
+import { RotationToStandardComponent } from './math/article/ts/rotation-to-standard.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -43,7 +44,8 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/dup-combi-orbit-space', component: DupCombiOrbitSpaceComponent },
   { path: 'math/permutation', component: PermutationComponent },
   { path: 'math/dup-permutation', component: DupPermutationComponent },
-  { path: 'math/cycle-permutation', component: CyclePermutationComponent }
+  { path: 'math/cycle-permutation', component: CyclePermutationComponent },
+  { path: 'math/rotation-to-standard', component: RotationToStandardComponent }
 
 ];
 
@@ -69,7 +71,21 @@ const ROUTE_TABLE: Routes = [
     NgChartsModule,
     RouterModule.forRoot(ROUTE_TABLE), // 追加. routing の情報を登録する,
     HttpClientModule,
-    MathjaxModule.forRoot(/*Optional Config*/),
+    MathjaxModule.forRoot(
+      // {
+      //   "config": {
+      //     "loader": {
+      //       "load": ["output/svg", "[tex]/require", "[tex]/ams"]
+      //     },
+      //     "tex": {
+      //       "inlineMath": [["$", "$"]],
+      //       "packages": ["base", "require", "ams"]
+      //     },
+      //     "svg": { "fontCache": "global" }
+      //   },
+      //   "src": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/startup.js"
+      // }
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]

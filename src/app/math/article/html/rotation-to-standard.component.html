@@ -1,0 +1,32 @@
+<h3 class="styled-h3">はじめに</h3><br>
+<p>
+この記事で伝えたい主張：回転によって2次形式を標準形に直す方法
+</p>
+<p>
+必要な予備知識：数学3-２次曲線まで-
+</p>
+<p>
+<div mathjax>
+  <h3 class="styled-h3">定義 実係数2次形式</h3><br>
+  <p>$a,b,c,d,e,f$が実数の時、2変数関数$F(x,y)=ax^{{ '{' }}2{{ '}' }}+bxy+cy^{{ '{' }}2{{ '}' }}+dx+ey+f\ ;\ x \in \mathbb{{ '{' }}R{{ '}' }},\ y \in \mathbb{{ '{' }}R{{ '}' }}$を「実係数2次形式」と言う。</p>
+  <h3 class="styled-h3">命題　〜実係数2次形式は回転によって標準形に直せる〜
+    <p>
+    任意の実係数2次形式$F(x,y)=ax^{{ '{' }}2{{ '}' }}+bxy+cy^{{ '{' }}2{{ '}' }}+dx+ey+f$に対して、<br>
+$\cdot\ \ c\neq a$の時は、$\theta$を$\displaystyle \tan 2\theta =\frac{{ '{' }}b{{ '}' }}{{ '{' }}c-a{{ '}' }}$を満たすように、<br>
+$\cdot\ \ c=a$の時は$\theta$を $ \displaystyle \frac{{ '{' }}\pi{{ '}' }}{{ '{' }}4{{ '}' }}$
+と取ると、$F(xcosθ+ysinθ,-xsinθ+ycosθ)$の$xy$の係数は0になる。
+</p>
+  </h3><br>
+  <p>
+    $\ \ F(x \cos \theta + y \sin \theta, -x \sin \theta + y \cos \theta)$<br>
+    $= a(x \cos \theta + y \sin \theta)^2+ b(x \cos \theta + y \sin \theta)( -x \sin \theta + y \cos \theta)+c( -x \sin \theta + y \cos \theta)^2+\cdots $<br>
+    $= (a\cos^2 \theta -b \sin \theta \cos \theta + c\sin ^2 \theta)x^2+ (2a\sin \theta \cos \theta + b \cos^2  \theta - b\sin^2 \theta -2c\sin \theta\cos \theta)xy+\cdots $<br>
+    $= (a\cos^2 \theta -b \sin \theta \cos \theta + c\sin ^2 \theta)x^2+ (a\sin 2\theta +b \cos 2\theta -c\sin 2 \theta)xy + \cdots  $<br>
+    $= (a\cos^2 \theta -b \sin \theta \cos \theta + c\sin ^2 \theta)x^2+ ((a-c)\sin 2 \theta + b \cos 2\theta)xy + \cdots  $<br>
+    $\cdot\ \ a\neq c$の時、$ \tan 2 \theta=\displaystyle \frac{{ '{' }}b{{ '}' }}{{ '{' }}c-a{{ '}' }}$と取っているので$ \sin 2 \theta=\displaystyle\cos 2 \theta \frac{{ '{' }}-b{{ '}' }}{{ '{' }}a-c{{ '}' }}$で、これを上式に代入すると
+    $xy$の係数=$(a-c)\sin 2 \theta + b \cos 2\theta= \displaystyle \frac{{ '{' }}-b(a-c){{ '}' }}{{ '{' }}a-c{{ '}' }}\cos 2 \theta + b \cos 2\theta= 0$<br>
+    $\cdot\ \ a = c$の時、$ \theta=\displaystyle \frac{{ '{' }}\pi{{ '}' }}{{ '{' }}4{{ '}' }}$と取っているので、
+    $xy$の係数=$ \displaystyle (a-c)\sin \frac {{ '{' }}\pi{{ '}' }} {{ '{' }}2{{ '}' }} + b \cos \frac {{ '{' }}\pi{{ '}' }} {{ '{' }}2{{ '}' }}= 0 + b \cos \frac {{ '{' }}\pi{{ '}' }} {{ '{' }}2{{ '}' }}= 0$
+  </p>
+  <br>
+</div>

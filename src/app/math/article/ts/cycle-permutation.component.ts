@@ -4,12 +4,12 @@ declare var MathJax: any;
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './permutation.component.html',
-  styleUrls: ['../../app.component.css', '../math.component.css']
+  templateUrl: '../html/cycle-permutation.component.html',
+  styleUrls: ['../../../app.component.css', '../../math.component.css']
 })
 
 
-export class PermutationComponent implements AfterViewChecked{
+export class CyclePermutationComponent implements AfterViewChecked{
   constructor(private router: Router) {}
 
   ngAfterViewChecked() {

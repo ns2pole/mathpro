@@ -4,8 +4,8 @@ declare var MathJax: any;
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './dup-combi-orbit-space.component.html',
-  styleUrls: ['../../app.component.css', '../math.component.css']
+  templateUrl: '../html/dup-combi-orbit-space.component.html',
+  styleUrls: ['../../../app.component.css', '../../math.component.css']
 })
 
 
