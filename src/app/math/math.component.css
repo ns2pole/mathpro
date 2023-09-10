@@ -80,3 +80,11 @@ a:hover {
   font-size: 0.9em;  /* 小さなフォントサイズ */
 }
 
+.articles-title-head {
+  background-color: white;
+  border-radius: 7px; /* 丸みの半径を調整 */
+  border: 1.8px solid #000000; /* 枠線の色と太さを調整 */
+  padding-left: 8px;  /* 内側のスペースを調整 */
+  padding-right: 8px;  /* 内側のスペースを調整 */
+  display: inline-block;  /* 要素をインラインブロックに */
+}

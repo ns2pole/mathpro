@@ -11,14 +11,23 @@
   <p>「2変数2次多項式$F(x,y)=ax^{{ '{' }}2{{ '}' }}+bxy+cy^{{ '{' }}2{{ '}' }}+dx+ey+f$の判別式」を$D(F(x,y))=b^{{ '{' }}2{{ '}' }}-4ac$ と表し、定義する。</p>
     <h3 class="styled-h3">命題　〜2変数2次多項式の判別式の回転不変性〜
       <p>
-        任意の2変数2次多項式$F(x,y)=ax^{{ '{' }}2{{ '}' }}+bxy+cy^{{ '{' }}2{{ '}' }}+dx+ey+f$に対して、どんな$\theta \in \mathbb{{ '{' }}R{{ '}' }}$に対しても$D(F(xcosθ+ysinθ,-xsinθ+ycosθ))=D(F(x,y))=b^2-4ac$
+        任意の2変数2次多項式$F(x,y)=ax^{{ '{' }}2{{ '}' }}+bxy+cy^{{ '{' }}2{{ '}' }}+dx+ey+f$に対して、どんな$\theta \in \mathbb{{ '{' }}R{{ '}' }}$に対しても$D(F(xcosθ+ysinθ,-xsinθ+ycosθ))=b^2-4ac=D(F(x,y))$
       </p>
   </h3>
   <br>
   Proof:<br>
   $F(xcosθ+ysinθ,-xsinθ+ycosθ)$<br>
-  $=a(xcosθ+ysinθ)^{{ '{' }}2{{ '}' }}+b(xcosθ+ysinθ)(-xsinθ+ycosθ)+c(-xsinθ+ycosθ)^{{ '{' }}2{{ '}' }}+\cdots$<br>
-  よって、$D(F(xcosθ+ysinθ,-xsinθ+ycosθ))=D(F(x,y))=b^2-4ac\ \ Q.E.D$
+  $=a(xcosθ+ysinθ)^{{ '{' }}2{{ '}' }}+b(xcosθ+ysinθ)(-xsinθ+ycosθ)+c(-xsinθ+ycosθ)^{{ '{' }}2{{ '}' }}+(1次以下の項)$<br>
+  であるから、<br>
+  <p>$x^2の係数=a \cos ^2 \theta  - b \cos \theta \sin \theta + c \sin ^2 \theta$</p>
+  <p>$xyの係数=2a \sin \theta \cos \theta  + b \cos ^2 \theta - b \sin ^2 \theta - 2c \sin \theta \cos \theta$
+  $= a \sin 2\theta + b \cos 2 \theta - c \sin 2\theta =  (a  - c) \sin 2\theta + b \cos 2 \theta$</p>
+  <p>$y^2の係数=a \sin ^2 \theta  + b \sin \theta \cos \theta + c \cos ^2 \theta$</p>
+  よって、<br>
+  $D(F(xcosθ+ysinθ,-xsinθ+ycosθ))$<br>
+  $=((a  - c) \sin 2\theta + b \cos 2 \theta)^2 - 4(a \cos ^2 \theta  - b \cos \theta \sin \theta + c \sin ^2 \theta)(a \sin ^2 \theta  + b \sin \theta \cos \theta + c \cos ^2 \theta)$<br>
+  $=(\ $各自計算$)\ = b^2-4ac = D(F(x,y))$
+  $\ \ \ \ Q.E.D$
   <br>
   <br>
 </div>

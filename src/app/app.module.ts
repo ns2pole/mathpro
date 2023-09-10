@@ -29,6 +29,7 @@ import { RotationToStandardComponent } from './math/article/ts/rotation-to-stand
 import { ImmutabilityForSlideComponent } from './math/article/ts/immutability-for-slide.component';
 import { ImmutabilityForRotationComponent } from './math/article/ts/immutability-for-rotation.component';
 import { ComingSoonComponent } from './math/article/ts/coming-soon.component';
+import { DiscriminantAndFactorizationComponent } from './math/article/ts/discriminant-and-factorization.component';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -51,7 +52,8 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/rotation-to-standard', component: RotationToStandardComponent },
   { path: 'math/coming-soon', component: ComingSoonComponent },
   { path: 'math/immutability-for-slide', component: ImmutabilityForSlideComponent },
-  { path: 'math/immutability-for-rotation', component: ImmutabilityForRotationComponent }
+  { path: 'math/immutability-for-rotation', component: ImmutabilityForRotationComponent },
+  { path: 'math/discriminant-and-factorization', component: DiscriminantAndFactorizationComponent }
 ];
 
 @NgModule({
