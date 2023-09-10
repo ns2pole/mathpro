@@ -1,4 +1,4 @@
-<h1>はじめに</h1>
+<h3>はじめに</h3>
 <p>
   - この記事で伝えたい事：円順列の問題を解く時よくある「1人を固定する」というのは要するに「完全代表系を張っている」
 </p>
@@ -10,7 +10,7 @@
 </p>
 <p>
 <div mathjax>
-  <h2>記号の約束</h2>
+  <h3>記号の約束</h3>
   <ul class="small-bullet">
     <li>記号の約束1：集合$\{{ '{' }}1,2,\cdots ,n\{{ '}' }}$を$[n]$と書く。</li>
     <li>記号の約束2：集合$\{{ '{' }}f\ |\ f:[n]\rightarrow[m]\ ,\ fは単射 \{{ '}' }}$を$F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[m]{{ '}' }}$と書き、これを順列全体という。(injはinjective:単射の頭文字より)</li>
@@ -22,11 +22,13 @@
   <h3>def 円順列</h3>
   <p>$n$人の円順列とは順列全体$F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }}$に巡回群$C_n$を右から群作用させた時の軌道空間$\displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }} $である。</p>
 
-  <h3>Proposition 1: 完全代表系と円順列における「固定」</h3>
+  <h3>Prop 1: 完全代表系と円順列における「固定」</h3>
   任意に$k,l\in [n]$を取ってくる。(つまり番号$k$を$l$番目に配置する。)
   この時、$R(k,l)$ は軌道空間$\displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }} $の完全代表系である。<br>
-  これを示す為に、包含写像と標準射影の合成$\pi : R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が全単射である事を示す。その為に以下の補題Lem1を用意する。
 
+  <h3>Proof of Prop1</h3>
+  命題は「包含写像と標準射影の合成$\pi : R(k,l)\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が全単射である」ことと同値。
+  これはLem2,Lem3より従う。 $\ \ Q.E.D$
 
 
   <h4>Lem 1</h4>
@@ -34,14 +36,16 @@
 
   <h4>Proof of Lem1</h4>
   単位元以外の元$\sigma\in C_n$を取ってくる。この時、$\sigma$は$C_n$の元だから、$\sigma(k)\neq k$。よって$\forall f\in R$に対して、$f$は定義より単射だから$\ \ f\circ \sigma(k)\neq f(k)=l$。よって$R$の定義より、$f\circ \sigma  \notin  R$
-  <h4>Proof of Prop1: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が単射</h4>
-  <p>$f,g\in R$に対して、$\pi (f) =\pi (g) $とする。この時、$f \sim g$より、$ \exists c \in C_n,f\circ c=g$　Lem1よりこれを満たすのは$c$が単位元の時に限る。よって$f=g$  $\square$
-  </p>
-  <h4>Proof of Prop1: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が全射</h4>
-  <p>「軌道空間の任意の元に対して、あるRの元が取って来れて$\pi$で対応させる事が出来る」事を示せばよい。言い換えると、軌道空間の任意の元に対して、どういう風に代表元$f$を取ってきても、$f$と同じ軌道にある$R$の元$g$が存在する事を示せばよい。
-  任意の$\overline{{ '{' }}f{{ '}' }} \in F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$に対して、$f\in F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }}$より、$f(a)=l$なる$a \in [n]$が存在する。$\sigma \in C_n$を$\sigma(k)=a$となるように取ってきて、$g=f\circ \sigma$とすると、$g\sim f$であってかつ、$g(k)=f\circ \sigma (k)= f(a) =l$より$g\in R\ $ よって$\pi (g)=\overline{{ '{' }}f{{ '}' }}$ $\square$
-  </p>
 
+  <h4>Lem2: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が単射</h4>
+  <h4>Proof of Lem2</h4>
+  <p>$f,g\in R$に対して、$\pi (f) =\pi (g) $とする。この時、$f \sim g$より、$ \exists c \in C_n,f\circ c=g$　Lem1よりこれを満たすのは$c$が単位元の時に限る。よって$f=g$  $\ \ Q.E.D$
+  </p>
+  <h4>Lem3: $\pi :R\hookrightarrow F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} \twoheadrightarrow \displaystyle F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$が全射</h4>
+  <h4>Proof of Lem3</h4>
+  <p>「軌道空間の任意の元に対して、あるRの元が取って来れて$\pi$で対応させる事が出来る」事を示せばよい。言い換えると、軌道空間の任意の元に対して、どういう風に代表元$f$を取ってきても、$f$と同じ軌道にある$R$の元$g$が存在する事を示せばよい。
+  任意の$\overline{{ '{' }}f{{ '}' }} \in F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }} /{{ '{' }}C_n{{ '}' }}$に対して、$f\in F_{{ '{' }}[n]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[n]{{ '}' }}$より、$f(a)=l$なる$a \in [n]$が存在する。$\sigma \in C_n$を$\sigma(k)=a$となるように取ってきて、$g=f\circ \sigma$とすると、$g\sim f$であってかつ、$g(k)=f\circ \sigma (k)= f(a) =l$より$g\in R\ $ よって$\pi (g)=\overline{{ '{' }}f{{ '}' }}$ $\ \ Q.E.D$
+  </p>
 
   <h3>具体例$(n=3)$</h3>
   $F_{{ '{' }}[3]\overset{{ '{' }}inj{{ '}' }}{{ '{' }}\rightarrow{{ '}' }}[3]{{ '}' }}$は以下の6つ元からなる集合である。
