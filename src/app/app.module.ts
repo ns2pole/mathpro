@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgChartsModule } from 'ng2-charts';
 import { MathjaxModule } from "mathjax-angular";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -53,7 +52,7 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/coming-soon', component: ComingSoonComponent },
   { path: 'math/immutability-for-slide', component: ImmutabilityForSlideComponent },
   { path: 'math/immutability-for-rotation', component: ImmutabilityForRotationComponent },
-  { path: 'math/discriminant-and-factorization', component: DiscriminantAndFactorizationComponent }
+  { path: 'math/discriminant-and-factorization', component: DiscriminantAndFactorizationComponent },
 ];
 
 @NgModule({
