@@ -1,8 +1,14 @@
 
 @media screen and (max-width:768px) {
+  h4 {
+    text-align: center;
+  }
   #me {
     width: 60%;
     height: auto;
+  }
+  #me-img-container {
+    text-align: center;
   }
 }
 
