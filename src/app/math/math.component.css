@@ -14,16 +14,22 @@ img {
 @media (max-width: 768px) {
   /* 全体のコンテナ */
   .articles-title{
-    width: 90%;  /* または適切なサイズに調整 */
+    width: 95%;  /* または適切なサイズに調整 */
     height: 33%;
     margin: auto;  /* 中央寄せ */
     text-align: center;
   }
 
   .articles {
-    width: 90%  ;  /* または適切なサイズに調整 */
+    width: 95%  ;  /* または適切なサイズに調整 */
     margin: auto;  /* 中央寄せ */
   }
+
+
+  .articles li {
+    margin-left: 1em;  /* Adjust the margin if necessary */
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -39,10 +45,11 @@ img {
     width: 30%  ;  /* または適切なサイズに調整 */
     margin: auto;  /* 中央寄せ */
   }
-}
 
-.articles li {
-  margin-left: 3em;  /* Adjust the margin if necessary */
+  .articles li {
+    margin-left: 3em;  /* Adjust the margin if necessary */
+  }
+
 }
 
 /* リスト項目 */
