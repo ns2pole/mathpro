@@ -1,13 +1,30 @@
 <h3 class="styled-h3">はじめに</h3><br>
 <p>
-この記事で伝えたい主張：
-</p>
-<p>
-必要な予備知識：
+必要な予備知識：因数分解と2次方程式の解の公式を習っていること
 </p>
 <p>
 <div mathjax>
-  <h3 class="styled-h3">定</h3><br>
-  <p>coming-soon</p>
+  <h3 class="styled-h3">命題<br>
+    $a,b,c$が整数の時、$b^2-4ac$が平方数ならば、整数係数2次形式$ax^2+bxy+cy^2$は1次式の積に因数分解できる。
+  </h3>
   <br>
+  Proof:<br>
+  $\displaystyle ax^2+bxy+cy^2=a\Bigr( x-\frac{{ '{' }}-b+\sqrt{{ '{' }}b^2-4ac{{ '}' }}{{ '}' }}{{ '{' }}2a{{ '}' }}y \Bigl)\Bigr( x-\frac{{ '{' }}-b-\sqrt{{ '{' }}b^2-4ac{{ '}' }}{{ '}' }}{{ '{' }}2a{{ '}' }}y \Bigl)$と因数分解出来る。<br>
+ここで、仮定より$b^2-4ac=k^2$と置くと、$(b-k)(b+k)=4ac$であるから、$b,k$の偶奇は一致する。※<br>
+
+よって、$-b+k,b+k$は偶数である。すなわち、$-b+\sqrt{{ '{' }}b^2-4ac{{ '}' }},-b-\sqrt{{ '{' }}b^2-4ac{{ '}' }}$は偶数である。よって、$\displaystyle \frac{{ '{' }}-b+\sqrt{{ '{' }}b^2-4ac{{ '}' }}{{ '}' }}{{ '{' }}2{{ '}' }}$,$\displaystyle \frac{{ '{' }}-b-\sqrt{{ '{' }}b^2-4ac{{ '}' }}{{ '}' }}{{ '{' }}2{{ '}' }}$は共に整数。
+<br>
+ここで、$p=\displaystyle \frac{{ '{' }}-b-\sqrt{{ '{' }}b^2-4ac{{ '}' }}{{ '}' }}{{ '{' }}2{{ '}' }}$,$q=\displaystyle \frac{{ '{' }}-b+\sqrt{{ '{' }}b^2-4ac{{ '}' }}{{ '}' }}{{ '{' }}2{{ '}' }}$とすると、
+$\displaystyle ax^2+bxy+cy^2=a\Bigr( x-\frac{{ '{' }}p{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)\Bigr( x-\frac{{ '{' }}q{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)$となる。<br>
+$y^2$の係数比較をすると$c=\displaystyle \frac{{ '{' }}pq{{ '}' }}{{ '{' }}a{{ '}' }}$であるから、$\displaystyle \frac{{ '{' }}pq{{ '}' }}{{ '{' }}a{{ '}' }}\in \mathbb{{ '{' }}Z{{ '}' }}$
+よって補題の仮定を全て満たす。
+<br><br>
+補題を用いて
+$a=\alpha\betaかつ\alpha{{ '{' }}\displaystyle \frac{{ '{' }}p{{ '}' }}{{ '{' }}a{{ '}' }}\in\mathbb{{ '{' }}Z{{ '}' }}{{ '}' }}かつ{{ '{' }}\displaystyle \beta\frac{{ '{' }}q{{ '}' }}{{ '{' }}a{{ '}' }}\in\mathbb{{ '{' }}Z{{ '}' }}{{ '}' }}$が成り立つような$\alpha\in\mathbb{{ '{' }}Z{{ '}' }},\beta\in\mathbb{{ '{' }}Z{{ '}' }}$を取ってくる。すると、$\displaystyle ax^2+bxy+cy^2=a\Bigr( x-\frac{{ '{' }}p{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)\Bigr( x-\frac{{ '{' }}q{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)=\alpha \beta \Bigr( x-\frac{{ '{' }}p{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)\Bigr( x-\frac{{ '{' }}q{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)= \Bigr( \alpha x-\alpha\frac{{ '{' }}p{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)\Bigr( \beta x-  \beta \frac{{ '{' }}q{{ '}' }}{{ '{' }}a{{ '}' }}y \Bigl)\ \ \ \ Q.E.D$
+
+<br>
+<br>
+<br>
+<br><br>
+※もし仮に片方が奇数で片方が偶数の場合、$b-k,b+k$のいずれも奇数となり$b^2-k^2$が$4$の倍数とならない<br>
 </div>
