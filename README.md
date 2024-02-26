@@ -3,6 +3,57 @@ ng buildをローカルのpcで行う。
 git pull
 update.sh実行でapacheで動かせる。(update.shが更新されたら、chmod 744 ./update.shが必要)
 
+
+# reload時に404を防ぐ方法
+httpd.confについて下記のように変えて直った。
+DocumentRoot "/var/www/html"
+
+#
+# Relax access to content within /var/www.
+#
+<Directory "/var/www">
+    AllowOverride All
+    # Allow open access:
+    Require all granted
+</Directory>
+
+# Further relax access to the default document root:
+<Directory "/var/www/html">
+    #
+    # Possible values for the Options directive are "None", "All",
+    # or any combination of:
+    #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+    #
+    # Note that "MultiViews" must be named *explicitly* --- "Options All"
+    # doesn't give it to you.
+    #
+    # The Options directive is both complicated and important.  Please see
+    # http://httpd.apache.org/docs/2.4/mod/core.html#options
+    # for more information.
+    #
+    Options Indexes FollowSymLinks
+
+    #
+    # AllowOverride controls what directives may be placed in .htaccess files.
+    # It can be "All", "None", or any combination of the keywords:
+    #   Options FileInfo AuthConfig Limit
+    #
+    AllowOverride All
+    #
+    # Controls who can get stuff from this server.
+    #
+    Require all granted
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+        RewriteRule ^index\.html$ - [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule . /index.html [L]
+    </IfModule>
+</Directory>
+
+
 # Mathpro
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
