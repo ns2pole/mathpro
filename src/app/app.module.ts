@@ -30,6 +30,7 @@ import { ImmutabilityForRotationComponent } from './math/article/ts/immutability
 import { ComingSoonComponent } from './math/article/ts/coming-soon.component';
 import { DiscriminantAndFactorizationComponent } from './math/article/ts/discriminant-and-factorization.component';
 import { LemmaFactorizationOnIntegerComponent } from './math/article/ts/lemma-factorization-on-integer.component';
+import { BuoyancyComparisonComponent } from './physics/note/ts/buoyancy-comparison';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -55,6 +56,7 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/immutability-for-rotation', component: ImmutabilityForRotationComponent },
   { path: 'math/discriminant-and-factorization', component: DiscriminantAndFactorizationComponent },
 	{ path: 'math/lemma-factorization-on-integer', component: LemmaFactorizationOnIntegerComponent },
+	{ path: 'physics-experiment-note/buoyancy-comparison', component: BuoyancyComparisonComponent },
 ];
 
 @NgModule({
