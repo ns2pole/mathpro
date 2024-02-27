@@ -58,8 +58,14 @@ body {
   }
 
   header li {
+    font-size: 16px; /* お好みのフォントサイズに調整してください */
+    min-height: 28px; /* 必要に応じて調整してください */
     margin: 3px;
-    padding: 2px;
+    padding-left: 5px;  /* 左側の内側余白 */
+    padding-right: 5px; /* 右側の内側余白 */
+    align-items: center; /* コンテンツを中央揃えにする */
+    justify-content: center; /* 水平方向に中央揃えにする場合 */
+    display: flex;
     border-radius: 5px;
     border: solid 1px #000000;
   }
