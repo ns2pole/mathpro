@@ -1,7 +1,16 @@
 # webで見れるように動かす方法
-ng buildをローカルのpcで行う。
+step1. ng buildをローカルのpcで行う。
+step2. vpsのサーバーでgit pullして
+step3. sudo find ./dist/mathpro -maxdepth 1 -type f -exec mv {} ../ \;
+で動かせる
+画像などがある場合は
 git pull
-update.sh実行でapacheで動かせる。(update.shが更新されたら、chmod 744 ./update.shが必要)
+sudo find ./dist/mathpro -maxdepth 1 -type f -exec mv {} ../ \;
+sudo mv ./dist/mathpro/assets/images/* ../assets/images/
+sudo rmdir ./dist/mathpro/assets/images
+sudo rmdir ./dist/mathpro/assets
+が必要な気がする(update.shにまとめてある)
+※update.shが更新されたら、chmod 744 ./update.shが必要
 
 
 # reload時に404を防ぐ方法
