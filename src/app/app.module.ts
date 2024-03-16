@@ -32,6 +32,7 @@ import { DiscriminantAndFactorizationComponent } from './math/article/ts/discrim
 import { LemmaFactorizationOnIntegerComponent } from './math/article/ts/lemma-factorization-on-integer.component';
 import { BuoyancyComparisonComponent } from './physics/note/ts/buoyancy-comparison';
 import { ResistanceLengthAndValueComponent } from './physics/note/ts/resistance-length-and-value';
+import { WhatIsCapacitorComponent } from './physics/note/ts/what-is-capacitor';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -59,6 +60,7 @@ const ROUTE_TABLE: Routes = [
 	{ path: 'math/lemma-factorization-on-integer', component: LemmaFactorizationOnIntegerComponent },
 	{ path: 'physics-experiment-note/buoyancy-comparison', component: BuoyancyComparisonComponent },
   { path: 'physics-experiment-note/resistance-length-and-value', component: ResistanceLengthAndValueComponent },
+  { path: 'physics-experiment-note/what-is-capacitor', component: WhatIsCapacitorComponent },
 ];
 
 @NgModule({
