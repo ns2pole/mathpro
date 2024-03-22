@@ -9,9 +9,11 @@ import { VisitorCounterService } from '../visitor-counter-service/visitor-counte
 })
 export class PlanComponent {
   constructor(private router: Router, private counterService: VisitorCounterService) {
+    console.log('Counter updating...');
     this.counterService.updateCounter().subscribe(response => {
       console.log('Counter updated:', response);
     });
+
   }
   toContact() {
     const queryParams = { title: '無料体験の申し込み', message: '無料体験を申し込み致します。よろしくお願いします。' };

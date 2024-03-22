@@ -33,7 +33,6 @@ import { LemmaFactorizationOnIntegerComponent } from './math/article/ts/lemma-fa
 import { BuoyancyComparisonComponent } from './physics/note/ts/buoyancy-comparison';
 import { ResistanceLengthAndValueComponent } from './physics/note/ts/resistance-length-and-value';
 import { WhatIsCapacitorComponent } from './physics/note/ts/what-is-capacitor';
-import { VisitorCounterService} from './visitor-counter-service/visitor-counter.service'
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
