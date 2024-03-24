@@ -33,6 +33,8 @@ import { LemmaFactorizationOnIntegerComponent } from './math/article/ts/lemma-fa
 import { BuoyancyComparisonComponent } from './physics/note/ts/buoyancy-comparison';
 import { ResistanceLengthAndValueComponent } from './physics/note/ts/resistance-length-and-value';
 import { WhatIsCapacitorComponent } from './physics/note/ts/what-is-capacitor';
+import { MagneticFieldByCircularCurrentComponent } from './physics/note/ts/magnetic-field-by-circular-current';
+
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
 // 下記のように明示する以外にも
@@ -60,6 +62,7 @@ const ROUTE_TABLE: Routes = [
 	{ path: 'physics-experiment-note/buoyancy-comparison', component: BuoyancyComparisonComponent },
   { path: 'physics-experiment-note/resistance-length-and-value', component: ResistanceLengthAndValueComponent },
   { path: 'physics-experiment-note/what-is-capacitor', component: WhatIsCapacitorComponent },
+  { path: 'physics-experiment-note/magnetic-field-by-circular-current', component: MagneticFieldByCircularCurrentComponent },
 ];
 
 @NgModule({
