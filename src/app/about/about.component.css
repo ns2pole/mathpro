@@ -1,24 +1,221 @@
 
-@media screen and (max-width:768px) {
-  h4 {
-    text-align: center;
-  }
-  #me {
-    width: 60%;
-    height: auto;
-  }
-  #me-img-container {
-    text-align: center;
-  }
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
-@media screen and (min-width: 769px) {
-  #me {
-    width: 20%;
-    height: auto;
-  }
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  line-height: 1.5;
 }
 
-.bold {
+li {
+  margin-bottom: 5px;
+}
+
+span {
+  margin-top: 2%;
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+figcaption {
+  font-size: 17px;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  opacity: 0.6;
+}
+
+.plan-button {
+  width: 25%;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  border: 1px solid #000000;
+}
+
+.plan-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.plan-button div {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.online-plan-button {
+  width: 85%;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  border: 1px solid #000000;
+}
+
+.plan-inner-button {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #9fddff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  border: 1px solid #000000;
+}
+
+
+@media (max-width: 767px) {
+  .plan-container {
+    flex-direction: column;
+  }
+
+  .plan-button {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 85%;
+  }
+}
+
+.sub-container {
+  text-align: center;
+}
+
+.explanation {
+  text-align: center;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+#prime-factors-img-container, #error-img-container, #desk-img-container {
+  text-align: center;
+}
+
+
+@media (max-width: 767px) {
+  #prime-factors-img , #error-img, #desk-img{
+    width: 100%;
+    height: 100%;
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-left: #000000 1px solid;
+    border-right: #000000 1px solid;
+  }
+
+  h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .recommend-title {
+    text-align: center;
+    font-size: 19px;
+  }
+
+  #prime-factor-ex {
+    color: #000000;
+    font-size: 29px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .title {
+    color: #000000;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #prime-factors-img, #error-img, #desk-img {
+    width: 50%;
+    height: 50%;
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+    border-left: #000000 1px solid;
+    border-right: #000000 1px solid;
+  }
+
+  h1 {
+    color: #007bff;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .recommend-title {
+    text-align: center;
+    font-size: 23px;
+  }
+
+  #prime-factor-ex {
+    color: #000000;
+    font-size: 49px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .title {
+    color: #000000;
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }

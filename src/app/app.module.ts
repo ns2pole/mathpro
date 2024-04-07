@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { TopComponent } from './top/top.component';
-import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
 import { PlanComponent } from './plan/plan.component';
 import { BarChartComponent } from './program/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './program/breadth-first-search/breadth-first-search.component';
@@ -35,6 +35,7 @@ import { ResistanceLengthAndValueComponent } from './physics/note/ts/resistance-
 import { WhatIsCapacitorComponent } from './physics/note/ts/what-is-capacitor';
 import { MagneticFieldByCircularCurrentComponent } from './physics/note/ts/magnetic-field-by-circular-current';
 import { SeriesSynthesisCapacityComponent } from './physics/note/ts/series_synthesis_capacity';
+import { ParallelSynthesisCapacityComponent } from './physics/note/ts/parallel_synthesis_capacity';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -42,9 +43,9 @@ import { SeriesSynthesisCapacityComponent } from './physics/note/ts/series_synth
 //    '' で [/] のルートパスを指定できる
 //    '**' でワイルドカードを指定できる
 const ROUTE_TABLE: Routes = [
-  { path: '', component: TopComponent },
+  { path: '', component: PlanComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'plan', component: PlanComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'math', component: MathComponent },
   { path: 'physics', component: PhysicsComponent },
@@ -65,13 +66,14 @@ const ROUTE_TABLE: Routes = [
   { path: 'physics-experiment-note/what-is-capacitor', component: WhatIsCapacitorComponent },
   { path: 'physics-experiment-note/magnetic-field-by-circular-current', component: MagneticFieldByCircularCurrentComponent },
   { path: 'physics-experiment-note/series_synthesis_capacity', component: SeriesSynthesisCapacityComponent },
+  { path: 'physics-experiment-note/parallel_synthesis_capacity', component: ParallelSynthesisCapacityComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopComponent,
     AboutComponent,
+    ProfileComponent,
     ContactComponent,
     BarChartComponent,
     BreadthFirstSearchComponent,
