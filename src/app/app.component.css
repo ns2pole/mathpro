@@ -49,6 +49,12 @@ body {
     height: 12px;
     vertical-align: middle; /* 画像を垂直方向に中央揃えに */
   }
+
+  #tiktok {
+    width: 12px;
+    height: 12px;
+    vertical-align: middle; /* 画像を垂直方向に中央揃えに */
+  }
 }
 
 @media (min-width: 767px) {
@@ -70,6 +76,12 @@ body {
     border: solid 1px #000000;
   }
   #youtube {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle; /* 画像を垂直方向に中央揃えに */
+  }
+
+  #tiktok {
     width: 15px;
     height: 15px;
     vertical-align: middle; /* 画像を垂直方向に中央揃えに */
