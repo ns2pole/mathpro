@@ -36,6 +36,7 @@ import { WhatIsCapacitorComponent } from './physics/note/ts/what-is-capacitor';
 import { MagneticFieldByCircularCurrentComponent } from './physics/note/ts/magnetic-field-by-circular-current';
 import { SeriesSynthesisCapacityComponent } from './physics/note/ts/series_synthesis_capacity';
 import { ParallelSynthesisCapacityComponent } from './physics/note/ts/parallel_synthesis_capacity';
+import { CoilPropertyKeepCurrentComponent } from './physics/note/ts/coil-property-keep-current';
 
 // Routing を行う対象のコンポーネントを管理する
 // path にセットした文字列にマッチしたURLが指定されると、対になっているコンポーネントが表示される
@@ -67,7 +68,8 @@ const ROUTE_TABLE: Routes = [
   { path: 'physics-experiment-note/magnetic-field-by-circular-current', component: MagneticFieldByCircularCurrentComponent },
   { path: 'physics-experiment-note/series_synthesis_capacity', component: SeriesSynthesisCapacityComponent },
   { path: 'physics-experiment-note/parallel_synthesis_capacity', component: ParallelSynthesisCapacityComponent },
-];
+  { path: 'physics-experiment-note/coil-property-keep-current', component: CoilPropertyKeepCurrentComponent },
+]
 
 @NgModule({
   declarations: [
