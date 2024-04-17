@@ -1,0 +1,61 @@
+<h1>電磁気学実験　ソレノイドコイルの自己インダクタンス</h1>
+
+<img>
+<div mathjax>
+  <img id="test" class="test" src="/assets/images/physics-experiment-note/test.png">
+
+  <h2>〜結果まとめ〜</h2>
+
+  <table border="1" cellspacing="1" cellpadding="10">
+    <tr>
+      <td>理論値</td>
+      <td>$21.64\cdots[\mu H]$</td>
+    </tr>
+    <tr>
+      <td>測定値</td>
+      <td>$20.28[\mu H]$</td>
+    </tr>
+    <tr>
+      <td>測定値と理論値のズレ</td>
+      <td>$21.64\cdots-20.28\fallingdotseq1.36[\mu H]$
+      </td>
+    </tr>
+    <tr>
+      <td>測定値と理論値のズレの割合
+      </td>
+      <td>測定値と理論値のズレ$\div$理論値
+        $\displaystyle \fallingdotseq\frac{{ '{' }}1.36{{ '}' }}{{ '{' }}21.64{{ '}' }}=6.28\cdots\%$
+        </td>
+    </tr>
+  </table>
+
+<h2>〜データ〜</h2>
+<p>・巻数:$N=300回$</p>
+<p>・長さ:$L=30[cm]$</p>
+<p>・巻き数密度:$n=1000[m^{{ '{' }}-1{{ '}' }}]$</p>
+<p>・コイルを巻きつけている管の半径:$R=4[mm]$</p>
+<p>・導線半径:$r=0.275[mm]$</p>
+
+<h2>理論値計算</h2>
+<p>・コイルの断面積$S[m^2]$を管の中心から導線の真ん中までを半径とすると、$S=\left(R+r\right)^{{ '{' }}2{{ '}' }}\ \ [m^2]$</p>
+
+<p>・コイルに電流$I[A]$を流した時のコイル内部の磁束密度$B[T]$はコイルが無限に長い近似を行うと</p>
+  $$B=\mu_{{ '{' }}0{{ '}' }}nI\ \ [T]$$
+
+電流$I[A]$をコイルに流した時にそのコイル自身を貫く磁束は、巻き数$N$,断面積$S$,磁束密度$B$の積で与えられるから、
+$$\begin{{ '{' }}align{{ '}' }}
+\Phi =& NSB
+	=N\times\left(R+r\right)^{{ '{' }}2{{ '}' }}\pi\times\mu_{{ '{' }}0{{ '}' }}nI
+	=300\times\left(\left(4+0.275\right)^{{ '{' }}2{{ '}' }}\times10^{{ '{' }}-3{{ '}' }}\right)^{{ '{' }}2{{ '}' }}\pi\times4\pi\times10^{{ '{' }}-7{{ '}' }}\times1000\times I
+	=3\times\left(4+0.275\right)^{{ '{' }}2{{ '}' }}\times4\times\pi^{{ '{' }}2{{ '}' }}\times10^{{ '{' }}-8{{ '}' }}I \\\\
+	=& 21.64\cdots\times10^{{ '{' }}-6{{ '}' }}\times I\ \ \ [Wb]
+\end{{ '{' }}align{{ '}' }}$$
+
+
+自己インダクタンスLの定義は$\Phi$と$I$の間の比例定数であるから、
+
+$$
+L	= 21.64\cdots\times10^{{ '{' }}-6{{ '}' }}[H] = 21.64\cdots[\mu H]
+$$
+<br><br>
+</div>
