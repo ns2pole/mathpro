@@ -1,7 +1,15 @@
 figure {
   text-align: center;
 }
-#coil-cross-section-view {
-    width: 30%;
-    height: 30%;
+@media (max-width: 767px) {
+  #coil-cross-section-view {
+      width: 60%;
+      height: 60%;
+  }
+}
+@media (min-width: 767px) {
+  #coil-cross-section-view {
+      width: 35%;
+      height: 35%;
+  }
 }
