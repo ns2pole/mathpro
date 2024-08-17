@@ -23,9 +23,9 @@
   height: 100%; /* 高さを調整 */
 }
 .container {
-  display: inline-flex;
+  display: flex; /* inline-flex を flex に変更 */
+  justify-content: center; /* 横方向のセンタリング */
   align-items: center;
-  margin: 10px;
 }
 .operator-container {
   display: flex;

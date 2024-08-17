@@ -1,42 +1,43 @@
 <div class="explanation">
   有理数同士の和の計算プログラムです。分母の最大公約数を計算し、和を計算し、結果は既約分数になるようにしています。
 </div>
-<div>
-  <div class="container">
-      <div class="fraction">
-      <div class="numerator">
-        <input id="numerator1" type="text" [(ngModel)]="fraction1Numerator" placeholder="分子2">
-      </div>
-      <div class="line"></div>
-      <div class="denominator">
-        <input id="denominator1" type="text" [(ngModel)]="fraction1Denominator" placeholder="分母2">
-      </div>
+<div class="container">
+  <div class="fraction">
+    <div class="numerator">
+      <input id="numerator1" type="text" [(ngModel)]="fraction1Numerator" placeholder="分子2">
     </div>
-    <div class="operator-container">
-        <span class="operator">+</span>
+    <div class="line">
+
     </div>
-    <div class="fraction">
-      <div class="numerator">
-        <input id="numerator2" type="text" [(ngModel)]="fraction2Numerator" placeholder="分子2">
-      </div>
-      <div class="line"></div>
-      <div class="denominator">
-        <input id="denominator2" type="text" [(ngModel)]="fraction2Denominator" placeholder="分母2">
-      </div>
+    <div class="denominator">
+      <input id="denominator1" type="text" [(ngModel)]="fraction1Denominator" placeholder="分母2">
     </div>
-    <div class="operator-container">
-      <span class="operator">=</span>
+  </div>
+  <div class="operator-container">
+    <span class="operator">+</span>
+  </div>
+  <div class="fraction">
+    <div class="numerator">
+      <input id="numerator2" type="text" [(ngModel)]="fraction2Numerator" placeholder="分子2">
     </div>
-    <div class="fraction">
-      <div class="numerator">
-        <input id="result-numerator" type="text" [(ngModel)]="resultNumerator" readonly>
-      </div>
-      <div class="line"></div>
-      <div class="denominator">
-        <input id="result-denominator" type="text" [(ngModel)]="resultDenominator" readonly>
-      </div>
+    <div class="line"></div>
+    <div class="denominator">
+      <input id="denominator2" type="text" [(ngModel)]="fraction2Denominator" placeholder="分母2">
     </div>
-    <div class="button_wrapper">
-        &nbsp;&nbsp;&nbsp;<button (click)="calc()">計算</button>&nbsp;&nbsp;
+  </div>
+  <div class="operator-container">
+    <span class="operator">=</span>
+  </div>
+  <div class="fraction">
+    <div class="numerator">
+      <input id="result-numerator" type="text" [(ngModel)]="resultNumerator" readonly>
     </div>
+    <div class="line"></div>
+    <div class="denominator">
+      <input id="result-denominator" type="text" [(ngModel)]="resultDenominator" readonly>
+    </div>
+  </div>
+</div>
+<div class="button_wrapper">
+  <button (click)="calc()">計算</button>
 </div>
