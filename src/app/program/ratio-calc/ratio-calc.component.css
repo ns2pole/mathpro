@@ -34,7 +34,7 @@
   flex-direction: column;
   justify-content: center; /* 中央揃え */
   height: 100%; /* 高さを合わせる */
-  padding: 0 15px; /* 左右のスペースを調整 */
+  padding: 0 8px; /* 左右のスペースを調整 */
 }
 .result-container {
   display: inline-flex;
