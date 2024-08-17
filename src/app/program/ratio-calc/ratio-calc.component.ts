@@ -13,7 +13,7 @@ interface Fraction {
   styleUrls: [ '../program.component.css','./ratio-calc.component.css' ],
 })
 export class RatioCalcComponent {
-  private apiUrl = 'http://promath.jp:8080/getAddedRatio';
+  private apiUrl = 'https://promath.jp:8081/getAddedRatio';
   constructor(private http: HttpClient) {}
   fraction1Numerator: number | null = null; // 初期値を null に設定
   fraction1Denominator: number | null = null; // 初期値を null に設定
