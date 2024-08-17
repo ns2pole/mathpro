@@ -38,7 +38,6 @@ export class BreadthFirstSearchComponent {
   }
 
   async draw() {
-    console.log('draw');
     this.buttonDisabled = true;
     await this.evoluteAndDraw();
     this.drawSolution();
@@ -72,10 +71,17 @@ export class BreadthFirstSearchComponent {
 
 
   reset() {
+    // 既存の p5 インスタンスを停止し、キャンバスを削除する
+    if (this.p) {
+      this.p.remove(); // p5 の remove() メソッドでキャンバスを削除
+    }
+
+    // 新しい迷路と関連オブジェクトを生成
     this.lab = Labyrinth2D.generateLabyrinth();
     this.ad = AdjacentMatrix.getAdjacentMatrixFor(this.lab);
     this.plane = new Plane(this.lab, this.ad);
+
+    // 新しい p5 インスタンスを生成して描画を開始
     this.p = new p5(this.sketch);
-    document.getElementsByClassName('p5Canvas')[0].remove();
   };
 }

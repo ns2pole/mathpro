@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // FormsModule をインポート
 import { BrowserModule } from '@angular/platform-browser';
 import { NgChartsModule } from 'ng2-charts';
 import { MathjaxModule } from "mathjax-angular";
@@ -16,6 +17,7 @@ import { MathComponent } from './math/math.component';
 import { PhysicsComponent } from './physics/physics.component';
 import { ProgramComponent } from './program/program.component';
 import { PrimeFactorizationComponent } from './program/prime-factorization/prime-factorization.component';
+import { RatioCalcComponent } from './program/ratio-calc/ratio-calc.component';
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
 import { TetrisComponent } from './program/tetris/tetris.component';
@@ -85,11 +87,13 @@ const ROUTE_TABLE: Routes = [
     PhysicsComponent,
     ProgramComponent,
     PrimeFactorizationComponent,
+    RatioCalcComponent,
     InvaderGameComponent,
     MechanicsComponent,
     TetrisComponent,
   ],
   imports: [
+    FormsModule, // FormsModule を imports 配列に追加
     BrowserModule,
     AppRoutingModule,
     NgChartsModule,
