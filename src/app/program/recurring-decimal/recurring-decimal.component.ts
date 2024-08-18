@@ -28,7 +28,7 @@ export class RecurringDecimalComponent {
 
   public calc(): void {
     this.sendRatio(this.ratioDenominator, this.ratioNumerator).subscribe(response => {
-      this.recurringDecimal = response;
+      this.recurringDecimal = "循環節は  " + response + "です。";
     }, error => {
       alert("errorが発生しました");
       console.log(error);

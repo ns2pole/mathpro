@@ -12,10 +12,10 @@
     <div class="denominator">
       <input id="denominator1" type="text" [(ngModel)]="ratioDenominator" placeholder="分母">
     </div>
-    <div class="recurring-decimal">
-      <input id="recurring-decimal" type="text" [(ngModel)]="recurringDecimal" readonly>
-    </div>
   </div>
+</div>
+<div class="recurring-decimal">
+  <span id="recurring-decimal">{{ recurringDecimal }}</span>
 </div>
 <div class="button_wrapper">
   <button (click)="calc()">計算</button>

@@ -34,3 +34,10 @@
 button {
   width: 50px;
 }
+.recurring-decimal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* 必要に応じて設定 */
+  text-align: center;
+}
