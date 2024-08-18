@@ -18,6 +18,7 @@ import { PhysicsComponent } from './physics/physics.component';
 import { ProgramComponent } from './program/program.component';
 import { PrimeFactorizationComponent } from './program/prime-factorization/prime-factorization.component';
 import { RatioCalcComponent } from './program/ratio-calc/ratio-calc.component';
+import { RecurringDecimalComponent } from './program/recurring-decimal/recurring-decimal.component';
 import { InvaderGameComponent } from './program/invader-game/invader-game.component';
 import { MechanicsComponent } from './program/mechanics/mechanics.component';
 import { TetrisComponent } from './program/tetris/tetris.component';
@@ -88,6 +89,7 @@ const ROUTE_TABLE: Routes = [
     ProgramComponent,
     PrimeFactorizationComponent,
     RatioCalcComponent,
+    RecurringDecimalComponent,
     InvaderGameComponent,
     MechanicsComponent,
     TetrisComponent,

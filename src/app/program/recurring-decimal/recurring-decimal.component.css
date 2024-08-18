@@ -1,0 +1,36 @@
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.fraction input {
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+  border: 0.5px solid #000; /* 枠線を明示的に設定 */
+  border-radius: 4px; /* 角を丸める場合 */
+  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
+}
+.fraction .line {
+  display: block;
+  width: 100%;
+  border-top: 2px solid #000;
+  margin: 5px 0;
+}
+.container {
+  display: flex; /* inline-flex を flex に変更 */
+  justify-content: center; /* 横方向のセンタリング */
+  align-items: center;
+}
+.result-container {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px;
+}
+.result-container .fraction {
+  margin: 0; /* 結果部分のマージンをリセット */
+}
+button {
+  width: 50px;
+}

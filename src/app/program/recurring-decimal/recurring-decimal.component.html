@@ -1,0 +1,22 @@
+<div class="explanation">
+  有理数の循環節を求めるプログラムです。
+</div>
+<div class="container">
+  <div class="fraction">
+    <div class="numerator">
+      <input id="numerator1" type="text" [(ngModel)]="ratioNumerator" placeholder="分子">
+    </div>
+    <div class="line">
+
+    </div>
+    <div class="denominator">
+      <input id="denominator1" type="text" [(ngModel)]="ratioDenominator" placeholder="分母">
+    </div>
+    <div class="recurring-decimal">
+      <input id="recurring-decimal" type="text" [(ngModel)]="recurringDecimal" readonly>
+    </div>
+  </div>
+</div>
+<div class="button_wrapper">
+  <button (click)="calc()">計算</button>
+</div>
