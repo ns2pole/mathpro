@@ -2,7 +2,7 @@
 text-align: center;
 }
 #tetris-canvas {
-text-align: center;
+  text-align: center;
 }
 .program-container {
   border-bottom: 1px solid #ccc;
@@ -39,11 +39,11 @@ text-align: center;
 
 @media screen and (min-width: 769px) {
   button {
-      width: 20%;
+      width: 6%;
       height: 100%;
   }
   canvas {
-      width: 60%;
+      width: 30%;
       height: auto;
       margin: 0 auto;
   }

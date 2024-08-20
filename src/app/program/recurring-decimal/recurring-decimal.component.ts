@@ -18,6 +18,7 @@ export class RecurringDecimalComponent {
   ratioNumerator: number | null = null; // 初期値を null に設定
   ratioDenominator: number | null = null; // 初期値を null に設定
   recurringDecimal : string = "";
+  recurringDecimalLength : string = "";
   sendRatio(deno: number | null, nume :number | null): Observable<any> {
     const payload = {
       denominator : deno,
@@ -28,6 +29,15 @@ export class RecurringDecimalComponent {
 
   public calc(): void {
     this.sendRatio(this.ratioDenominator, this.ratioNumerator).subscribe(response => {
+      // 半角スペースを取り除く
+      const noSpaces = response.replace(/ /g, '');
+      // 数値だけを抽出する
+      const numbers = noSpaces.match(/\d+/g);
+      // 数値部分を結合する
+      const numberStr = numbers ? numbers.join('') : '';
+      // 結果の長さを求める
+      const recurringDecimalLength = numberStr.length;
+      this.recurringDecimalLength = "循環節の長さは " + recurringDecimalLength + "です。";
       this.recurringDecimal = "循環節は  " + response + "です。";
     }, error => {
       alert("errorが発生しました");
