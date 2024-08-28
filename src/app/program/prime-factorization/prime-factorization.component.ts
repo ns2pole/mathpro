@@ -42,7 +42,11 @@ export class PrimeFactorizationComponent {
     const integer = parseInt((<HTMLInputElement>document.getElementById("integer")).value);
     const factors = this.getPrimeFactorsOf(integer);
     const formatted = this.formatPrimeFactors(factors);
-    document.getElementById("result")!.innerHTML = "$" + integer.toString() + " = " + (formatted.join(" × ") + "$");
+    if(factors.length == 1) {
+      document.getElementById("result")!.innerHTML = integer.toString() + "は素数です";
+    } else {
+      document.getElementById("result")!.innerHTML = "$" + integer.toString() + " = " + (formatted.join(" × ") + "$");
+    }
     (window as any).MathJax.typeset();
   }
 
