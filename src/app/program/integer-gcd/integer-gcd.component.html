@@ -1,0 +1,26 @@
+<div class="explanation">
+  有理数同士の和の計算プログラムです。分母の最大公約数を計算し、和を計算します。結果は既約分数になるようにしています。
+</div>
+<div class="container">
+  <div class="fraction">
+    <div class="numerator">
+      <input id="numerator1" type="text" [(ngModel)]="int1" placeholder="整数1">
+    </div>
+  </div>
+  <div class="fraction">
+    <div class="denominator">
+      <input id="denominator2" type="text" [(ngModel)]="int2" placeholder="整数2">
+    </div>
+  </div>
+  <div class="operator-container">
+    <span class="operator">=</span>
+  </div>
+  <div class="fraction">
+    <div class="numerator">
+      {{ result }}
+    </div>
+  </div>
+</div>
+<div class="button_wrapper">
+  <button (click)="calc()">計算</button>
+</div>
