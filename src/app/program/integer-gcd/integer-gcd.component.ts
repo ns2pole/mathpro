@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: [ '../program.component.css','./integer-gcd.component.css' ],
 })
 export class IntegerGcdComponent {
-  private apiUrl = 'https://promath.jp:8090/getGCD';
+  private apiUrl = 'https://promath.jp:8091/getGCD';
   // private apiUrl = 'http://localhost:8090/getGCD';
   constructor(private http: HttpClient) {}
   int1: number | null = null; // 初期値を null に設定
