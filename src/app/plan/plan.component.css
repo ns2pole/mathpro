@@ -9,7 +9,6 @@
 img {  width: 35%;
   height: 35%;
   display: block;
-  margin: auto;
   margin: 20px auto; /* 上下20px、左右自動で中央寄せ */
   border-radius: 7px; /* 角を少し丸く */
   border: 0.5px solid #000000; /* 薄いグレーのボーダー */

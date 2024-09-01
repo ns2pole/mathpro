@@ -9,6 +9,9 @@ text-align: center;
   margin-bottom: 20px;
   padding-bottom: 20px;
   background-color: #f8f8f8;
+  width: 50%;
+  margin: 30px auto;
+
 }
 
 .button_wrapper {
