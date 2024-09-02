@@ -19,13 +19,6 @@
   font-size: 1.2em; /* 太字部分の文字サイズを大きくする */
 }
 
-.plan-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
 .image-with-caption {
   text-align: center; /* キャプションを中央寄せ */
 }
@@ -116,7 +109,7 @@
   }
 
   .plan-button {
-    width: 25%;
+    width: 20%;
     padding: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -201,13 +194,20 @@
   }
 
   .plan-button {
-    border: 2px solid #333; /* ボーダーの色と太さ */
-    border-radius: 10px; /* 角を丸くする */
-    padding: 15px; /* 内側の余白 */
-    margin: 20px auto; /* 外側の余白を上下20px、左右を自動で中央寄せ */
+    width: 25%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
     background-color: #f9f9f9; /* 背景色 */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
-    width: 65%;
+    border: 1px solid #000000;
   }
 }
 
