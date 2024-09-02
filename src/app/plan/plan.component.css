@@ -28,18 +28,19 @@
   color: #555; /* グレーの文字色 */
 }
 
+img {
+  display: block;
+  margin: 20px auto; /* 上下20px、左右自動で中央寄せ */
+  border-radius: 7px; /* 角を少し丸く */
+  border: 1.2px solid #333; /* ボーダーの色と太さ */
+  background-color: #fff; /* 背景色を白に */
+}
 
 /* PC用 */
 @media (min-width: 767px) {
   img {
     width: 37%;
-    display: block;
-    margin: 20px auto; /* 上下20px、左右自動で中央寄せ */
-    border-radius: 7px; /* 角を少し丸く */
-    border: 1.2px solid #333; /* ボーダーの色と太さ */
-    background-color: #fff; /* 背景色を白に */
   }
-
 
   .online-plan-button {
     width: 85%;
@@ -57,7 +58,6 @@
     white-space: pre-wrap;
     border: 1px solid #000000;
   }
-
 
   .student-voice {
     border: 2px solid #333; /* ボーダーの色と太さ */
@@ -126,10 +126,6 @@
 @media (max-width: 767px) {
   img {
     width: 85%;
-    display: block;
-    border-radius: 7px; /* 角を少し丸く */
-    border: 1.2px solid #333; /* ボーダーの色と太さ */
-    background-color: #fff; /* 背景色を白に */
   }
 
   .online-plan-button {
