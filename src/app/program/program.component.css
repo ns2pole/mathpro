@@ -47,7 +47,7 @@ input {
 /* スマホ用 */
 @media screen and (max-width: 769px) {
   input {
-    width: 33%;
+    width: 85%;
   }
 
   .program-container {
@@ -62,7 +62,7 @@ input {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   button {
-    width: 35%;
+    width: 25%;
     height: 100%;
   }
   canvas {
