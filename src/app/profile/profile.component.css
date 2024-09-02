@@ -2,15 +2,28 @@
   width: 55%;
   margin: auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 子要素が一列に並ぶ */
   align-items: flex-start;
-  gap: 20px;
-  justify-content: center; /* 追加: 中央揃え */
+  gap: 20px; /* 画像とプロフィールの間に余白を追加 */
+  justify-content: space-between; /* 画像とテキストを左右に広げる */
 }
+
 #me-img-container {
-  flex: 1;
-  max-width: 200px;
-  text-align: center; /* 追加: 画像を中央揃え */
+  flex: 1; /* 画像コンテナを1つ分のスペースに */
+  max-width: 200px; /* 画像の最大幅を設定 */
+  text-align: left; /* PCでは画像を左揃え */
+}
+
+#me {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* 画像の角を丸くする */
+}
+
+.profile-content {
+  flex: 2; /* プロフィール部分に2つ分のスペースを割り当て */
+  min-width: 300px; /* プロフィールの最小幅を設定 */
+  text-align: left; /* PCではテキストを左揃え */
 }
 
 @media screen and (max-width: 768px) {
@@ -20,12 +33,23 @@
   }
 
   #me-img-container {
-    max-width: 60%;
-    text-align: center; /* 追加: 画像を中央揃え */
+    max-width: 60%; /* モバイルでの画像幅を調整 */
+    text-align: center; /* モバイルで画像を中央揃え */
   }
 
   .profile-content {
     width: 100%;
-    text-align: center;
+    text-align: center; /* モバイルでテキストを中央揃え */
   }
+}
+
+.profile-section {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#me-img-caption {
+  text-align: center;
+  font-size: 0.9em; /* キャプションのフォントサイズを少し小さく */
+  color: #555; /* グレーの文字色 */
 }
