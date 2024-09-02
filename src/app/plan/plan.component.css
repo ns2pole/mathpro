@@ -125,7 +125,7 @@ img {
 /* スマホ用 */
 @media (max-width: 767px) {
   img {
-    width: 85%;
+    width: 95%;
   }
 
   .online-plan-button {
