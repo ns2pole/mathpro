@@ -156,7 +156,9 @@ figcaption {
 
   .recommend-title {
     text-align: center;
-    font-size: 19px;
+    font-size: 21px;
+    margin-bottom: 15px;
+
   }
 
   #prime-factor-ex {
@@ -196,7 +198,8 @@ figcaption {
 
   .recommend-title {
     text-align: center;
-    font-size: 23px;
+    font-size: 25px;
+    margin-bottom: 15px;
   }
 
   #prime-factor-ex {

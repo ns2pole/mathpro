@@ -52,13 +52,14 @@ button {
   #home {
     width: 90%;
     height: 90%;
+    border-radius: 12px; /* 角を少し強調 */
     border-top: #000000 1px solid;
     border-bottom: #000000 1px solid;
     border-left: #000000 1px solid;
     border-right: #000000 1px solid;
   }
   .container {
-    width: 85%;
+    width: 90%;
     margin: auto;
   }
 }
