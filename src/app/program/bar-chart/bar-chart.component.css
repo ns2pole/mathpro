@@ -14,8 +14,8 @@
 /* スマホ用 */
 @media screen and (max-width: 769px) {
   .chart-container {
-    width: 85%; /* 全体の幅を60%に設定 */
-    margin: 10px auto; /* 中央寄せ */
+    width: 95%; /* 全体の幅を60%に設定 */
+    margin: 5px auto; /* 中央寄せ */
   }
 }
 

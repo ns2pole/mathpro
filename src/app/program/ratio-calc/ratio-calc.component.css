@@ -38,10 +38,6 @@
   margin: 0; /* 結果部分のマージンをリセット */
 }
 
-button {
-  width: 50px;
-}
-
 input[readonly] {
   background-color: #f0f0f0; /* 明るい灰色 */
   cursor: not-allowed; /* ポインタが禁じられていることを示す */

@@ -25,9 +25,6 @@
 .result-container .fraction {
   margin: 0; /* 結果部分のマージンをリセット */
 }
-button {
-  width: 50px;
-}
 .recurring-decimal, .recurring-decimal-length {
   display: flex;
   justify-content: center;

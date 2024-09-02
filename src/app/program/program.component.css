@@ -30,12 +30,23 @@ text-align: center;
 
 input {
   text-align: center;
+  height: 30px;
   font-size: 16px;
   border: 0.5px solid #000; /* 枠線を明示的に設定 */
   border-radius: 4px; /* 角を丸める場合 */
   box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
   margin-right: 10px;
   margin-left: 10px;
+}
+
+button {
+  height: 100%;
+  border-radius: 5px; /* 角を丸くする */
+  background-color: #d7d7d7; /* ボタンの背景色 */
+  color: #000000; /* ボタンのテキスト色 */
+  border:0.5px solid #000; /* デフォルトの境界線を削除 */
+  font-size: 16px; /* フォントサイズ */
+  cursor: pointer; /* カーソルをポインタに */
 }
 
 @media screen and (max-width: 768px) {
@@ -61,9 +72,9 @@ input {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を強調 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+
   button {
     width: 25%;
-    height: 100%;
   }
   canvas {
       width: 90%;
@@ -85,8 +96,7 @@ input {
   }
 
   button {
-    width: 12%;
-    height: 100%;
+    width: 16%;
   }
 
   canvas {

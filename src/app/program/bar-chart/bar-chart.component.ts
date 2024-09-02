@@ -5,7 +5,7 @@ import { BaseChartDirective } from 'ng2-charts';
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
-  styleUrls: [ '../program.component.css', './bar-chart.component.css'],
+  styleUrls: ['../../app.component.css', '../program.component.css', './bar-chart.component.css'],
 })
 export class BarChartComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
