@@ -30,7 +30,6 @@ text-align: center;
 
 @media screen and (max-width: 768px) {
 
-
 }
 
 /* スマホ用 */
@@ -47,7 +46,7 @@ text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   button {
-    width: 80%;
+    width: 35%;
     height: 100%;
   }
   canvas {
@@ -70,9 +69,10 @@ text-align: center;
   }
 
   button {
-      width: 10%;
-      height: 100%;
+    width: 8%;
+    height: 100%;
   }
+
   canvas {
       width: 30%;
       height: auto;
