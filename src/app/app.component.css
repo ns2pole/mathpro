@@ -109,3 +109,37 @@ body::before {
     vertical-align: middle; /* 画像を垂直方向に中央揃えに */
   }
 }
+
+.sub-title {
+  font-size: 2em; /* 大きめのフォントサイズ */
+  color: #333; /* 濃いめの文字色 */
+  text-align: center; /* 中央寄せ */
+  margin-top: 20px; /* 上部の余白 */
+  margin-bottom: 20px; /* 下部の余白 */
+  font-weight: bold; /* 太字にする */
+}
+
+.articles-container {
+  border: 1px solid #000000; /* より鮮明なブルーを使った境界線 */
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f1f1f1; /* 背景色を少し明るく */
+  width: 32%;
+  margin: 30px auto;
+  border-radius: 12px; /* 角を少し強調 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を強調 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* リンク */
+a {
+  text-decoration: none;    /* アンダーラインを削除 */
+  color: #419cfc;           /* テキストの色 */
+  transition: color 0.3s;   /* 色の遷移 */
+}
+
+/* ホバー時のリンク */
+a:hover {
+  color: #0055ff;           /* ホバー時の色 */
+}

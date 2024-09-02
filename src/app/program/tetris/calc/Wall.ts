@@ -1,5 +1,5 @@
 import * as p5 from "p5";
-import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE } from "./Constants";
+import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE_FOR_PC } from "./Constants";
 export class Wall {
   position: { x: number, y: number };
   img: HTMLImageElement;
@@ -11,7 +11,7 @@ export class Wall {
 
 
   static getSize(s: any) : number {
-    return s.windowWidth * CELL_SIZE;
+    return s.windowWidth * CELL_SIZE_FOR_PC;
   }
 
   getLeftTopCornerX(p: p5): number {

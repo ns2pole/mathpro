@@ -1,0 +1,11 @@
+.chart-container {
+  width: 60%; /* 全体の幅を60%に設定 */
+  max-width: 600px; /* 最大幅を600pxに設定 */
+  margin: 20px auto; /* 中央寄せ */
+  text-align: center; /* ボタンなどの中央寄せ */
+}
+
+.chart {
+  width: 100%; /* 親要素に対しての幅を100%に設定 */
+  height: auto; /* 自動で高さを調整 */
+}

@@ -1,40 +1,52 @@
 #bread-first-search-canvas{
 text-align: center;
 }
-#tetris-canvas {
-  text-align: center;
-}
-.program-container {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  background-color: #f8f8f8;
-  width: 50%;
-  margin: 30px auto;
 
+.program-container {
+  border: 1px solid #000000; /* より鮮明なブルーを使った境界線 */
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f1f1f1; /* 背景色を少し明るく */
+  width: 45%;
+  margin: 30px auto;
+  border-radius: 12px; /* 角を少し強調 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を強調 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-title-addition {
+  text-align: center;
 }
 
 .button_wrapper {
   text-align: center;
   height: 30px;
-  margin-top: 5px; /* 上に20pxの間隔を追加 */
+  margin-top: 5px;
 }
 
-.program-container li, .program-container a, .explanation {
+.program-title {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 8px;
+}
+
+.program-container li, .program-container a {
   word-wrap: break-word;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
+.explanation {
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   button {
-      width: 30%;
+      width: 80%;
       height: 100%;
   }
   canvas {
       width: 90%;
-      height: auto;
-      margin: 0 auto;
   }
 
 }
@@ -42,7 +54,7 @@ text-align: center;
 
 @media screen and (min-width: 769px) {
   button {
-      width: 6%;
+      width: 10%;
       height: 100%;
   }
   canvas {
@@ -59,3 +71,6 @@ text-align: center;
   }
 }
 
+.others-list {
+  text-align: center;
+}

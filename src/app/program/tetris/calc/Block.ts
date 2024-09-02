@@ -1,5 +1,5 @@
 import * as p5 from 'p5';
-import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE} from '../calc/Constants';
+import { getXOriginForDrawing, getYOriginForDrawing, CELL_SIZE_FOR_PC} from '../calc/Constants';
 import { Vec2D } from './Vec2D';
 import { CELL_STATUS } from './Union';
 export class Block {
@@ -22,7 +22,7 @@ export class Block {
 
 
   static getSize(s: any) : number {
-      return s.windowWidth * CELL_SIZE;
+      return s.windowWidth * CELL_SIZE_FOR_PC;
   }
 
   getLeftTopCornerX(p: p5): number {

@@ -11,8 +11,11 @@ export class TetrisComponent {
   sketch = (p: p5) => {
     p.setup = () => {
       let canvas = p.createCanvas(getCanvasWidth(p), getCanvasHeight(p));
-      let ele : any = document.getElementById('tetris-canvas');
+      let ele : any = document.getElementById('tetris-container');
       canvas.parent(ele);
+      // キャンバスを中央に配置するためにCSSを直接設定
+      canvas.style('display', 'block');
+      canvas.style('margin', '0 auto');
     };
     p.draw = ViewManager.timeElapse(p);
     p.frameRate(FPS_PER_SECOND);

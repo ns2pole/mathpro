@@ -1,24 +1,51 @@
+.container {
+  width: 55%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px; /* 画像とプロフィールの間に余白を追加 */
+}
 
-@media screen and (max-width:768px) {
-  h4 {
-    text-align: center;
+#me-img-container {
+  flex: 1; /* 画像コンテナを1つ分のスペースに */
+  max-width: 200px; /* 画像の最大幅を設定 */
+}
+
+#me {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* 画像の角を丸くする */
+}
+
+.profile-content {
+  flex: 2; /* プロフィール部分に2つ分のスペースを割り当て */
+  min-width: 300px; /* プロフィールの最小幅を設定 */
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
-  #me {
-    width: 60%;
-    height: auto;
-  }
+
   #me-img-container {
-    text-align: center;
+    max-width: 60%; /* モバイルでの画像幅を調整 */
+  }
+
+  .profile-content {
+    width: 100%;
+    text-align: center; /* モバイルでテキストを中央揃え */
   }
 }
 
-@media screen and (min-width: 769px) {
-  #me {
-    width: 20%;
-    height: auto;
-  }
-}
-
-.bold {
+.profile-section {
+  font-size: 18px;
   font-weight: bold;
+}
+
+#me-img-caption {
+  text-align: center;
+  font-size: 0.9em; /* キャプションのフォントサイズを少し小さく */
+  color: #555; /* グレーの文字色 */
 }
