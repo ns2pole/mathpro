@@ -2,18 +2,6 @@
 text-align: center;
 }
 
-.program-container {
-  border: 1px solid #000000; /* より鮮明なブルーを使った境界線 */
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #f1f1f1; /* 背景色を少し明るく */
-  width: 45%;
-  margin: 30px auto;
-  border-radius: 12px; /* 角を少し強調 */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を強調 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .sub-title-addition {
   text-align: center;
 }
@@ -41,18 +29,46 @@ text-align: center;
 }
 
 @media screen and (max-width: 768px) {
+
+
+}
+
+/* スマホ用 */
+@media screen and (max-width: 769px) {
+  .program-container {
+    border: 1px solid #000000; /* より鮮明なブルーを使った境界線 */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f1f1f1; /* 背景色を少し明るく */
+    width: 85%;
+    margin: 30px auto;
+    border-radius: 12px; /* 角を少し強調 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を強調 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
   button {
-      width: 80%;
-      height: 100%;
+    width: 80%;
+    height: 100%;
   }
   canvas {
       width: 90%;
   }
-
 }
 
-
+/* PC用 */
 @media screen and (min-width: 769px) {
+  .program-container {
+    border: 1px solid #000000; /* より鮮明なブルーを使った境界線 */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f1f1f1; /* 背景色を少し明るく */
+    width: 45%;
+    margin: 30px auto;
+    border-radius: 12px; /* 角を少し強調 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を強調 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
   button {
       width: 10%;
       height: 100%;

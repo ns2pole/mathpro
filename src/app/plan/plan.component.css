@@ -1,81 +1,247 @@
-.plan-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+/* PC用 */
+@media (min-width: 767px) {
+  .plan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  img {
+    width: 37%;
+    display: block;
+    margin: 20px auto; /* 上下20px、左右自動で中央寄せ */
+    border-radius: 7px; /* 角を少し丸く */
+    border: 1.2px solid #333; /* ボーダーの色と太さ */
+    background-color: #fff; /* 背景色を白に */
+  }
+
+  .image-with-caption {
+    text-align: center; /* キャプションを中央寄せ */
+  }
+
+  .image-with-caption figcaption {
+    font-size: 0.9em; /* キャプションのフォントサイズを少し小さく */
+    color: #555; /* グレーの文字色 */
+  }
+
+  .plan-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .online-plan-button {
+    width: 85%;
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+    border: 1px solid #000000;
+  }
+
+
+  .sub-title {
+    font-size: 2em; /* 大きめのフォントサイズ */
+    color: #333; /* 濃いめの文字色 */
+    text-align: center; /* 中央寄せ */
+    margin-top: 20px; /* 上部の余白 */
+    margin-bottom: 20px; /* 下部の余白 */
+    font-weight: bold; /* 太字にする */
+  }
+
+  .student-voice {
+    border: 2px solid #333; /* ボーダーの色と太さ */
+    border-radius: 10px; /* 角を丸くする */
+    padding: 15px; /* 内側の余白 */
+    margin: 20px auto; /* 外側の余白を上下20px、左右を自動で中央寄せ */
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
+    width: 35%; /* 横幅を80%に設定 */
+  }
+
+  .student-voice p {
+    margin: 6px; /* 段落の余白を無くす */
+  }
+
+  .student-voice strong {
+    font-size: 1.2em; /* 太字部分の文字サイズを大きくする */
+  }
+
+  .sub-container {
+    border: 1px solid #000000;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 40%;
+    margin: 30px auto;
+    font-size: 20px;
+    border-radius: 12px; /* 角を少し強調 */
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+  #sub-container-caption {
+    font-size: 17px;
+  }
+
+  #notice-container {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 40%;
+    height: auto;
+    margin: auto;
+    font-size: 15px;
+    border-radius: 10px; /* 角を少し強調 */
+    background-color: #ffffff; /* 背景色 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+  .plan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: auto;
+    width: 66%;
+  }
+
+  .plan-button {
+    width: 25%;
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
+
+    border: 1px solid #000000;
+  }
 }
 
-
-img {
-  width: 37%;
-  display: block;
-  margin: 20px auto; /* 上下20px、左右自動で中央寄せ */
-  border-radius: 7px; /* 角を少し丸く */
-  border: 1.2px solid #333; /* ボーダーの色と太さ */
-  background-color: #fff; /* 背景色を白に */
-}
-
-.image-with-caption {
-  text-align: center; /* キャプションを中央寄せ */
-}
-
-.image-with-caption figcaption {
-  font-size: 0.9em; /* キャプションのフォントサイズを少し小さく */
-  color: #555; /* グレーの文字色 */
-}
-
-.plan-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-.online-plan-button {
-  width: 85%;
-  padding: 1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: pre-wrap;
-  border: 1px solid #000000;
-}
-
-.plan-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  margin: auto;
-  width: 66%;
-}
-
-.plan-button {
-  width: 25%;
-  padding: 1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: pre-wrap;
-  background-color: #f9f9f9; /* 背景色 */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
-
-  border: 1px solid #000000;
-}
-
+/* スマホ用 */
 @media (max-width: 767px) {
+  .plan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  img {
+    width: 87%;
+    display: block;
+    margin: 20px auto; /* 上下20px、左右自動で中央寄せ */
+    border-radius: 7px; /* 角を少し丸く */
+    border: 1.2px solid #333; /* ボーダーの色と太さ */
+    background-color: #fff; /* 背景色を白に */
+  }
+
+  .image-with-caption {
+    text-align: center; /* キャプションを中央寄せ */
+  }
+
+  .image-with-caption figcaption {
+    font-size: 0.9em; /* キャプションのフォントサイズを少し小さく */
+    color: #555; /* グレーの文字色 */
+  }
+
+  .plan-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .online-plan-button {
+    width: 85%;
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+    border: 1px solid #000000;
+  }
+
+
+  .sub-title {
+    font-size: 2em; /* 大きめのフォントサイズ */
+    color: #333; /* 濃いめの文字色 */
+    text-align: center; /* 中央寄せ */
+    margin-top: 20px; /* 上部の余白 */
+    margin-bottom: 20px; /* 下部の余白 */
+    font-weight: bold; /* 太字にする */
+  }
+
+  .student-voice {
+    border: 2px solid #333; /* ボーダーの色と太さ */
+    border-radius: 10px; /* 角を丸くする */
+    padding: 15px; /* 内側の余白 */
+    margin: 20px auto; /* 外側の余白を上下20px、左右を自動で中央寄せ */
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
+    width: 85%; /* 横幅を80%に設定 */
+  }
+
+  .student-voice p {
+    margin: 6px; /* 段落の余白を無くす */
+  }
+
+  .student-voice strong {
+    font-size: 1.2em; /* 太字部分の文字サイズを大きくする */
+  }
+
+  .sub-container {
+    border: 1px solid #000000;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 85%;
+    margin: 30px auto;
+    font-size: 20px;
+    border-radius: 12px; /* 角を少し強調 */
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+  #sub-container-caption {
+    font-size: 17px;
+  }
+
+  #notice-container {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 85%;
+    height: auto;
+    margin: auto;
+    font-size: 15px;
+    border-radius: 10px; /* 角を少し強調 */
+    background-color: #ffffff; /* 背景色 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
   .plan-container {
     flex-direction: column;
   }
@@ -88,59 +254,3 @@ img {
   }
 }
 
-.sub-title {
-  font-size: 2em; /* 大きめのフォントサイズ */
-  color: #333; /* 濃いめの文字色 */
-  text-align: center; /* 中央寄せ */
-  margin-top: 20px; /* 上部の余白 */
-  margin-bottom: 20px; /* 下部の余白 */
-  font-weight: bold; /* 太字にする */
-}
-
-.student-voice {
-  border: 2px solid #333; /* ボーダーの色と太さ */
-  border-radius: 10px; /* 角を丸くする */
-  padding: 15px; /* 内側の余白 */
-  margin: 20px auto; /* 外側の余白を上下20px、左右を自動で中央寄せ */
-  background-color: #f9f9f9; /* 背景色 */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
-  width: 35%; /* 横幅を80%に設定 */
-}
-
-.student-voice p {
-  margin: 6px; /* 段落の余白を無くす */
-}
-
-.student-voice strong {
-  font-size: 1.2em; /* 太字部分の文字サイズを大きくする */
-}
-
-.sub-container {
-  border: 1px solid #000000;
-  margin-bottom: 20px;
-  padding: 20px;
-  width: 40%;
-  margin: 30px auto;
-  font-size: 20px;
-  border-radius: 12px; /* 角を少し強調 */
-  background-color: #f9f9f9; /* 背景色 */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-#sub-container-caption {
-  font-size: 17px;
-}
-
-#notice-container {
-  text-align: center;
-  margin-bottom: 20px;
-  width: 40%;
-  height: auto;
-  margin: auto;
-  font-size: 15px;
-  border-radius: 10px; /* 角を少し強調 */
-  background-color: #ffffff; /* 背景色 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
