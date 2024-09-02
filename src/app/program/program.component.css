@@ -74,8 +74,10 @@ button {
   }
 
   button {
-    width: 25%;
+    padding-left: 25px; /* 内側の余白を設定 */
+    padding-right: 25px; /* 内側の余白を設定 */
   }
+
   canvas {
       width: 90%;
   }
@@ -96,8 +98,10 @@ button {
   }
 
   button {
-    width: 16%;
+    padding-left: 35px; /* 内側の余白を設定 */
+    padding-right: 35px; /* 内側の余白を設定 */
   }
+
 
   canvas {
       width: 30%;
