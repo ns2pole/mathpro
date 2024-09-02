@@ -1,3 +1,13 @@
-.tetris-controller {
-  width: 30%;
+/* PC用 */
+@media screen and (min-width: 769px) {
+  .tetris-controller {
+    width: 30%;
+  }
+}
+
+/* スマホ用 */
+@media screen and (max-width: 769px) {
+  .tetris-controller {
+    width: 25%;
+  }
 }

@@ -137,9 +137,8 @@
 /* スマホ用 */
 @media (max-width: 767px) {
   img {
-    width: 87%;
+    width: 100%;
     display: block;
-    margin: 5px auto; /* 上下20px、左右自動で中央寄せ */
     border-radius: 7px; /* 角を少し丸く */
     border: 1.2px solid #333; /* ボーダーの色と太さ */
     background-color: #fff; /* 背景色を白に */
@@ -202,9 +201,12 @@
   }
 
   .plan-button {
-    margin-top: 1rem;
-    margin-left: 0;
-    margin-right: 0;
+    border: 2px solid #333; /* ボーダーの色と太さ */
+    border-radius: 10px; /* 角を丸くする */
+    padding: 15px; /* 内側の余白 */
+    margin: 20px auto; /* 外側の余白を上下20px、左右を自動で中央寄せ */
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
     width: 65%;
   }
 }

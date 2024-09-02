@@ -1,6 +1,7 @@
 figure {
   text-align: center;
 }
+
 @media (max-width: 767px) {
   #coil-cross-section-view {
       width: 60%;

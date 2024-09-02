@@ -79,12 +79,17 @@ text-align: center;
       margin: 0 auto;
   }
 
-  input {
-      width: 30%;
-      height: 100%;
-      font-size: 1.4rem;
-      text-align: center;
-  }
+}
+
+input {
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+  border: 0.5px solid #000; /* 枠線を明示的に設定 */
+  border-radius: 4px; /* 角を丸める場合 */
+  box-sizing: border-box; /* パディングとボーダーを含む幅を設定 */
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .others-list {
