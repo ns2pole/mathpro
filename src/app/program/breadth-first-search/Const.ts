@@ -9,7 +9,7 @@ export const CANVAS_BACKGROUND_COLOR : Color = 'White';
 export const LARGE_LABYRINTH_SIZE : number = 50;
 export const SQUARE_SIZE_FOR_LARGE_LABYRINTH : number = 1 / (LARGE_LABYRINTH_SIZE * 2.6);
 export const SMALL_LABYRINTH_SIZE : number = 30;
-export const SQUARE_SIZE_FOR_SMALL_LABYRINTH : number = 1 / (SMALL_LABYRINTH_SIZE * 1.9);
+export const SQUARE_SIZE_FOR_SMALL_LABYRINTH : number = 1 / (SMALL_LABYRINTH_SIZE * 1.6);
 
 export const getCanvasWidth: (s: any) => number = (s: any) => {
   if(screen.width < 700) {
