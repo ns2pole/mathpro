@@ -11,7 +11,7 @@ img {
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 967px) {
   /* 全体のコンテナ */
   .articles-title{
     width: 100%;  /* または適切なサイズに調整 */
@@ -32,7 +32,7 @@ img {
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 967px) {
   /* 全体のコンテナ */
   .articles-title{
     width: 30%;  /* または適切なサイズに調整 */

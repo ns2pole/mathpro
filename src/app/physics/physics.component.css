@@ -2,13 +2,13 @@ figure {
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 967px) {
   #coil-cross-section-view {
       width: 60%;
       height: 60%;
   }
 }
-@media (min-width: 767px) {
+@media (min-width: 967px) {
   #coil-cross-section-view {
       width: 35%;
       height: 35%;

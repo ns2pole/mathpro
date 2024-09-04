@@ -44,7 +44,7 @@ button {
 }
 
 /* スマホ用 */
-@media (max-width: 767px) {
+@media (max-width: 967px) {
   .form-container {
     width: 93%;
   }
@@ -72,7 +72,7 @@ figcaption {
 }
 
 /* PC用 */
-@media (min-width: 768px) {
+@media (min-width: 967px) {
   #home {
     width: 60%;
     height: 60%;

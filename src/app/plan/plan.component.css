@@ -37,7 +37,7 @@ img {
 }
 
 /* PC用 */
-@media (min-width: 767px) {
+@media (min-width: 967px) {
   img {
     width: 37%;
   }
@@ -123,7 +123,7 @@ img {
 }
 
 /* スマホ用 */
-@media (max-width: 767px) {
+@media (max-width: 967px) {
   img {
     width: 95%;
   }

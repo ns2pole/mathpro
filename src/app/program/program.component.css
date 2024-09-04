@@ -49,7 +49,7 @@ button {
   cursor: pointer; /* カーソルをポインタに */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 967px) {
   input {
     width: 120px;
   }
