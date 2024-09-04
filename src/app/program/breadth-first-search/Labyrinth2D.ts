@@ -11,13 +11,13 @@ export class Labyrinth2D extends Array<Array<Square>> {
     let rowNum : number = 0;
     let columnNum : number = 0;
     let obstaclesNum : number = 0;
-    if(screen.width < 1000) {
-      rowNum = SMALL_LABYRINTH_SIZE;
-      columnNum = SMALL_LABYRINTH_SIZE;
-    } else {
+    // if(screen.width < 1000) {
+    //   rowNum = SMALL_LABYRINTH_SIZE;
+    //   columnNum = SMALL_LABYRINTH_SIZE;
+    // } else {
       rowNum = LARGE_LABYRINTH_SIZE;
       columnNum = LARGE_LABYRINTH_SIZE;
-    }
+    // }
     obstaclesNum = rowNum * columnNum / 3;
 		let lab : Labyrinth2D = new Labyrinth2D();
 		for( let i :number = 0; i < rowNum; i++) {

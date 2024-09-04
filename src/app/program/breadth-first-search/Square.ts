@@ -48,11 +48,11 @@ export class Square extends Vertex{
   }
 
   static getSize(s: any) : number {
-    if(s.windowWidth < 1000) {
-      return s.windowWidth * SQUARE_SIZE_FOR_SMALL_LABYRINTH;
-    } else {
+    // if(s.windowWidth < 1000) {
+    //   return s.windowWidth * SQUARE_SIZE_FOR_SMALL_LABYRINTH;
+    // } else {
       return s.windowWidth * SQUARE_SIZE_FOR_LARGE_LABYRINTH;
-    }
+    // }
   }
 
   getLeftTopCornerX(p: p5): number {

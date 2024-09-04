@@ -18,17 +18,17 @@ export const getCanvasHeight: (s: any) => number = (s: any) => {
 };
 
 export const getXOriginForDrawing: (s: any) => number = (s: any) => {
-  if(s.windowWidth < 1000) {
-    return s.windowWidth * (CANVAS_WIDTH_FOR_PC - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
-  } else {
+  // if(s.windowWidth < 1000) {
+  //   return s.windowWidth * (CANVAS_WIDTH_FOR_PC - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
+  // } else {
     return s.windowWidth * (CANVAS_WIDTH_FOR_PC  - (LARGE_LABYRINTH_SIZE * SQUARE_SIZE_FOR_LARGE_LABYRINTH)) / 2;
-  }
+  // }
 }
 
 export const getYOriginForDrawing: (s: any) => number = (s: any) => {
-  if(s.windowWidth < 1000) {
-    return s.windowWidth * (CANVAS_HEIGHT_FOR_PC - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
-  } else {
+  // if(s.windowWidth < 1000) {
+  //   return s.windowWidth * (CANVAS_HEIGHT_FOR_PC - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
+  // } else {
     return s.windowWidth * (CANVAS_HEIGHT_FOR_PC - (LARGE_LABYRINTH_SIZE * SQUARE_SIZE_FOR_LARGE_LABYRINTH )) / 2;
-  }
+  // }
 }
