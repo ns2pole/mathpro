@@ -12,33 +12,33 @@ export const SMALL_LABYRINTH_SIZE : number = 20;
 export const SQUARE_SIZE_FOR_SMALL_LABYRINTH : number = 1 / (SMALL_LABYRINTH_SIZE * 1.6);
 
 export const getCanvasWidth: (s: any) => number = (s: any) => {
-  if(s.windowWidth < 700) {
-    return s.windowWidth * CANVAS_WIDTH_FOR_PHONE;
+  if(screen.width < 700) {
+    return screen.width * CANVAS_WIDTH_FOR_PHONE;
   } else {
-    return s.windowWidth * CANVAS_WIDTH_FOR_PC;
+    return screen.width * CANVAS_WIDTH_FOR_PC;
   }
 };
 
 export const getCanvasHeight: (s: any) => number = (s: any) => {
-  if(s.windowWidth < 700) {
-    return s.windowWidth * CANVAS_HEIGHT_FOR_PHONE;
+  if(screen.width < 700) {
+    return screen.width * CANVAS_HEIGHT_FOR_PHONE;
   } else {
-    return s.windowWidth * CANVAS_HEIGHT_FOR_PC;
+    return screen.width * CANVAS_HEIGHT_FOR_PC;
   }
 };
 
 export const getXOriginForDrawing: (s: any) => number = (s: any) => {
-  if(s.windowWidth < 700) {
-    return s.windowWidth * (CANVAS_WIDTH_FOR_PHONE - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
+  if(screen.width < 700) {
+    return screen.width * (CANVAS_WIDTH_FOR_PHONE - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
   } else {
-    return s.windowWidth * (CANVAS_WIDTH_FOR_PC  - (LARGE_LABYRINTH_SIZE * SQUARE_SIZE_FOR_LARGE_LABYRINTH)) / 2;
+    return screen.width * (CANVAS_WIDTH_FOR_PC  - (LARGE_LABYRINTH_SIZE * SQUARE_SIZE_FOR_LARGE_LABYRINTH)) / 2;
   }
 }
 
 export const getYOriginForDrawing: (s: any) => number = (s: any) => {
-  if(s.windowWidth < 700) {
-    return s.windowWidth * (CANVAS_HEIGHT_FOR_PHONE - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
+  if(screen.width < 700) {
+    return screen.width * (CANVAS_HEIGHT_FOR_PHONE - (SMALL_LABYRINTH_SIZE * SQUARE_SIZE_FOR_SMALL_LABYRINTH)) / 2;
   } else {
-    return s.windowWidth * (CANVAS_HEIGHT_FOR_PC - (LARGE_LABYRINTH_SIZE * SQUARE_SIZE_FOR_LARGE_LABYRINTH )) / 2;
+    return screen.width * (CANVAS_HEIGHT_FOR_PC - (LARGE_LABYRINTH_SIZE * SQUARE_SIZE_FOR_LARGE_LABYRINTH )) / 2;
   }
 }

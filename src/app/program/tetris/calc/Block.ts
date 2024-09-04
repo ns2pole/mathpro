@@ -22,7 +22,7 @@ export class Block {
 
 
   static getSize(s: any) : number {
-      return s.windowWidth * CELL_SIZE_FOR_PC;
+      return screen.width * CELL_SIZE_FOR_PC;
   }
 
   getLeftTopCornerX(p: p5): number {

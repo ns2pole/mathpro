@@ -22,17 +22,17 @@ export const CANVAS_WIDTH_FOR_PC : number = 2 / 5;
 export const CANVAS_HEIGHT_FOR_PC : number = 2 / 5;
 export const FPS_PER_SECOND = 1;
 export const getCanvasWidth: (s: any) => number = (s: any) => {
-  return s.windowWidth * CANVAS_WIDTH_FOR_PC;
+  return screen.width * CANVAS_WIDTH_FOR_PC;
 };
 
 export const getCanvasHeight: (s: any) => number = (s: any) => {
-  return s.windowWidth * CANVAS_HEIGHT_FOR_PC;
+  return screen.width * CANVAS_HEIGHT_FOR_PC;
 };
 
 export const getXOriginForDrawing: (s: any) => number = (s: any) => {
-  return (s.windowWidth * CANVAS_WIDTH_FOR_PC / 2) - s.windowWidth * CELL_SIZE_FOR_PC * FIELD_WIDTH_INCLUDING_WALL / 2;
+  return (screen.width * CANVAS_WIDTH_FOR_PC / 2) - screen.width * CELL_SIZE_FOR_PC * FIELD_WIDTH_INCLUDING_WALL / 2;
 }
 
 export const getYOriginForDrawing: (s: any) => number = (s: any) => {
-  return s.windowWidth * (CANVAS_HEIGHT_FOR_PC - (CELL_SIZE_FOR_PC * FIELD_HEIGHT)) / 2;
+  return screen.width * (CANVAS_HEIGHT_FOR_PC - (CELL_SIZE_FOR_PC * FIELD_HEIGHT)) / 2;
 }

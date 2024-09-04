@@ -48,10 +48,10 @@ export class Square extends Vertex{
   }
 
   static getSize(s: any) : number {
-    if(s.windowWidth < 700) {
-      return s.windowWidth * SQUARE_SIZE_FOR_SMALL_LABYRINTH;
+    if(screen.width < 700) {
+      return screen.width * SQUARE_SIZE_FOR_SMALL_LABYRINTH;
     } else {
-      return s.windowWidth * SQUARE_SIZE_FOR_LARGE_LABYRINTH;
+      return screen.width * SQUARE_SIZE_FOR_LARGE_LABYRINTH;
     }
   }
 
