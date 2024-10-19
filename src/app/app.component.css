@@ -13,14 +13,16 @@ figure {
 @media (max-width: 967px) {
   .sub-container {
     border: 1px solid #000000;
-    margin-bottom: 20px;
     width: 85%;
-    margin: 0 auto;
     font-size: 20px;
     border-radius: 12px; /* 角を少し強調 */
     background-color: #f9f9f9; /* 背景色 */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* 影を付ける */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    
   }
 }
 
