@@ -14,6 +14,7 @@ import { PlanComponent } from './plan/plan.component';
 import { BarChartComponent } from './program/bar-chart/bar-chart.component';
 import { BreadthFirstSearchComponent } from './program/breadth-first-search/breadth-first-search.component';
 import { MathComponent } from './math/math.component';
+import { MathProgrammingChannelComponent } from './math-programming-channel/math-programming-channel.component';
 import { PhysicsComponent } from './physics/physics.component';
 import { ProgramComponent } from './program/program.component';
 import { PrimeFactorizationComponent } from './program/prime-factorization/prime-factorization.component';
@@ -67,6 +68,7 @@ const ROUTE_TABLE: Routes = [
   { path: 'math/immutability-for-rotation', component: ImmutabilityForRotationComponent },
   { path: 'math/discriminant-and-factorization', component: DiscriminantAndFactorizationComponent },
 	{ path: 'math/lemma-factorization-on-integer', component: LemmaFactorizationOnIntegerComponent },
+	{ path: 'math-programming-channel', component: MathProgrammingChannelComponent },
 	{ path: 'physics-experiment-note/buoyancy-comparison', component: BuoyancyComparisonComponent },
   { path: 'physics-experiment-note/resistance-length-and-value', component: ResistanceLengthAndValueComponent },
   { path: 'physics-experiment-note/what-is-capacitor', component: WhatIsCapacitorComponent },
@@ -86,6 +88,7 @@ const ROUTE_TABLE: Routes = [
     BarChartComponent,
     BreadthFirstSearchComponent,
     MathComponent,
+    MathProgrammingChannelComponent,
     PhysicsComponent,
     ProgramComponent,
     PrimeFactorizationComponent,

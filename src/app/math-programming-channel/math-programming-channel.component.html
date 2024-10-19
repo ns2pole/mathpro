@@ -1,0 +1,31 @@
+
+<h2 class="sub-title">お知らせ</h2>
+<div id="notice-container">
+  <li>数学プログラミングちゃんねるの登録者数が150人を超えました。(2024/10/19)</li>
+</div>
+<br><br>
+<h2 class="sub-title">内容</h2>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/cnzMZTQWa70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>プログラム</h4>
+      <code>
+        elem' :: Eq a => a -> [a] -> Bool<br>
+        elem' _ [] = False<br>
+        elem' a (x:xs)<br>
+        &nbsp;&nbsp;| a == x = True<br>
+        &nbsp;&nbsp;| otherwise = elem a xs<br>
+        bool1 = elem' 1 [1,2,3]<br>
+        bool2 = elem' 1 [2,3,4]<br>
+        main :: IO ()<br>
+        main = do<br>
+        &nbsp;&nbsp;putStrLn $ show (bool1)<br>
+        &nbsp;&nbsp;putStrLn $ show (bool2)<br>
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
