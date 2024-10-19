@@ -72,15 +72,7 @@
     transition: all 0.3s ease; /* ホバー時のアニメーション */
     margin: 0px 0px 10px; /* 上下のマージン */
   }
-
-  .sub-container {
-    margin: auto;
-    width: 90%; /* コンテナの幅 */
-    margin: 0 auto; /* 中央寄せ */
-    border: 1px solid #000;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-  }
+  
   .content-wrapper {
     flex-direction: column; /* 縦並びに変更 */
   }
