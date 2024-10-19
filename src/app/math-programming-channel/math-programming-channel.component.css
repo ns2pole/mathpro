@@ -75,7 +75,6 @@
 
   .sub-container {
     width: 90%; /* コンテナの幅 */
-    height: 30%; /* 固定の高さを設定 */
     margin: 0 auto; /* 中央寄せ */
     border: 1px solid #000;
     border-radius: 12px;
@@ -83,6 +82,8 @@
   }
   
   .content-wrapper {
+    width: 90%; /* コンテナの幅 */
+    height: 70%; /* 固定の高さを設定 */
     flex-direction: column; /* 縦並びに変更 */
   }
   
