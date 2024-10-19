@@ -78,7 +78,7 @@
   }
 
   .video-container {
-    margin: 0 auto; /* 中央寄せ */
+    margin: 10px auto; /* 中央寄せ */
     flex: 0 0 auto; /* 縦並びのために幅を自動に */
     width: 90%; /* 親の90%の幅 */
     height: 70vh; /* 高さを画面の70%に設定 */
