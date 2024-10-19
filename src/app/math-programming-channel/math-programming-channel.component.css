@@ -74,6 +74,7 @@
   }
 
   .sub-container {
+    margin: auto;
     width: 90%; /* コンテナの幅 */
     margin: 0 auto; /* 中央寄せ */
     border: 1px solid #000;
@@ -87,16 +88,18 @@
   .video-container {
     margin: 0 auto; /* 中央寄せ */
     flex: 0 0 auto; /* 縦並びのために幅を自動に */
-    height: 70vh; /* 高さを画面の70%に設定 */
     width: 90%; /* 親の90%の幅 */
+    height: 70vh; /* 高さを画面の70%に設定 */
     margin-bottom: 10px; /* 下にマージンを追加 */
   }
 
+  
   .description-container {
     flex: 0 0 auto; /* 縦並びのために幅を自動に */
   }
 
   iframe {
+    margin: 0 auto; /* 中央寄せ */
     width: 90%; /* 親要素の90%の幅 */
     height: 100%; /* 親要素の100%の高さに設定 */
     border: none; /* 不要な枠線を削除 */
