@@ -29,3 +29,27 @@
   </div>
 </div>
 <br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/shorts/vAPD1g3e-I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>プログラム</h4>
+      <code>
+        insert :: Int -> Int -> [Int] -> [Int]<br>
+        insert index x list = (take index list) ++ [x] ++  (drop index list)<br>
+        f i= \l -> insert i (l !! i) $ filter (\a -> a `mod` (l !! i) /= 0) l<br>
+        fs = foldl1 (.) $ reverse $ map f [0..100]<br>
+        pl = fs [2..1000]<br>
+        pf :: Int -> [Int] -> [Int]<br>
+        pf x (p:ps)<br>
+        &nbsp;&nbsp;| x == 1 = []<br>
+        &nbsp;&nbsp;| x `mod` p == 0 = p : pf (x `div` p) (p:ps)<br>
+        &nbsp;&nbsp;| otherwise = pf x ps<br>
+        main = putStrLn (show $ pf (124124 ::Int) pl)<br>
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
