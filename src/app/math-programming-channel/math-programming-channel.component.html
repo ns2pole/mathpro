@@ -106,10 +106,8 @@
         root x = sqrt (fromIntegral x)<br>
         f :: Integer -> [(Integer, Integer)]<br>
         f x = [(a, x `div` a) | a <- [1..(floor (root x))], x `mod` a == 0]<br>
-        main :: IO ()<br>
-        main = do<br>
-        let d = f 30<br>
-        putStrLn (show d)<br>
+        d = f 30<br>
+        main = putStrLn (show d)
       </code>
     </div>
   </div>
