@@ -32,6 +32,32 @@
 <div class="sub-container">
   <div class="content-wrapper">
     <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/A7IUXRsoKkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>プログラム</h4>
+      <code>
+        insert i x list = take i list ++ [x] ++ drop I list<br>
+        f i = \list -> insert i (list !! i) (filter (\x -> x `mod` (list !! i) /= 0) list)<br>
+        l = [2..50]<br>
+        l0 = (f 0) l<br>
+        l1 = (f 1) l0<br>
+        l2 = (f 2) l1<br>
+        l3 = (f 3) l2<br>
+        main = do<br>
+        &nbsp;&nbsp;putStrLn (show l)<br>
+        &nbsp;&nbsp;putStrLn (show l0)<br>
+        &nbsp;&nbsp;putStrLn (show l1)<br>
+        &nbsp;&nbsp;putStrLn (show l2)<br>
+        &nbsp;&nbsp;putStrLn (show l3)<br>
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
       <iframe src="https://www.youtube.com/embed/MWooMXyCXT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="description-container">
@@ -61,9 +87,29 @@
     <div class="description-container">
       <h4>プログラム</h4>
       <code>
-        
         p = [(a,b,c) | a <- [1..30], b <- [1..30], c <- [1..30], a^2 + b^2 == c^2]<br>
         main = putStrLn (show p)
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/N4raHJfD7pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>プログラム</h4>
+      <code>
+        root :: Integer -> Double<br>
+        root x = sqrt (fromIntegral x)<br>
+        f :: Integer -> [(Integer, Integer)]<br>
+        f x = [(a, x `div` a) | a <- [1..(floor (root x))], x `mod` a == 0]<br>
+        main :: IO ()<br>
+        main = do<br>
+        let d = f 30<br>
+        putStrLn (show d)<br>
       </code>
     </div>
   </div>
