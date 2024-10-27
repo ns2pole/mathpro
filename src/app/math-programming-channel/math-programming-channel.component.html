@@ -5,13 +5,47 @@
 </div>
 <br><br>
 <h2 class="sub-title">動画リスト</h2>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/hSv-AKlS-Ho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>code</h4>
+      <code>
+        p = [(a,b,c) | a <- [1..30], b <- [1..30], c <- [1..30], a^2 + b^2 == c^2]<br>
+        main = putStrLn (show p)
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/nQabg-oNzb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>code</h4>
+      <code>
+        root :: Integer -> Double<br>
+        root x = sqrt (fromIntegral x)<br>
+        f :: Integer -> [(Integer, Integer)]<br>
+        f x = [(a, x `div` a) | a <- [1..(floor (root x))], x `mod` a == 0]<br>
+        d = f 30<br>
+        main = putStrLn (show d)
+      </code>
+    </div>
+  </div>
+</div>
 <div class="sub-container">
   <div class="content-wrapper">
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/cnzMZTQWa70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="description-container">
-      <h4>プログラム</h4>
+      <h4>code</h4>
       <code>
         elem' :: Eq a => a -> [a] -> Bool<br>
         elem' _ [] = False<br>
@@ -28,6 +62,7 @@
     </div>
   </div>
 </div>
+
 <br><br><br>
 <div class="sub-container">
   <div class="content-wrapper">
@@ -35,7 +70,7 @@
       <iframe src="https://www.youtube.com/embed/A7IUXRsoKkk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="description-container">
-      <h4>プログラム</h4>
+      <h4>code</h4>
       <code>
         insert i x list = take i list ++ [x] ++ drop I list<br>
         f i = \list -> insert i (list !! i) (filter (\x -> x `mod` (list !! i) /= 0) list)<br>
@@ -61,7 +96,7 @@
       <iframe src="https://www.youtube.com/embed/MWooMXyCXT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="description-container">
-      <h4>プログラム</h4>
+      <h4>code</h4>
       <code>
         insert :: Int -> Int -> [Int] -> [Int]<br>
         insert index x list = (take index list) ++ [x] ++  (drop index list)<br>
@@ -78,38 +113,5 @@
     </div>
   </div>
 </div>
-<br><br><br>
-<div class="sub-container">
-  <div class="content-wrapper">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/hSv-AKlS-Ho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="description-container">
-      <h4>プログラム</h4>
-      <code>
-        p = [(a,b,c) | a <- [1..30], b <- [1..30], c <- [1..30], a^2 + b^2 == c^2]<br>
-        main = putStrLn (show p)
-      </code>
-    </div>
-  </div>
-</div>
-<br><br><br>
-<div class="sub-container">
-  <div class="content-wrapper">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/N4raHJfD7pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="description-container">
-      <h4>プログラム</h4>
-      <code>
-        root :: Integer -> Double<br>
-        root x = sqrt (fromIntegral x)<br>
-        f :: Integer -> [(Integer, Integer)]<br>
-        f x = [(a, x `div` a) | a <- [1..(floor (root x))], x `mod` a == 0]<br>
-        d = f 30<br>
-        main = putStrLn (show d)
-      </code>
-    </div>
-  </div>
-</div>
+
 <br><br><br>
