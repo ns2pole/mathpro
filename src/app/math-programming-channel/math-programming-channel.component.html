@@ -24,7 +24,7 @@
 <div class="sub-container">
   <div class="content-wrapper">
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/0KWSgJAjP6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/f1us3ZlRJPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="description-container">
       <h4>code</h4>
@@ -56,6 +56,60 @@
     </div>
   </div>
 </div>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/mhKo1t5EH10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>code</h4>
+      <code>
+        d [] = []<br>
+        d [x] = []<br>
+        d (x1:x2:xs) =  (x2 - x1) : d (x2:xs)<br>
+        list = d [1,5,6,9,11]<br>
+        main = putStrLn (show list)
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/TSVUY9bpD2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>code</h4>
+      <code>
+        s [] = []<br>
+        s [x] = [x]<br>
+        s (x1:x2:xs) = x1 : s ((x1+x2):xs)<br>
+        list = s [1,2,3]<br>
+        main = putStrLn (show list)
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="sub-container">
+  <div class="content-wrapper">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/aRHhoRjAmlo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+      <h4>code</h4>
+      <code>
+        g f n = n : (g f (f n))<br>
+        d x = 2 * x<br>
+        l = g d 3<br>
+        main = putStrLn (show (take 5 l))
+      </code>
+    </div>
+  </div>
+</div>
+<br><br><br>
 <div class="sub-container">
   <div class="content-wrapper">
     <div class="video-container">
@@ -79,7 +133,6 @@
     </div>
   </div>
 </div>
-
 <br><br><br>
 <div class="sub-container">
   <div class="content-wrapper">
