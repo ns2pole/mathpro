@@ -187,12 +187,79 @@
 <div class="sub-container">
   <div class="content-wrapper">
     <div class="video-container">
-      <iframe src="https://youtu.be/5ZJzR62Vo_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+      <iframe 
+        src="https://www.youtube.com/embed/5ZJzR62Vo_Y" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>    </div>
     <div class="description-container">
-      <h4>program</h4>
-      <a (click)="Sierpinski_haskell_download()">Main.hs</a><br><br>
-      <a (click)="Sierpinski_animeDraw_download()">anime.py</a>
+      <h4>haskell</h4>
+      <code>
+        type PlanePoint = (Float, Float)<br>
+        <br>
+        midpoint :: PlanePoint -> PlanePoint -> PlanePoint<br>
+        midpoint (x1, y1) (x2, y2) = ((x1 + x2) / 2, (y1 + y2) / 2)<br><br>
+        
+        triangleVertices :: [PlanePoint]<br>
+        triangleVertices = [(200, -150), (-200, -150), (0, 173)]<br><br>
+        
+        removeDuplicates :: Eq a => [a] -> [a]<br>
+        removeDuplicates [] = []<br>
+        removeDuplicates (x:xs) = x : removeDuplicates (filter (/= x) xs)<br><br>
+        
+        addMidpoint :: [PlanePoint] -> [PlanePoint]<br>
+        addMidpoint [] = []<br>
+        addMidpoint (p1:points) = removeDuplicates [midpoint p1 vertex | vertex <- triangleVertices] ++ addMidpoint points<br><br>
+        
+        repeatMidpoints :: [PlanePoint] -> Int -> [PlanePoint]<br>
+        repeatMidpoints points 0 = points<br>
+        repeatMidpoints points n = repeatMidpoints (points ++ addMidpoint points) (n - 1)<br><br>
+        
+        midpointForAnimate  :: [PlanePoint] -> Int -> [[PlanePoint]]<br>
+        midpointForAnimate points n = [repeatMidpoints points k | k <- [1..n]]<br><br>
+        
+        main :: IO ()<br>
+        main = do<br>
+            let midpoints = midpointForAnimate triangleVertices 8<br>
+            writeFile "output.txt" "Results:\n"<br>
+            appendFile "output.txt" (init (show midpoints) ++ "\n")<br>
+      </code>
+      <br><br><br>
+      <h4>python</h4>
+      <code>
+        import numpy as np<br>
+        import matplotlib.pyplot as plt<br>
+        from matplotlib.animation import FuncAnimation<br><br>
+
+        with open('./calc/output.txt', 'r') as file:<br>
+            raw_data = file.read()<br><br>
+
+        data_list = eval(raw_data)<br><br>
+
+        fig, ax = plt.subplots()<br>
+        ax.set_xlim(-300, 300)<br>
+        ax.set_ylim(-300, 300)<br><br>
+
+        scatter = ax.scatter([], [], s=0.1)<br><br>
+
+        def init():<br>
+        &nbsp;&nbsp;scatter.set_offsets(np.empty((0, 2)))<br>
+        &nbsp;&nbsp;return scatter,<br><br>
+
+        def update(frame):<br>
+        &nbsp;&nbsp;data = np.array(data_list[frame % len(data_list)])<br>
+        &nbsp;&nbsp;scatter.set_offsets(data)<br>
+        &nbsp;&nbsp;return scatter,<br><br>
+
+        ani = FuncAnimation(fig, update, frames=len(data_list), init_func=init, interval=1000, blit=True)<br><br>
+
+        plt.show()<br><br>
+
+      </code>
+      <!-- <a (click)="Sierpinski_haskell_download()">Main.hs</a><br><br>
+      <a (click)="Sierpinski_animeDraw_download()">anime.py</a> -->
     </div>
   </div>
 </div>
