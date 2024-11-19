@@ -222,9 +222,9 @@
         
         main :: IO ()<br>
         main = do<br>
-            let midpoints = midpointForAnimate triangleVertices 8<br>
-            writeFile "output.txt" "Results:\n"<br>
-            appendFile "output.txt" (init (show midpoints) ++ "\n")<br>
+        &nbsp;&nbsp;let midpoints = midpointForAnimate triangleVertices 8<br>
+        &nbsp;&nbsp;writeFile "output.txt" "Results:\n"<br>
+        &nbsp;&nbsp;appendFile "output.txt" (init (show midpoints) ++ "\n")<br>
       </code>
       <br><br><br>
       <h4>python</h4>
@@ -234,7 +234,7 @@
         from matplotlib.animation import FuncAnimation<br><br>
 
         with open('./calc/output.txt', 'r') as file:<br>
-            raw_data = file.read()<br><br>
+        &nbsp;&nbsp;raw_data = file.read()<br><br>
 
         data_list = eval(raw_data)<br><br>
 
